@@ -1,7 +1,7 @@
 import {
   ADD,
   MINUS
-} from '../constants/counter'
+} from '@/store/constants/counter'
 
 export const add = () => {
   return {
