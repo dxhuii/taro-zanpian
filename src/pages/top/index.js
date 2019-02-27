@@ -53,6 +53,12 @@ class TopPage extends PureComponent {
     }
   }
 
+  go(id) {
+    Taro.navigateTo({
+      url: `/subject/${id}`
+    })
+  }
+
   render() {
     const { day, week, month, all } = this.props
     const dayData = day.data || []
@@ -64,24 +70,24 @@ class TopPage extends PureComponent {
         <View className={styles.top}>
           <View className='box'>
             <h2>总</h2>
-            <ul className={styles.toplist}>
+            <View className={styles.toplist}>
               {allData.map((item, index) => (
-                <li key={item.id}>
-                  <span styleName={`num ${index <= 2 ? 'on' : ''}`}>{index + 1}</span>
-                  <a href={`/subject/${item.id}`}>{item.title}</a>
-                  <span>{item.glod}</span>
-                </li>
+                <View key={item.id} onClick={this.go.bind(this, item.id)}>
+                  <Text className={`${styles.num} ${index <= 2 ? styles.on : ''}`}>{index + 1}</Text>
+                  <Text>{item.title}</Text>
+                  <Text>{item.glod}</Text>
+                </View>
               ))}
-            </ul>
+            </View>
           </View>
           <View className='box'>
             <h2>月</h2>
             <ul styleName='toplist'>
               {monthData.map((item, index) => (
                 <li key={item.id}>
-                  <span styleName={`num ${index <= 2 ? 'on' : ''}`}>{index + 1}</span>
+                  <Text styleName={`num ${index <= 2 ? 'on' : ''}`}>{index + 1}</Text>
                   <a href={`/subject/${item.id}`}>{item.title}</a>
-                  <span>{item.hits}</span>
+                  <Text>{item.hits}</Text>
                 </li>
               ))}
             </ul>
