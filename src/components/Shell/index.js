@@ -1,15 +1,12 @@
 import Taro from '@tarojs/taro'
+import { View, Text } from '@tarojs/components'
 import PropTypes from 'prop-types'
 
 // redux
 import { bindActionCreators } from 'redux'
-// import { connect } from 'react-redux'
 import { connect } from '@tarojs/redux'
 import { saveScrollPosition, setScrollPosition } from '@/store/actions/scroll'
 import { addVisitHistory } from '@/store/actions/history'
-
-// tools
-// import parseUrl from '@/common/parse-url'
 
 // 壳组件，用于给页面组件，套一个外壳
 // 这样可以通过壳组件，给每个页面，传递参数
@@ -28,15 +25,10 @@ export default Component => {
       setScrollPosition: PropTypes.func,
       addVisitHistory: PropTypes.func,
       saveScrollPosition: PropTypes.func
-      // componentWillUnmount: PropTypes.func,
-      // componentDidMount: PropTypes.func
     }
 
     constructor(props) {
       super(props)
-      // debugger
-      // const { search } = props.location
-      // this.props.location.params = search ? parseUrl(search) : {}
       this.state = {
         notFoundPgae: '',
         hasError: ''
@@ -49,26 +41,6 @@ export default Component => {
       this.props.setScrollPosition(path + search)
       this.props.addVisitHistory(path + search)
     }
-
-    // static getDerivedStateFromProps(nextProps, prevState) {
-    //   console.log(nextProps, prevState, 'shell')
-    //   if (prevState.location.pathname + prevState.location.search != nextProps.location.pathname + nextProps.location.search) {
-    //     nextProps.componentWillUnmount()
-    //     prevState.props = nextProps
-    //     nextProps.componentDidMount()
-    //   }
-    //   return prevState
-    // }
-
-    // componentWillReceiveProps(props) {
-    //   // 组件url发生变化
-    //   console.log(this.props, props, 'receive')
-    //   if (this.props.location.pathname + this.props.location.search != props.location.pathname + props.location.search) {
-    //     this.componentWillUnmount()
-    //     this.props = props
-    //     this.componentDidMount()
-    //   }
-    // }
 
     // 组件被卸载
     componentWillUnmount() {
@@ -90,13 +62,13 @@ export default Component => {
       const { notFoundPgae, hasError } = this.state
 
       if (notFoundPgae) {
-        return <div>{notFoundPgae}</div>
+        return <Text>{notFoundPgae}</Text>
       } else if (hasError) {
         return (
-          <div>
-            <div>页面发生错误</div>
-            <div>{hasError}</div>
-          </div>
+          <View>
+            <Text>页面发生错误</Text>
+            <Text>{hasError}</Text>
+          </View>
         )
       } else {
         return (
