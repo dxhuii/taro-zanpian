@@ -57,7 +57,6 @@ class TopPage extends Component {
     const weekData = week.data || []
     const monthData = month.data || []
     const allData = all.data || []
-    debugger
     return (
       <View>
         <View className={styles.top}>

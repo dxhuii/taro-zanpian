@@ -1,3 +1,5 @@
+import merge from 'lodash/merge'
+
 export default function() {
   let initialState = {}
   return function week(state = initialState, action = {}) {
@@ -5,7 +7,7 @@ export default function() {
     switch (action.type) {
       case 'GET_WEEK':
         state = data
-        return Object.assign({}, state, {})
+        return merge({}, state, {})
       case 'CLEAN':
         return {}
 
