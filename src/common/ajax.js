@@ -1,16 +1,16 @@
-import axios from 'axios'
+import Taro from '@tarojs/taro'
 
 const AJAX = ({ url = '', method = 'get', data = {}, headers = {} }) => {
   let option = { url, method, headers }
 
   if (method === 'get') {
     data._t = new Date().getTime()
-    option.params = data
+    option.data = data
   } else if (method === 'post') {
     option.data = data
   }
 
-  return axios(option)
+  return Taro.request(option)
     .then(resp => {
       if (resp && resp.data) {
         let res = resp.data

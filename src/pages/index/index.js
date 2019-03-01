@@ -4,6 +4,8 @@ import { connect } from '@tarojs/redux'
 
 import { add, minus, asyncAdd } from '@/store/actions/counter'
 
+import Week from '@/components/Week'
+
 import './index.scss'
 
 @connect(
@@ -46,6 +48,8 @@ class Index extends Component {
   render() {
     return (
       <View className='index'>
+        <Week type={1} />
+        <Week type={0} />
         <Button className='add_btn' onClick={this.props.add}>
           +
         </Button>
