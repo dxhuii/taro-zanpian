@@ -1,5 +1,3 @@
-import merge from 'lodash/merge'
-
 export default function() {
   let initialState = {}
   return function page(state = initialState, action = {}) {
@@ -7,7 +5,7 @@ export default function() {
     switch (action.type) {
       case 'GET_TOP_LIST':
         state[name] = data
-        return merge({}, state, {})
+        return Object.assign({}, state, {})
       case 'CLEAN':
         return {}
       default:

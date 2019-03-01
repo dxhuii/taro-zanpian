@@ -9,9 +9,6 @@ import { getTopList } from '@/store/reducers/page'
 
 import styles from './style.module.scss'
 
-import Shell from '@/components/Shell'
-
-@Shell
 @connect(
   (state, props) => ({
     day: getTopList(state, 'hits_day'),
@@ -32,10 +29,6 @@ class TopPage extends Component {
     TopList: PropTypes.func
   }
 
-  constructor(props) {
-    super(props)
-    this.state = {}
-  }
   componentDidMount() {
     const { day, week, month, all, TopList } = this.props
     if (!day.data) {
@@ -64,6 +57,7 @@ class TopPage extends Component {
     const weekData = week.data || []
     const monthData = month.data || []
     const allData = all.data || []
+    debugger
     return (
       <View>
         <View className={styles.top}>
