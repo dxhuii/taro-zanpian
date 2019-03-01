@@ -49,7 +49,7 @@
     "@tarojs/plugin-sass": "^1.2.15",
     "@tarojs/plugin-uglifyjs": "^1.2.15",
     "@tarojs/webpack-runner": "^1.2.15",
-    "@types/react": "^16.8.5",
+    "@types/react": "^16.8.6",
     "@types/webpack-env": "^1.13.7",
     "babel-eslint": "^10.0.1",
     "babel-plugin-transform-class-properties": "^6.24.1",

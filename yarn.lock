@@ -518,10 +518,18 @@
   resolved "http://npm.boqii.com:80/@types%2fprop-types/-/prop-types-15.5.9.tgz#f2d14df87b0739041bc53a7d75e3d77d726a3ec0"
   integrity sha1-8tFN+HsHOQQbxTp9dePXfXJqPsA=
 
-"@types/react@^16.7.3", "@types/react@^16.8.5":
+"@types/react@^16.7.3":
   version "16.8.5"
   resolved "http://npm.boqii.com:80/@types%2freact/-/react-16.8.5.tgz#03b9a6597bc20f6eaaed43f377a160f7e41c2b90"
   integrity sha1-A7mmWXvCD26q7UPzd6Fg9+QcK5A=
+  dependencies:
+    "@types/prop-types" "*"
+    csstype "^2.2.0"
+
+"@types/react@^16.8.6":
+  version "16.8.6"
+  resolved "http://npm.boqii.com:80/@types%2freact/-/react-16.8.6.tgz#fa1de3fe56cc9b6afeddc73d093d7f30fd5e31cc"
+  integrity sha1-+h3j/lbMm2r+3cc9CT1/MP1eMcw=
   dependencies:
     "@types/prop-types" "*"
     csstype "^2.2.0"
