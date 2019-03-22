@@ -2,6 +2,29 @@
 # yarn lockfile v1
 
 
+"@ant-design/icons-react-native@^1.0.2":
+  version "1.0.2"
+  resolved "http://npm.boqii.com:80/@ant-design%2ficons-react-native/-/icons-react-native-1.0.2.tgz#28648eacb808a1fae0ad59d691bbb472a6ffc26e"
+  integrity sha1-KGSOrLgIofrgrVnWkbu0cqb/wm4=
+
+"@ant-design/react-native@^3.1.4":
+  version "3.1.5"
+  resolved "http://npm.boqii.com:80/@ant-design%2freact-native/-/react-native-3.1.5.tgz#2b19d28b2dfef42be9007833ce0a864243987daf"
+  integrity sha1-KxnSiy3+9CvpAHgzzgqGQkOYfa8=
+  dependencies:
+    "@ant-design/icons-react-native" "^1.0.2"
+    "@bang88/react-native-drawer-layout" "^2.0.3"
+    "@bang88/react-native-ultimate-listview" "^3.3.0"
+    array-tree-filter "~2.1.0"
+    babel-runtime "^6.x"
+    deepmerge "^3.0.0"
+    normalize-css-color "^1.0.2"
+    react-native-collapsible "^1.4.0"
+    react-native-modal-popover "^0.0.12"
+    react-native-safe-area-view "^0.11.0"
+    react-native-swipeout "^2.3.6"
+    utility-types "^2.1.0"
+
 "@babel/code-frame@^7.0.0":
   version "7.0.0"
   resolved "http://npm.boqii.com:80/@babel%2fcode-frame/-/code-frame-7.0.0.tgz#06e2ab19bdb535385559aabb5ba59729482800f8"
@@ -64,6 +87,13 @@
   dependencies:
     regenerator-runtime "^0.12.0"
 
+"@babel/runtime@^7.3.4":
+  version "7.4.2"
+  resolved "http://npm.boqii.com:80/@babel%2fruntime/-/runtime-7.4.2.tgz#f5ab6897320f16decd855eed70b705908a313fe8"
+  integrity sha1-9atolzIPFt7NhV7tcLcFkIoxP+g=
+  dependencies:
+    regenerator-runtime "^0.13.2"
+
 "@babel/template@^7.1.0":
   version "7.2.2"
   resolved "http://npm.boqii.com:80/@babel%2ftemplate/-/template-7.2.2.tgz#005b3fdf0ed96e88041330379e0da9a708eb2907"
@@ -96,6 +126,16 @@
     esutils "^2.0.2"
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
+
+"@bang88/react-native-drawer-layout@^2.0.3":
+  version "2.0.3"
+  resolved "http://npm.boqii.com:80/@bang88%2freact-native-drawer-layout/-/react-native-drawer-layout-2.0.3.tgz#a93abd5a9c6d1fc4c0924a9f21c2cd7d1deea88d"
+  integrity sha1-qTq9WpxtH8TAkkqfIcLNfR3uqI0=
+
+"@bang88/react-native-ultimate-listview@^3.3.0":
+  version "3.3.0"
+  resolved "http://npm.boqii.com:80/@bang88%2freact-native-ultimate-listview/-/react-native-ultimate-listview-3.3.0.tgz#b09199105b942aee4ae05729e4bd229353217ab6"
+  integrity sha1-sJGZEFuUKu5K4Fcp5L0ik1MherY=
 
 "@expo/bunyan@1.8.10", "@expo/bunyan@^1.8.10":
   version "1.8.10"
@@ -247,86 +287,93 @@
     component-type "^1.2.1"
     join-component "^1.1.0"
 
-"@tarojs/async-await@^1.2.15":
-  version "1.2.15"
-  resolved "http://npm.boqii.com:80/@tarojs%2fasync-await/-/async-await-1.2.15.tgz#bd093cfe03ac3a1e3323d3676243bc9c7737ab2c"
-  integrity sha1-vQk8/gOsOh4zI9NnYkO8nHc3qyw=
+"@tarojs/async-await@^1.2.21":
+  version "1.2.21"
+  resolved "http://npm.boqii.com:80/@tarojs%2fasync-await/-/async-await-1.2.21.tgz#30aea98e61a4fb2c7751a588dd742add1a0d78f2"
+  integrity sha1-MK6pjmGk+yx3UaWI3XQq3RoNePI=
   dependencies:
     promise-polyfill "^7.1.2"
     regenerator-runtime "^0.11.1"
 
-"@tarojs/components-rn@^1.2.15":
-  version "1.2.15"
-  resolved "http://npm.boqii.com:80/@tarojs%2fcomponents-rn/-/components-rn-1.2.15.tgz#880175130ccd22221c73002e99d76644afa3deee"
-  integrity sha1-iAF1EwzNIiIccwAumddmRK+j3u4=
+"@tarojs/components-rn@^1.2.21":
+  version "1.2.21"
+  resolved "http://npm.boqii.com:80/@tarojs%2fcomponents-rn/-/components-rn-1.2.21.tgz#1a92eca1fd9c2f13ac3fd3f6f0d04b2da0d2b046"
+  integrity sha1-GpLsof2cLxOsP9P28NBLLaDSsEY=
   dependencies:
+    "@ant-design/react-native" "^3.1.4"
+    "@babel/runtime" "^7.3.4"
     "@nart/react-native-swiper" "^1.5.13"
+    array-tree-filter "^2.1.0"
+    deepmerge "^3.2.0"
     prop-types "^15.6.2"
     react-dom "^16.4.0"
     react-mixin "^5.0.0"
     react-native-animatable "^1.3.0"
     react-timer-mixin "^0.13.4"
+    utility-types "^3.4.1"
 
-"@tarojs/components@^1.2.15":
-  version "1.2.15"
-  resolved "http://npm.boqii.com:80/@tarojs%2fcomponents/-/components-1.2.15.tgz#350f4e4d7b0bff315e14dfedbebc27f2bc49123d"
-  integrity sha1-NQ9OTXsL/zFeFN/tvrwn8rxJEj0=
+"@tarojs/components@^1.2.21":
+  version "1.2.21"
+  resolved "http://npm.boqii.com:80/@tarojs%2fcomponents/-/components-1.2.21.tgz#af892b1d5a32e04fce2bbf4a6725408382362489"
+  integrity sha1-r4krHVoy4E/OK79KZyVAg4I2JIk=
   dependencies:
+    better-scroll "^1.14.1"
     classnames "^2.2.5"
     nervjs "^1.3.0"
     omit.js "^1.0.0"
+    resolve-pathname "^3.0.0"
     swiper "^4.4.2"
     weui "^1.1.2"
 
-"@tarojs/plugin-babel@^1.2.15":
-  version "1.2.15"
-  resolved "http://npm.boqii.com:80/@tarojs%2fplugin-babel/-/plugin-babel-1.2.15.tgz#cf66b5cf7fd99dee4ec3e7e586366614e31bd021"
-  integrity sha1-z2a1z3/Zne5Ow+flhjZmFOMb0CE=
+"@tarojs/plugin-babel@^1.2.21":
+  version "1.2.21"
+  resolved "http://npm.boqii.com:80/@tarojs%2fplugin-babel/-/plugin-babel-1.2.21.tgz#38d7747d3f62d9dda309ece4afee9014da0a51ac"
+  integrity sha1-ONd0fT9i2d2jCezkr+6QFNoKUaw=
   dependencies:
     babel-core "^6.26.0"
 
-"@tarojs/plugin-csso@^1.2.15":
-  version "1.2.15"
-  resolved "http://npm.boqii.com:80/@tarojs%2fplugin-csso/-/plugin-csso-1.2.15.tgz#6d8090c807e3c4f39051b3f1ebf91ca6dc145e43"
-  integrity sha1-bYCQyAfjxPOQUbPx6/kcptwUXkM=
+"@tarojs/plugin-csso@^1.2.21":
+  version "1.2.21"
+  resolved "http://npm.boqii.com:80/@tarojs%2fplugin-csso/-/plugin-csso-1.2.21.tgz#11ff2be21ab781714cbb06461a8d37ec0da3b0c9"
+  integrity sha1-Ef8r4hq3gXFMuwZGGo037A2jsMk=
   dependencies:
     csso "^3.5.0"
 
-"@tarojs/plugin-sass@^1.2.15":
-  version "1.2.15"
-  resolved "http://npm.boqii.com:80/@tarojs%2fplugin-sass/-/plugin-sass-1.2.15.tgz#10118dead28c5cea7d3ce34e61ea5c4ebddf7b24"
-  integrity sha1-EBGN6tKMXOp9PONOYepcTr3feyQ=
+"@tarojs/plugin-sass@^1.2.21":
+  version "1.2.21"
+  resolved "http://npm.boqii.com:80/@tarojs%2fplugin-sass/-/plugin-sass-1.2.21.tgz#2fbf3555b2f77eb2d3719ef07e99c655e3b554a4"
+  integrity sha1-L781VbL3frLTcZ7wfpnGVeO1VKQ=
   dependencies:
     node-sass "^4.11.0"
 
-"@tarojs/plugin-uglifyjs@^1.2.15":
-  version "1.2.15"
-  resolved "http://npm.boqii.com:80/@tarojs%2fplugin-uglifyjs/-/plugin-uglifyjs-1.2.15.tgz#09a1e46b556333f3943937bbccb6cf217d375ca5"
-  integrity sha1-CaHka1VjM/OUOTe7zLbPIX03XKU=
+"@tarojs/plugin-uglifyjs@^1.2.21":
+  version "1.2.21"
+  resolved "http://npm.boqii.com:80/@tarojs%2fplugin-uglifyjs/-/plugin-uglifyjs-1.2.21.tgz#c24d408dd5f3310993db94e89ccf58774b6d5f30"
+  integrity sha1-wk1AjdXzMQmT25TonM9Yd0ttXzA=
   dependencies:
     uglify-js "^3.3.24"
 
-"@tarojs/redux-h5@^1.2.15":
-  version "1.2.15"
-  resolved "http://npm.boqii.com:80/@tarojs%2fredux-h5/-/redux-h5-1.2.15.tgz#c3503314a31d909076d74faec02b9237672c0588"
-  integrity sha1-w1AzFKMdkJB210+uwCuSN2csBYg=
+"@tarojs/redux-h5@^1.2.21":
+  version "1.2.21"
+  resolved "http://npm.boqii.com:80/@tarojs%2fredux-h5/-/redux-h5-1.2.21.tgz#544a4331965c620ad4a8eb30bfeb3639d1ac1399"
+  integrity sha1-VEpDMZZcYgrUqOswv+s2OdGsE5k=
   dependencies:
     hoist-non-react-statics "^2.5.0"
     invariant "^2.2.4"
     loose-envify "^1.1.0"
     prop-types "^15.6.1"
 
-"@tarojs/redux@^1.2.15":
-  version "1.2.15"
-  resolved "http://npm.boqii.com:80/@tarojs%2fredux/-/redux-1.2.15.tgz#dfe58ea8ca210c89ec0f6f8b87984ad67b74879b"
-  integrity sha1-3+WOqMohDInsD2+Lh5hK1nt0h5s=
+"@tarojs/redux@^1.2.21":
+  version "1.2.21"
+  resolved "http://npm.boqii.com:80/@tarojs%2fredux/-/redux-1.2.21.tgz#4c6ec706bdceccdffd3e07045122246caa06b7e8"
+  integrity sha1-TG7HBr3OzN/9PgcEUSIkbKoGt+g=
   dependencies:
-    "@tarojs/utils" "1.2.15"
+    "@tarojs/utils" "1.2.21"
 
-"@tarojs/rn-runner@^1.2.15":
-  version "1.2.15"
-  resolved "http://npm.boqii.com:80/@tarojs%2frn-runner/-/rn-runner-1.2.15.tgz#613c109bda9392a7a1d06dc926510a87160f70f9"
-  integrity sha1-YTwQm9qTkqeh0G3JJlEKhxYPcPk=
+"@tarojs/rn-runner@^1.2.21":
+  version "1.2.21"
+  resolved "http://npm.boqii.com:80/@tarojs%2frn-runner/-/rn-runner-1.2.21.tgz#b059ce063a8cde628ae79eaa74c65f862946154c"
+  integrity sha1-sFnOBjqM3mKK556qdMZfhilGFUw=
   dependencies:
     "@expo/bunyan" "1.8.10"
     babel-runtime "^6.9.2"
@@ -344,10 +391,10 @@
     rimraf "^2.6.1"
     xdl "48.1.4"
 
-"@tarojs/router@^1.2.15":
-  version "1.2.15"
-  resolved "http://npm.boqii.com:80/@tarojs%2frouter/-/router-1.2.15.tgz#1f5cdd184f9661d183bffa74db97ccfe41dc53f0"
-  integrity sha1-H1zdGE+WYdGDv/p025fM/kHcU/A=
+"@tarojs/router@^1.2.21":
+  version "1.2.21"
+  resolved "http://npm.boqii.com:80/@tarojs%2frouter/-/router-1.2.21.tgz#127f9445db537a27db43842563954937ab9fea0e"
+  integrity sha1-En+URdtTeifbQ4QlY5VJN6uf6g4=
   dependencies:
     invariant "2.2.4"
     lodash "4.17.11"
@@ -356,98 +403,100 @@
     value-equal "0.4.0"
     warning "4.0.2"
 
-"@tarojs/taro-alipay@^1.2.15":
-  version "1.2.15"
-  resolved "http://npm.boqii.com:80/@tarojs%2ftaro-alipay/-/taro-alipay-1.2.15.tgz#132b6ea04517f1ade01deca6a62aa384ce672cd6"
-  integrity sha1-EytuoEUX8a3gHeympiqjhM5nLNY=
+"@tarojs/taro-alipay@^1.2.21":
+  version "1.2.21"
+  resolved "http://npm.boqii.com:80/@tarojs%2ftaro-alipay/-/taro-alipay-1.2.21.tgz#8ea1027bf86003aa46321b6ebda073766d1e1a92"
+  integrity sha1-jqECe/hgA6pGMhtuvaBzdm0eGpI=
   dependencies:
-    "@tarojs/taro" "1.2.15"
-    "@tarojs/utils" "1.2.15"
+    "@tarojs/taro" "1.2.21"
+    "@tarojs/utils" "1.2.21"
     lodash "^4.17.10"
     prop-types "^15.6.1"
 
-"@tarojs/taro-h5@^1.2.15":
-  version "1.2.15"
-  resolved "http://npm.boqii.com:80/@tarojs%2ftaro-h5/-/taro-h5-1.2.15.tgz#0f4840948dae86ece941b1e794b03cda5cdb4504"
-  integrity sha1-D0hAlI2uhuzpQbHnlLA82lzbRQQ=
+"@tarojs/taro-h5@1.2.21", "@tarojs/taro-h5@^1.2.21":
+  version "1.2.21"
+  resolved "http://npm.boqii.com:80/@tarojs%2ftaro-h5/-/taro-h5-1.2.21.tgz#4aecfc44b740bb27d21f654e9cc3bca6fc44c037"
+  integrity sha1-Suz8RLdAuyfSH2VOnMO8pvxEwDc=
   dependencies:
-    "@tarojs/taro" "1.2.15"
     base64-js "^1.3.0"
     jsonp-retry "^1.0.3"
     mobile-detect "^1.4.2"
     whatwg-fetch "^2.0.4"
 
-"@tarojs/taro-rn@^1.2.15":
-  version "1.2.15"
-  resolved "http://npm.boqii.com:80/@tarojs%2ftaro-rn/-/taro-rn-1.2.15.tgz#b4704a9559699e2ada764b4b370014f2df92c18d"
-  integrity sha1-tHBKlVlpniradktLNwAU8t+SwY0=
+"@tarojs/taro-rn@^1.2.21":
+  version "1.2.21"
+  resolved "http://npm.boqii.com:80/@tarojs%2ftaro-rn/-/taro-rn-1.2.21.tgz#1e5b7a2571d7ad4d67b8f6e1744604776d39174f"
+  integrity sha1-Hlt6JXHXrU1nuPbhdEYEd205F08=
   dependencies:
-    "@tarojs/taro" "1.2.15"
+    "@tarojs/taro" "1.2.21"
     base64-js "^1.3.0"
     react-native-image-zoom-viewer "^2.2.13"
     react-native-root-siblings "^3.1.0"
     react-native-root-toast "^3.0.1"
     react-native-stylekit "^1.0.0"
 
-"@tarojs/taro-router-rn@^1.2.15":
-  version "1.2.15"
-  resolved "http://npm.boqii.com:80/@tarojs%2ftaro-router-rn/-/taro-router-rn-1.2.15.tgz#0a4c009cc2bd07a5f9839c2a359781cd54e4d983"
-  integrity sha1-CkwAnMK9B6X5g5wqNZeBzVTk2YM=
+"@tarojs/taro-router-rn@^1.2.21":
+  version "1.2.21"
+  resolved "http://npm.boqii.com:80/@tarojs%2ftaro-router-rn/-/taro-router-rn-1.2.21.tgz#239c2cbea7e26debed233ee7c19d2d3283fd99eb"
+  integrity sha1-I5wsvqfibevtIz7nwZ0tMoP9mes=
   dependencies:
     query-string "^6.1.0"
     react-navigation "^2.7.0"
 
-"@tarojs/taro-swan@^1.2.15":
-  version "1.2.15"
-  resolved "http://npm.boqii.com:80/@tarojs%2ftaro-swan/-/taro-swan-1.2.15.tgz#10f29edf09781c020fe4968ac28560c9bb799356"
-  integrity sha1-EPKe3wl4HAIP5JaKwoVgybt5k1Y=
+"@tarojs/taro-swan@^1.2.21":
+  version "1.2.21"
+  resolved "http://npm.boqii.com:80/@tarojs%2ftaro-swan/-/taro-swan-1.2.21.tgz#41ea57e6a4b645746dc5a339bb2899c31f90ce9f"
+  integrity sha1-QepX5qS2RXRtxaM5uyiZwx+Qzp8=
   dependencies:
-    "@tarojs/taro" "1.2.15"
-    "@tarojs/utils" "1.2.15"
+    "@tarojs/taro" "1.2.21"
+    "@tarojs/utils" "1.2.21"
     lodash "^4.17.10"
     prop-types "^15.6.1"
 
-"@tarojs/taro-tt@^1.2.15":
-  version "1.2.15"
-  resolved "http://npm.boqii.com:80/@tarojs%2ftaro-tt/-/taro-tt-1.2.15.tgz#25dc4251b3d1efb582cdcaa7e4390ceaa457e1f1"
-  integrity sha1-JdxCUbPR77WCzcqn5DkM6qRX4fE=
+"@tarojs/taro-tt@^1.2.21":
+  version "1.2.21"
+  resolved "http://npm.boqii.com:80/@tarojs%2ftaro-tt/-/taro-tt-1.2.21.tgz#a7e62b9e78fb833ab543ce16d93ad4168dc14b23"
+  integrity sha1-p+Yrnnj7gzq1Q84W2TrUFo3BSyM=
   dependencies:
-    "@tarojs/taro" "1.2.15"
-    "@tarojs/utils" "1.2.15"
+    "@tarojs/taro" "1.2.21"
+    "@tarojs/utils" "1.2.21"
     lodash "^4.17.10"
     prop-types "^15.6.1"
 
-"@tarojs/taro-weapp@^1.2.15":
-  version "1.2.15"
-  resolved "http://npm.boqii.com:80/@tarojs%2ftaro-weapp/-/taro-weapp-1.2.15.tgz#73502ddda9d6e0d00403f6f7f0c4427e8d2c6a86"
-  integrity sha1-c1At3anW4NAEA/b38MRCfo0saoY=
+"@tarojs/taro-weapp@^1.2.21":
+  version "1.2.21"
+  resolved "http://npm.boqii.com:80/@tarojs%2ftaro-weapp/-/taro-weapp-1.2.21.tgz#3bd71a5e0f7fce4bec7242810554e9695b460070"
+  integrity sha1-O9caXg9/zkvsckKBBVTpaVtGAHA=
   dependencies:
-    "@tarojs/taro" "1.2.15"
-    "@tarojs/utils" "1.2.15"
+    "@tarojs/taro" "1.2.21"
+    "@tarojs/utils" "1.2.21"
     lodash "^4.17.10"
     prop-types "^15.6.1"
 
-"@tarojs/taro@1.2.15", "@tarojs/taro@^1.2.15":
-  version "1.2.15"
-  resolved "http://npm.boqii.com:80/@tarojs%2ftaro/-/taro-1.2.15.tgz#01789ca6388e55ae8b5476fd9f71cd2545abdc60"
-  integrity sha1-AXicpjiOVa6LVHb9n3HNJUWr3GA=
+"@tarojs/taro@1.2.21", "@tarojs/taro@^1.2.21":
+  version "1.2.21"
+  resolved "http://npm.boqii.com:80/@tarojs%2ftaro/-/taro-1.2.21.tgz#87eda010381802bd71ab690e6e4ce02080b485d7"
+  integrity sha1-h+2gEDgYAr1xq2kObkzgIIC0hdc=
 
-"@tarojs/utils@1.2.15":
-  version "1.2.15"
-  resolved "http://npm.boqii.com:80/@tarojs%2futils/-/utils-1.2.15.tgz#d9aff7c0ae650f3b1129b5c65060c5914e69617a"
-  integrity sha1-2a/3wK5lDzsRKbXGUGDFkU5pYXo=
+"@tarojs/utils@1.2.21":
+  version "1.2.21"
+  resolved "http://npm.boqii.com:80/@tarojs%2futils/-/utils-1.2.21.tgz#678547cb8233302a02223ec68e2e2da0eafb5db4"
+  integrity sha1-Z4VHy4IzMCoCIj7Gji4toOr7XbQ=
 
-"@tarojs/webpack-runner@^1.2.15":
-  version "1.2.15"
-  resolved "http://npm.boqii.com:80/@tarojs%2fwebpack-runner/-/webpack-runner-1.2.15.tgz#34b7c12dbf9a1cb52c7719918502fb06ade8118f"
-  integrity sha1-NLfBLb+aHLUsdxmRhQL7Bq3oEY8=
+"@tarojs/webpack-runner@^1.2.21":
+  version "1.2.21"
+  resolved "http://npm.boqii.com:80/@tarojs%2fwebpack-runner/-/webpack-runner-1.2.21.tgz#85c961afffd8a962da541cda76de809686cde8cb"
+  integrity sha1-hclhr//YqWLaVBzadt6AlobN6Ms=
   dependencies:
+    "@tarojs/taro-h5" "1.2.21"
     autoprefixer "8.6.4"
     babel-core "6.26.0"
     babel-loader "7.1.4"
     babel-plugin-syntax-dynamic-import "6.18.0"
     babel-plugin-transform-react-jsx "6.24.1"
-    chalk "2.4.1"
+    babel-plugin-transform-taroapi "1.2.21"
+    babel-types "^6.26.0"
+    chalk "2.4.2"
     css-loader "1.0.0"
     csso-webpack-plugin "1.0.0-beta.12"
     file-loader "3.0.1"
@@ -455,14 +504,14 @@
     html-webpack-plugin "3.1.0"
     less "3.0.4"
     less-loader "4.1.0"
-    lodash "4.17.10"
+    lodash "4.17.11"
     mini-css-extract-plugin "0.4.1"
     node-sass "4.11.0"
     opn "5.3.0"
     ora "2.1.0"
     postcss-loader "2.1.6"
-    postcss-plugin-constparse "1.2.15"
-    postcss-pxtransform "1.2.15"
+    postcss-plugin-constparse "1.2.21"
+    postcss-pxtransform "1.2.21"
     resolve "1.8.1"
     resolve-url-loader "2.3.0"
     sass-loader "7.1.0"
@@ -475,7 +524,6 @@
     webpack-chain "4.9.0"
     webpack-dev-server "3.1.14"
     webpack-format-messages "2.0.3"
-    webpack-merge "4.1.4"
 
 "@types/cross-spawn@^6.0.0":
   version "6.0.0"
@@ -518,6 +566,11 @@
   resolved "http://npm.boqii.com:80/@types%2fprop-types/-/prop-types-15.5.9.tgz#f2d14df87b0739041bc53a7d75e3d77d726a3ec0"
   integrity sha1-8tFN+HsHOQQbxTp9dePXfXJqPsA=
 
+"@types/prop-types@^15.5.5":
+  version "15.7.0"
+  resolved "http://npm.boqii.com:80/@types%2fprop-types/-/prop-types-15.7.0.tgz#4c48fed958d6dcf9487195a0ef6456d5f6e0163a"
+  integrity sha1-TEj+2VjW3PlIcZWg72RW1fbgFjo=
+
 "@types/react@^16.7.3":
   version "16.8.5"
   resolved "http://npm.boqii.com:80/@types%2freact/-/react-16.8.5.tgz#03b9a6597bc20f6eaaed43f377a160f7e41c2b90"
@@ -526,18 +579,18 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
-"@types/react@^16.8.6":
-  version "16.8.6"
-  resolved "http://npm.boqii.com:80/@types%2freact/-/react-16.8.6.tgz#fa1de3fe56cc9b6afeddc73d093d7f30fd5e31cc"
-  integrity sha1-+h3j/lbMm2r+3cc9CT1/MP1eMcw=
+"@types/react@^16.8.8":
+  version "16.8.8"
+  resolved "http://npm.boqii.com:80/@types%2freact/-/react-16.8.8.tgz#4b60a469fd2469f7aa6eaa0f8cfbc51f6d76e662"
+  integrity sha1-S2Ckaf0kafeqbqoPjPvFH2125mI=
   dependencies:
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
-"@types/webpack-env@^1.13.7":
-  version "1.13.7"
-  resolved "http://npm.boqii.com:80/@types%2fwebpack-env/-/webpack-env-1.13.7.tgz#137a4e57aa31ab57b1baf66f5dc3b6bf085e9944"
-  integrity sha1-E3pOV6oxq1exuvZvXcO2vwhemUQ=
+"@types/webpack-env@^1.13.9":
+  version "1.13.9"
+  resolved "http://npm.boqii.com:80/@types%2fwebpack-env/-/webpack-env-1.13.9.tgz#a67287861c928ebf4159a908d1fb1a2a34d4097a"
+  integrity sha1-pnKHhhySjr9BWakI0fsaKjTUCXo=
 
 "@webassemblyjs/ast@1.5.12":
   version "1.5.12"
@@ -932,6 +985,11 @@ array-includes@^3.0.3:
   dependencies:
     define-properties "^1.1.2"
     es-abstract "^1.7.0"
+
+array-tree-filter@^2.1.0, array-tree-filter@~2.1.0:
+  version "2.1.0"
+  resolved "http://npm.boqii.com:80/array-tree-filter/-/array-tree-filter-2.1.0.tgz#873ac00fec83749f255ac8dd083814b4f6329190"
+  integrity sha1-hzrAD+yDdJ8lWsjdCDgUtPYykZA=
 
 array-union@^1.0.1:
   version "1.0.2"
@@ -1606,10 +1664,10 @@ babel-plugin-transform-jsx-stylesheet@^0.6.5:
   dependencies:
     camelcase "^3.0.0"
 
-babel-plugin-transform-jsx-to-stylesheet@^1.2.15:
-  version "1.2.15"
-  resolved "http://npm.boqii.com:80/babel-plugin-transform-jsx-to-stylesheet/-/babel-plugin-transform-jsx-to-stylesheet-1.2.15.tgz#1203f2aaffa15a96a2ce4f2538e7298a78a117cf"
-  integrity sha1-EgPyqv+hWpaizk8lOOcpinihF88=
+babel-plugin-transform-jsx-to-stylesheet@^1.2.21:
+  version "1.2.21"
+  resolved "http://npm.boqii.com:80/babel-plugin-transform-jsx-to-stylesheet/-/babel-plugin-transform-jsx-to-stylesheet-1.2.21.tgz#d147eb73ac78704622cbcf1ae3d0c036073700ad"
+  integrity sha1-0Ufrc6x4cEYiy88a49DANgc3AK0=
 
 babel-plugin-transform-object-rest-spread@^6.26.0:
   version "6.26.0"
@@ -1642,6 +1700,11 @@ babel-plugin-transform-strict-mode@^6.24.1:
   dependencies:
     babel-runtime "^6.22.0"
     babel-types "^6.24.1"
+
+babel-plugin-transform-taroapi@1.2.21:
+  version "1.2.21"
+  resolved "http://npm.boqii.com:80/babel-plugin-transform-taroapi/-/babel-plugin-transform-taroapi-1.2.21.tgz#371c0e1ce9d4cbc482c2f73c636fdf300590b0d2"
+  integrity sha1-NxwOHOnUy8SCwvc8Y2/fMAWQsNI=
 
 babel-polyfill@^6.23.0:
   version "6.26.0"
@@ -1708,7 +1771,7 @@ babel-register@^6.26.0:
     mkdirp "^0.5.1"
     source-map-support "^0.4.15"
 
-babel-runtime@^6.18.0, babel-runtime@^6.2.0, babel-runtime@^6.22.0, babel-runtime@^6.23.0, babel-runtime@^6.26.0, babel-runtime@^6.9.2:
+babel-runtime@^6.0.0, babel-runtime@^6.18.0, babel-runtime@^6.2.0, babel-runtime@^6.22.0, babel-runtime@^6.23.0, babel-runtime@^6.26.0, babel-runtime@^6.9.2, babel-runtime@^6.x:
   version "6.26.0"
   resolved "http://npm.boqii.com:80/babel-runtime/-/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"
   integrity sha1-llxwWGaOgrVde/4E/yM3vItWR/4=
@@ -1796,6 +1859,13 @@ bcrypt-pbkdf@^1.0.0:
   integrity sha1-pDAdOJtqQ/m2f/PKEaP2Y342Dp4=
   dependencies:
     tweetnacl "^0.14.3"
+
+better-scroll@^1.14.1:
+  version "1.15.0"
+  resolved "http://npm.boqii.com:80/better-scroll/-/better-scroll-1.15.0.tgz#bdfb6ab3322eeb6ab7f40b4bda38c52736624b90"
+  integrity sha1-vftqszIu62q39AtL2jjFJzZiS5A=
+  dependencies:
+    babel-runtime "^6.0.0"
 
 big.js@^3.1.3:
   version "3.2.0"
@@ -2110,10 +2180,10 @@ caseless@~0.12.0:
   resolved "http://npm.boqii.com:80/caseless/-/caseless-0.12.0.tgz#1b681c21ff84033c826543090689420d187151dc"
   integrity sha1-G2gcIf+EAzyCZUMJBolCDRhxUdw=
 
-chalk@2.4.1:
-  version "2.4.1"
-  resolved "http://npm.boqii.com:80/chalk/-/chalk-2.4.1.tgz#18c49ab16a037b6eb0152cc83e3471338215b66e"
-  integrity sha1-GMSasWoDe26wFSzIPjRxM4IVtm4=
+chalk@2.4.2, chalk@^2.0.0, chalk@^2.0.1, chalk@^2.1.0, chalk@^2.3.0, chalk@^2.3.1, chalk@^2.3.2, chalk@^2.4.1, chalk@^2.4.2:
+  version "2.4.2"
+  resolved "http://npm.boqii.com:80/chalk/-/chalk-2.4.2.tgz#cd42541677a54333cf541a49108c1432b44c9424"
+  integrity sha1-zUJUFnelQzPPVBpJEIwUMrRMlCQ=
   dependencies:
     ansi-styles "^3.2.1"
     escape-string-regexp "^1.0.5"
@@ -2129,15 +2199,6 @@ chalk@^1.1.1, chalk@^1.1.3:
     has-ansi "^2.0.0"
     strip-ansi "^3.0.0"
     supports-color "^2.0.0"
-
-chalk@^2.0.0, chalk@^2.0.1, chalk@^2.1.0, chalk@^2.3.0, chalk@^2.3.1, chalk@^2.3.2, chalk@^2.4.1, chalk@^2.4.2:
-  version "2.4.2"
-  resolved "http://npm.boqii.com:80/chalk/-/chalk-2.4.2.tgz#cd42541677a54333cf541a49108c1432b44c9424"
-  integrity sha1-zUJUFnelQzPPVBpJEIwUMrRMlCQ=
-  dependencies:
-    ansi-styles "^3.2.1"
-    escape-string-regexp "^1.0.5"
-    supports-color "^5.3.0"
 
 change-case@^2.3.0:
   version "2.3.1"
@@ -2551,6 +2612,15 @@ create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.4:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
+create-react-class@^15.6.0:
+  version "15.6.3"
+  resolved "http://npm.boqii.com:80/create-react-class/-/create-react-class-15.6.3.tgz#2d73237fb3f970ae6ebe011a9e66f46dbca80036"
+  integrity sha1-LXMjf7P5cK5uvgEanmb0bbyoADY=
+  dependencies:
+    fbjs "^0.8.9"
+    loose-envify "^1.3.1"
+    object-assign "^4.1.1"
+
 create-react-context@0.2.2:
   version "0.2.2"
   resolved "http://npm.boqii.com:80/create-react-context/-/create-react-context-0.2.2.tgz#9836542f9aaa22868cd7d4a6f82667df38019dca"
@@ -2835,6 +2905,11 @@ deepmerge@^1.3.0, deepmerge@^1.5.1, deepmerge@^1.5.2:
   version "1.5.2"
   resolved "http://npm.boqii.com:80/deepmerge/-/deepmerge-1.5.2.tgz#10499d868844cdad4fee0842df8c7f6f0c95a753"
   integrity sha1-EEmdhohEza1P7ghC34x/bwyVp1M=
+
+deepmerge@^3.0.0, deepmerge@^3.2.0:
+  version "3.2.0"
+  resolved "http://npm.boqii.com:80/deepmerge/-/deepmerge-3.2.0.tgz#58ef463a57c08d376547f8869fdc5bcee957f44e"
+  integrity sha1-WO9GOlfAjTdlR/iGn9xbzulX9E4=
 
 default-gateway@^2.6.0:
   version "2.7.2"
@@ -3259,12 +3334,12 @@ escodegen@1.x.x:
   optionalDependencies:
     source-map "~0.6.1"
 
-eslint-config-taro@^1.2.15:
-  version "1.2.15"
-  resolved "http://npm.boqii.com:80/eslint-config-taro/-/eslint-config-taro-1.2.15.tgz#49d40964b8371a52d7d6397f4d6e115a763aff5f"
-  integrity sha1-SdQJZLg3GlLX1jl/TW4RWnY6/18=
+eslint-config-taro@^1.2.21:
+  version "1.2.21"
+  resolved "http://npm.boqii.com:80/eslint-config-taro/-/eslint-config-taro-1.2.21.tgz#cdf5b6a895bd43895def06cb6b89d86b7d7688eb"
+  integrity sha1-zfW2qJW9Q4ld7wbLa4nYa312iOs=
   dependencies:
-    eslint-plugin-taro "1.2.15"
+    eslint-plugin-taro "1.2.21"
 
 eslint-import-resolver-node@^0.3.2:
   version "0.3.2"
@@ -3311,10 +3386,10 @@ eslint-plugin-react@^7.12.4:
     prop-types "^15.6.2"
     resolve "^1.9.0"
 
-eslint-plugin-taro@1.2.15, eslint-plugin-taro@^1.2.15:
-  version "1.2.15"
-  resolved "http://npm.boqii.com:80/eslint-plugin-taro/-/eslint-plugin-taro-1.2.15.tgz#0f74de95684eff930041858fc2362d347b77020a"
-  integrity sha1-D3TelWhO/5MAQYWPwjYtNHt3Ago=
+eslint-plugin-taro@1.2.21, eslint-plugin-taro@^1.2.21:
+  version "1.2.21"
+  resolved "http://npm.boqii.com:80/eslint-plugin-taro/-/eslint-plugin-taro-1.2.21.tgz#68c7f5b431829c64cd503c6e0680c717c4a94585"
+  integrity sha1-aMf1tDGCnGTNUDxuBoDHF8SpRYU=
   dependencies:
     has "^1.0.1"
 
@@ -3334,10 +3409,10 @@ eslint-scope@^3.7.1:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
 
-eslint-scope@^4.0.0:
-  version "4.0.0"
-  resolved "http://npm.boqii.com:80/eslint-scope/-/eslint-scope-4.0.0.tgz#50bf3071e9338bcdc43331794a0cb533f0136172"
-  integrity sha1-UL8wcekzi83EMzF5Sgy1M/ATYXI=
+eslint-scope@^4.0.3:
+  version "4.0.3"
+  resolved "http://npm.boqii.com:80/eslint-scope/-/eslint-scope-4.0.3.tgz#ca03833310f6889a3264781aa82e63eb9cfe7848"
+  integrity sha1-ygODMxD2iJoyZHgaqC5j65z+eEg=
   dependencies:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
@@ -3352,10 +3427,10 @@ eslint-visitor-keys@^1.0.0:
   resolved "http://npm.boqii.com:80/eslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz#3f3180fb2e291017716acb4c9d6d5b5c34a6a81d"
   integrity sha1-PzGA+y4pEBdxastMnW1bXDSmqB0=
 
-eslint@^5.14.1:
-  version "5.14.1"
-  resolved "http://npm.boqii.com:80/eslint/-/eslint-5.14.1.tgz#490a28906be313685c55ccd43a39e8d22efc04ba"
-  integrity sha1-SQookGvjE2hcVczUOjno0i78BLo=
+eslint@^5.15.3:
+  version "5.15.3"
+  resolved "http://npm.boqii.com:80/eslint/-/eslint-5.15.3.tgz#c79c3909dc8a7fa3714fb340c11e30fd2526b8b5"
+  integrity sha1-x5w5CdyKf6NxT7NAwR4w/SUmuLU=
   dependencies:
     "@babel/code-frame" "^7.0.0"
     ajv "^6.9.1"
@@ -3363,7 +3438,7 @@ eslint@^5.14.1:
     cross-spawn "^6.0.5"
     debug "^4.0.1"
     doctrine "^3.0.0"
-    eslint-scope "^4.0.0"
+    eslint-scope "^4.0.3"
     eslint-utils "^1.3.1"
     eslint-visitor-keys "^1.0.0"
     espree "^5.0.1"
@@ -3653,7 +3728,7 @@ faye-websocket@~0.11.1:
   dependencies:
     websocket-driver ">=0.5.1"
 
-fbjs@^0.8.0:
+fbjs@^0.8.0, fbjs@^0.8.9:
   version "0.8.17"
   resolved "http://npm.boqii.com:80/fbjs/-/fbjs-0.8.17.tgz#c4d598ead6949112653d6588b01a5cdcd9f90fdd"
   integrity sha1-xNWY6taUkRJlPWWIsBpc3Nn5D90=
@@ -5359,6 +5434,11 @@ lodash.clonedeep@^4.3.2, lodash.clonedeep@^4.5.0:
   resolved "http://npm.boqii.com:80/lodash.clonedeep/-/lodash.clonedeep-4.5.0.tgz#e23f3f9c4f8fbdde872529c1071857a086e5ccef"
   integrity sha1-4j8/nE+Pvd6HJSnBBxhXoIblzO8=
 
+lodash.debounce@^4.0.8:
+  version "4.0.8"
+  resolved "http://npm.boqii.com:80/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
+  integrity sha1-gteb/zCmfEAF/9XiUVMArZyk168=
+
 lodash.defaults@^3.1.2:
   version "3.1.2"
   resolved "http://npm.boqii.com:80/lodash.defaults/-/lodash.defaults-3.1.2.tgz#c7308b18dbf8bc9372d701a73493c61192bd2e2c"
@@ -5411,11 +5491,6 @@ lodash.tail@^4.1.1:
   resolved "http://npm.boqii.com:80/lodash.tail/-/lodash.tail-4.1.1.tgz#d2333a36d9e7717c8ad2f7cacafec7c32b444664"
   integrity sha1-0jM6NtnncXyK0vfKyv7HwytERmQ=
 
-lodash@4.17.10:
-  version "4.17.10"
-  resolved "http://npm.boqii.com:80/lodash/-/lodash-4.17.10.tgz#1b7793cf7259ea38fb3661d4d38b3260af8ae4e7"
-  integrity sha1-G3eTz3JZ6jj7NmHU04syYK+K5Oc=
-
 lodash@4.17.11, lodash@4.x, lodash@^4.0.0, lodash@^4.14.1, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.2.1, lodash@^4.3.0, lodash@^4.6.1, lodash@~4.17.10:
   version "4.17.11"
   resolved "http://npm.boqii.com:80/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
@@ -5455,7 +5530,7 @@ long@^3.2.0:
   resolved "http://npm.boqii.com:80/long/-/long-3.2.0.tgz#d821b7138ca1cb581c172990ef14db200b5c474b"
   integrity sha1-2CG3E4yhy1gcFymQ7xTbIAtcR0s=
 
-loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.4.0:
+loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.3.1, loose-envify@^1.4.0:
   version "1.4.0"
   resolved "http://npm.boqii.com:80/loose-envify/-/loose-envify-1.4.0.tgz#71ee51fa7be4caec1a63839f7e682d8132d30caf"
   integrity sha1-ce5R+nvkyuwaY4OffmgtgTLTDK8=
@@ -5907,14 +5982,14 @@ neo-async@^2.5.0:
   resolved "http://npm.boqii.com:80/neo-async/-/neo-async-2.6.0.tgz#b9d15e4d71c6762908654b5183ed38b753340835"
   integrity sha1-udFeTXHGdikIZUtRg+04t1M0CDU=
 
-nerv-devtools@^1.3.12:
-  version "1.3.12"
-  resolved "http://npm.boqii.com:80/nerv-devtools/-/nerv-devtools-1.3.12.tgz#b6cf56e61fb2a813e1a5e80e317946ac4accd9bc"
-  integrity sha1-ts9W5h+yqBPhpegOMXlGrErM2bw=
+nerv-devtools@^1.3.13:
+  version "1.3.13"
+  resolved "http://npm.boqii.com:80/nerv-devtools/-/nerv-devtools-1.3.13.tgz#600717e7652bdc163fe81123afd364719caf0468"
+  integrity sha1-YAcX52Ur3BY/6BEjr9NkcZyvBGg=
   dependencies:
     nerv-shared "1.3.7"
     nerv-utils "1.3.12"
-    nervjs "1.3.12"
+    nervjs "1.3.13"
 
 nerv-shared@1.3.7:
   version "1.3.7"
@@ -5926,7 +6001,15 @@ nerv-utils@1.3.12:
   resolved "http://npm.boqii.com:80/nerv-utils/-/nerv-utils-1.3.12.tgz#f08d26e46dfe84f4159654941e37392fc6ee2768"
   integrity sha1-8I0m5G3+hPQVllSUHjc5L8buJ2g=
 
-nervjs@1.3.12, nervjs@^1.3.0, nervjs@^1.3.12:
+nervjs@1.3.13, nervjs@^1.3.13:
+  version "1.3.13"
+  resolved "http://npm.boqii.com:80/nervjs/-/nervjs-1.3.13.tgz#0f3d5d5d09ced9c9a2329c4172cd707b32a1cc42"
+  integrity sha1-Dz1dXQnO2cmiMpxBcs1wezKhzEI=
+  dependencies:
+    nerv-shared "1.3.7"
+    nerv-utils "1.3.12"
+
+nervjs@^1.3.0:
   version "1.3.12"
   resolved "http://npm.boqii.com:80/nervjs/-/nervjs-1.3.12.tgz#2c19919007876fa6e40104e01f85decd84f48898"
   integrity sha1-LBmRkAeHb6bkAQTgH4XezYT0iJg=
@@ -6071,6 +6154,11 @@ nopt@^4.0.1:
   dependencies:
     abbrev "1"
     osenv "^0.1.4"
+
+normalize-css-color@^1.0.2:
+  version "1.0.2"
+  resolved "http://npm.boqii.com:80/normalize-css-color/-/normalize-css-color-1.0.2.tgz#02991e97cccec6623fe573afbbf0de6a1f3e9f8d"
+  integrity sha1-Apkel8zOxmI/5XOvu/Deah8+n40=
 
 normalize-package-data@^2.3.2, normalize-package-data@^2.3.4:
   version "2.5.0"
@@ -6711,10 +6799,10 @@ postcss-modules-values@^1.3.0:
     icss-replace-symbols "^1.1.0"
     postcss "^6.0.1"
 
-postcss-plugin-constparse@1.2.15:
-  version "1.2.15"
-  resolved "http://npm.boqii.com:80/postcss-plugin-constparse/-/postcss-plugin-constparse-1.2.15.tgz#75189037e5802343d0f8ab83d51807d2948864fd"
-  integrity sha1-dRiQN+WAI0PQ+KuD1RgH0pSIZP0=
+postcss-plugin-constparse@1.2.21:
+  version "1.2.21"
+  resolved "http://npm.boqii.com:80/postcss-plugin-constparse/-/postcss-plugin-constparse-1.2.21.tgz#58909b79f9f30d7ed4b0839d3de893c40d0e4649"
+  integrity sha1-WJCbefnzDX7UsIOdPeiTxA0ORkk=
   dependencies:
     postcss "^6.0.22"
 
@@ -6726,10 +6814,10 @@ postcss-pxtorem@^4.0.1:
     object-assign "^4.1.0"
     postcss "^5.2.10"
 
-postcss-pxtransform@1.2.15:
-  version "1.2.15"
-  resolved "http://npm.boqii.com:80/postcss-pxtransform/-/postcss-pxtransform-1.2.15.tgz#6df22975b0154a935e07658993f9152c6d778aaa"
-  integrity sha1-bfIpdbAVSpNeB2WJk/kVLG13iqo=
+postcss-pxtransform@1.2.21:
+  version "1.2.21"
+  resolved "http://npm.boqii.com:80/postcss-pxtransform/-/postcss-pxtransform-1.2.21.tgz#d91725ce1ef96c2fd442fb436d9a5ee767006a0e"
+  integrity sha1-2Rclzh75bC/UQvtDbZpe52cAag4=
   dependencies:
     postcss "^6.0.16"
     postcss-pxtorem "^4.0.1"
@@ -6966,6 +7054,13 @@ querystringify@^2.0.0:
   resolved "http://npm.boqii.com:80/querystringify/-/querystringify-2.1.0.tgz#7ded8dfbf7879dcc60d0a644ac6754b283ad17ef"
   integrity sha1-fe2N+/eHncxg0KZErGdUsoOtF+8=
 
+raf@^3.1.0:
+  version "3.4.1"
+  resolved "http://npm.boqii.com:80/raf/-/raf-3.4.1.tgz#0742e99a4a6552f445d73e3ee0328af0ff1ede39"
+  integrity sha1-B0LpmkplUvRF1z4+4DKK8P8e3jk=
+  dependencies:
+    performance-now "^2.1.0"
+
 randombytes@^2.0.0, randombytes@^2.0.1, randombytes@^2.0.5:
   version "2.0.6"
   resolved "http://npm.boqii.com:80/randombytes/-/randombytes-2.0.6.tgz#d302c522948588848a8d300c932b44c24231da80"
@@ -7062,6 +7157,13 @@ react-native-animatable@^1.3.0:
   dependencies:
     prop-types "^15.5.10"
 
+react-native-collapsible@^1.4.0:
+  version "1.4.0"
+  resolved "http://npm.boqii.com:80/react-native-collapsible/-/react-native-collapsible-1.4.0.tgz#ec03cac361178319b77bb9993b73677356dd89d2"
+  integrity sha1-7APKw2EXgxm3e7mZO3Nnc1bdidI=
+  dependencies:
+    prop-types "^15.6.2"
+
 react-native-dismiss-keyboard@1.0.0:
   version "1.0.0"
   resolved "http://npm.boqii.com:80/react-native-dismiss-keyboard/-/react-native-dismiss-keyboard-1.0.0.tgz#32886242b3f2317e121f3aeb9b0a585e2b879b49"
@@ -7093,6 +7195,15 @@ react-native-image-zoom-viewer@^2.2.13:
   dependencies:
     react-native-image-pan-zoom "^2.1.9"
 
+react-native-modal-popover@^0.0.12:
+  version "0.0.12"
+  resolved "http://npm.boqii.com:80/react-native-modal-popover/-/react-native-modal-popover-0.0.12.tgz#5c0b5e9e0323490c3c5867821fc94b6582bfa3dc"
+  integrity sha1-XAtengMjSQw8WGeCH8lLZYK/o9w=
+  dependencies:
+    "@types/prop-types" "^15.5.5"
+    lodash.debounce "^4.0.8"
+    prop-types "^15.6.2"
+
 react-native-root-siblings@^3.0.0, react-native-root-siblings@^3.1.0:
   version "3.1.7"
   resolved "http://npm.boqii.com:80/react-native-root-siblings/-/react-native-root-siblings-3.1.7.tgz#9af7cf7495311db9fbe929201a3234ed114cfe77"
@@ -7109,7 +7220,7 @@ react-native-root-toast@^3.0.1:
     prop-types "^15.5.10"
     react-native-root-siblings "^3.0.0"
 
-react-native-safe-area-view@0.11.0:
+react-native-safe-area-view@0.11.0, react-native-safe-area-view@^0.11.0:
   version "0.11.0"
   resolved "http://npm.boqii.com:80/react-native-safe-area-view/-/react-native-safe-area-view-0.11.0.tgz#4f3dda43c2bace37965e7c6aef5fc83d4f19d174"
   integrity sha1-Tz3aQ8K6zjeWXnxq71/IPU8Z0XQ=
@@ -7125,6 +7236,15 @@ react-native-stylekit@^1.0.0:
   version "1.0.0"
   resolved "http://npm.boqii.com:80/react-native-stylekit/-/react-native-stylekit-1.0.0.tgz#96fc013345b8d3cd60dfdaced0d47af7a9d5316b"
   integrity sha1-lvwBM0W4081g39rO0NR696nVMWs=
+
+react-native-swipeout@^2.3.6:
+  version "2.3.6"
+  resolved "http://npm.boqii.com:80/react-native-swipeout/-/react-native-swipeout-2.3.6.tgz#47dac8a835825cf3f2eef9e495574a3d9ab6d3fa"
+  integrity sha1-R9rIqDWCXPPy7vnklVdKPZq20/o=
+  dependencies:
+    create-react-class "^15.6.0"
+    prop-types "^15.5.10"
+    react-tween-state "^0.1.5"
 
 react-native-tab-view@^0.0.77:
   version "0.0.77"
@@ -7210,6 +7330,14 @@ react-timer-mixin@^0.13.4:
   version "0.13.4"
   resolved "http://npm.boqii.com:80/react-timer-mixin/-/react-timer-mixin-0.13.4.tgz#75a00c3c94c13abe29b43d63b4c65a88fc8264d3"
   integrity sha1-daAMPJTBOr4ptD1jtMZaiPyCZNM=
+
+react-tween-state@^0.1.5:
+  version "0.1.5"
+  resolved "http://npm.boqii.com:80/react-tween-state/-/react-tween-state-0.1.5.tgz#e98b066551efb93cb92dd1be14995c2e3deae339"
+  integrity sha1-6YsGZVHvuTy5LdG+FJlcLj3q4zk=
+  dependencies:
+    raf "^3.1.0"
+    tween-functions "^1.0.1"
 
 react@^16.0.0:
   version "16.8.3"
@@ -7378,6 +7506,11 @@ regenerator-runtime@^0.12.0:
   version "0.12.1"
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.12.1.tgz#fa1a71544764c036f8c49b13a08b2594c9f8a0de"
   integrity sha512-odxIc1/vDlo4iZcfXqRYFj0vpXFNoGdKMAUieAlFYO6m/nl5e9KR/beGf41z4a1FI+aQgtjhuaSlDxQ0hmkrHg==
+
+regenerator-runtime@^0.13.2:
+  version "0.13.2"
+  resolved "http://npm.boqii.com:80/regenerator-runtime/-/regenerator-runtime-0.13.2.tgz#32e59c9a6fb9b1a4aff09b4930ca2d4477343447"
+  integrity sha1-MuWcmm+5saSv8JtJMMotRHc0NEc=
 
 regenerator-transform@^0.10.0:
   version "0.10.1"
@@ -7574,6 +7707,11 @@ resolve-pathname@2.2.0:
   version "2.2.0"
   resolved "http://npm.boqii.com:80/resolve-pathname/-/resolve-pathname-2.2.0.tgz#7e9ae21ed815fd63ab189adeee64dc831eefa879"
   integrity sha1-fpriHtgV/WOrGJre7mTcgx7vqHk=
+
+resolve-pathname@^3.0.0:
+  version "3.0.0"
+  resolved "http://npm.boqii.com:80/resolve-pathname/-/resolve-pathname-3.0.0.tgz#99d02224d3cf263689becbb393bc560313025dcd"
+  integrity sha1-mdAiJNPPJjaJvsuzk7xWAxMCXc0=
 
 resolve-url-loader@2.3.0:
   version "2.3.0"
@@ -8539,10 +8677,10 @@ tar@^4, tar@^4.0.2:
     safe-buffer "^5.1.2"
     yallist "^3.0.2"
 
-taro-ui@^2.0.1:
-  version "2.0.1"
-  resolved "http://npm.boqii.com:80/taro-ui/-/taro-ui-2.0.1.tgz#32fd5cd16aa47e83c6a9ccff662ded430e88ffe6"
-  integrity sha1-Mv1c0WqkfoPGqcz/Zi3tQw6I/+Y=
+taro-ui@^2.0.2:
+  version "2.0.2"
+  resolved "http://npm.boqii.com:80/taro-ui/-/taro-ui-2.0.2.tgz#178112e81066a77135d7b0da6d68137cff5ddb5c"
+  integrity sha1-F4ES6BBmp3E117DabWgTfP9d21w=
   dependencies:
     "@types/react" "^16.7.3"
     bind-decorator "^1.0.11"
@@ -8738,6 +8876,11 @@ tunnel-agent@^0.6.0:
   integrity sha1-J6XeoGs2sEoKmWZ3SykIaPD8QP0=
   dependencies:
     safe-buffer "^5.0.1"
+
+tween-functions@^1.0.1:
+  version "1.2.0"
+  resolved "http://npm.boqii.com:80/tween-functions/-/tween-functions-1.2.0.tgz#1ae3a50e7c60bb3def774eac707acbca73bbc3ff"
+  integrity sha1-GuOlDnxguz3vd06scHrLynO7w/8=
 
 tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   version "0.14.5"
@@ -8963,6 +9106,16 @@ utila@^0.4.0, utila@~0.4:
   resolved "http://npm.boqii.com:80/utila/-/utila-0.4.0.tgz#8a16a05d445657a3aea5eecc5b12a4fa5379772c"
   integrity sha1-ihagXURWV6Oupe7MWxKk+lN5dyw=
 
+utility-types@^2.1.0:
+  version "2.1.0"
+  resolved "http://npm.boqii.com:80/utility-types/-/utility-types-2.1.0.tgz#0c78fc9f7eb424d14302222b4ddd13fdb17f44ab"
+  integrity sha1-DHj8n360JNFDAiIrTd0T/bF/RKs=
+
+utility-types@^3.4.1:
+  version "3.4.1"
+  resolved "http://npm.boqii.com:80/utility-types/-/utility-types-3.4.1.tgz#3caa1d207eac873f989bf8c92cf3e8c539045c61"
+  integrity sha1-PKodIH6shz+Ym/jJLPPoxTkEXGE=
+
 utils-merge@1.0.1:
   version "1.0.1"
   resolved "http://npm.boqii.com:80/utils-merge/-/utils-merge-1.0.1.tgz#9f95710f50a267947b2ccc124741c1028427e713"
@@ -9125,13 +9278,6 @@ webpack-log@^2.0.0:
   dependencies:
     ansi-colors "^3.0.0"
     uuid "^3.3.2"
-
-webpack-merge@4.1.4:
-  version "4.1.4"
-  resolved "http://npm.boqii.com:80/webpack-merge/-/webpack-merge-4.1.4.tgz#0fde38eabf2d5fd85251c24a5a8c48f8a3f4eb7b"
-  integrity sha1-D9446r8tX9hSUcJKWoxI+KP063s=
-  dependencies:
-    lodash "^4.17.5"
 
 webpack-sources@^1.0.1, webpack-sources@^1.1.0:
   version "1.3.0"

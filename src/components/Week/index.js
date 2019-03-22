@@ -112,7 +112,7 @@ class weekDay extends Component {
         <Text className='week-title'>{type ? '日漫' : '国漫'}</Text>
         <View className='week-tab'>
           {weekCn.map((item, index) => (
-            <Text key={index} onClick={() => this.setState({ today: index })} className='week-li'>
+            <Text key={`week_${index}`} onClick={() => this.setState({ today: index })} className='week-li'>
               {index === today ? <Text className='active'>周{item}</Text> : <Text>周{item}</Text>}
             </Text>
           ))}
