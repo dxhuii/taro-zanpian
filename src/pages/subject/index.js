@@ -17,18 +17,21 @@ import NewsPic from '@/components/Subject/NewsPic'
 import NewsText from '@/components/Subject/NewsText'
 import PlayList from '@/components/PlayList'
 import Tating from '@/components/Tating'
-import Modal from '@/components/Modal'
-import Sign from '@/components/Sign'
+// import Modal from '@/components/Modal'
+// import Sign from '@/components/Sign'
+import A from '@/components/A'
 
-import { isNumber, formatPic } from '@/utils'
+import { isNumber, formatPic, globalData } from '@/utils'
 
-import './style.scss'
+console.log(globalData)
+
+// import './style.scss'
 
 @connect(
-  (state, props) => ({
-    info: getDetail(state, props.match.params.id),
+  state => ({
+    info: getDetail(state, globalData.extraData.id),
     userinfo: getUserInfo(state),
-    cmScore: getScore(state, props.match.params.id, 1, getUserInfo(state).userid || 0)
+    cmScore: getScore(state, globalData.extraData.id)
   }),
   dispatch => ({
     detail: bindActionCreators(detail, dispatch),
@@ -39,7 +42,6 @@ import './style.scss'
 )
 class Bangumi extends Component {
   static propTypes = {
-    match: PropTypes.object.isRequired,
     info: PropTypes.object.isRequired,
     detail: PropTypes.func.isRequired,
     score: PropTypes.func.isRequired,
@@ -60,10 +62,11 @@ class Bangumi extends Component {
   }
 
   componentDidMount() {
+    console.log(this.$router)
     const {
-      match: {
-        params: { id }
-      },
+      params: { id }
+    } = this.$router
+    const {
       info,
       detail,
       score,
@@ -152,15 +155,11 @@ class Bangumi extends Component {
     return name
   }
 
-  onShareAppMessage (res) {
+  onShareAppMessage(res) {
     const {
       info: { data = {} }
     } = this.props
-    const {
-      id,
-      title,
-      pic = '',
-    } = data
+    const { id, title, pic = '' } = data
     if (res.from === 'button') {
       // 来自页面内转发按钮
       console.log(res.target)
@@ -168,28 +167,37 @@ class Bangumi extends Component {
     return {
       title: title,
       imageUrl: pic,
-      path: `/pages/play?id=${id}`
+      path: `/pages/subject/index?id=${id}`
     }
+  }
+
+  copyPan(data) {
+    Taro.setClipboardData({
+      data,
+      success(res) {
+        console.log(res)
+      }
+    })
   }
 
   render() {
     const { visible, isSign } = this.state
     const {
+      params: { id }
+    } = this.$router
+    const {
       info: { data = {}, loading },
-      match: { url },
       userinfo: { userid },
       cmScore = {},
       score
     } = this.props
     const {
-      id,
       cid,
       title,
       content = '',
       listName,
       listNameBig,
       pic = '',
-      actor,
       area,
       aliases,
       gold,
@@ -207,6 +215,7 @@ class Bangumi extends Component {
       storyId,
       actorId,
       pan,
+      actor = [],
       mcid = [],
       original = [],
       director = [],
@@ -224,13 +233,13 @@ class Bangumi extends Component {
     }
     return (
       <View>
-        <div className="warp-bg">
-          <div styleName="detail">
-            <div styleName="detail-blur" style={{ backgroundImage: `url(${rePic})` }} />
-            <div styleName="detail-con" className="wp clearfix">
-              <div styleName="detail-pic">{pic ? <img src={rePic} /> : null}</div>
-              <div styleName="detail-info">
-                <div styleName="detial-title">
+        <div className='warp-bg'>
+          <div className='detail'>
+            <div className='detail-blur' style={{ backgroundImage: `url(${rePic})` }} />
+            <div className='detail-con' className='wp clearfix'>
+              <div className='detail-pic'>{pic ? <img src={rePic} /> : null}</div>
+              <div className='detail-info'>
+                <div className='detial-title'>
                   <h1>{title}</h1>
                   <span>
                     <Link to={`/type/${this.getName(cid)}/-/-/-/-/-/-/`}>{listName}</Link>
@@ -246,7 +255,7 @@ class Bangumi extends Component {
                   </span>
                 </div>
                 {aliases ? <p>别名：{aliases}</p> : null}
-                <ul styleName="detail-info__count">{/* <li>热度<span>{hits}</span></li> */}</ul>
+                <ul className='detail-info__count'>{/* <li>热度<span>{hits}</span></li> */}</ul>
                 {filmtime || status || total ? (
                   <p>
                     {filmtime ? <span>{filmtime} 播出</span> : <span>{year}年</span>}
@@ -259,34 +268,34 @@ class Bangumi extends Component {
                   {language ? <span style={{ marginRight: 30 }}>语言：{language}</span> : null}
                   {area ? <span>地区：{area}</span> : null}
                 </p>
-                <p styleName="detail-update">更新时间：{updateDate}</p>
-                <div styleName="detail-tool">
-                  <div styleName={`detail-tool__on ${remindid ? 'active' : ''}`} onClick={() => this.addMark('remind', id, cid, userid)}>
-                    <i className="iconfont">&#xe6bd;</i>
+                <p className='detail-update'>更新时间：{updateDate}</p>
+                <div className='detail-tool'>
+                  <div className={`detail-tool__on ${remindid ? 'active' : ''}`} onClick={() => this.addMark('remind', id, cid, userid)}>
+                    <i className='iconfont'>&#xe6bd;</i>
                     {remindid ? '已追番' : '追番'}
                   </div>
-                  <div styleName={`detail-tool__on ${loveid ? 'active' : ''}`} onClick={() => this.addMark('love', id, cid, userid)}>
-                    <i className="iconfont">&#xe66a;</i>
+                  <div className={`detail-tool__on ${loveid ? 'active' : ''}`} onClick={() => this.addMark('love', id, cid, userid)}>
+                    <i className='iconfont'>&#xe66a;</i>
                     {loveid ? '已收藏' : '收藏'}
                   </div>
                 </div>
               </div>
-              {star ? (
-                <div styleName="detail-score">
+              {/* {star ? (
+                <div className="detail-score">
                   <Tating data={star} id={id} uid={userid} sid={1} score={score} />
                 </div>
-              ) : null}
+              ) : null} */}
             </div>
           </div>
-          <div styleName="detail-nav">
-            <div className="wp">
+          <div className='detail-nav'>
+            <div className='wp'>
               <ul>
-                <li styleName="active">
+                <li className='active'>
                   <a>作品详情</a>
                 </li>
                 {newsTextlist.length || newsPiclist.length ? (
                   <li>
-                    <Link to={`/subject/${id}/news`}>新闻花絮</Link>
+                    <A url={`/subject/${id}/news`}><Text>新闻花絮</Text></A>
                   </li>
                 ) : null}
                 {actorId ? (
@@ -296,91 +305,74 @@ class Bangumi extends Component {
                 ) : null}
                 {storyId ? (
                   <li>
-                    <Link to={`/episode/${storyId}`}>分集剧情</Link>
+                    <A url={`/episode/${storyId}`}><Text>分集剧情</Text></A>
                   </li>
                 ) : null}
                 <li>
-                  <Link to={`/time/${id}`}>播出时间</Link>
+                  <A url={`/time/${id}`}><Text>播出时间</Text></A>
                 </li>
-                <li>
-                  <a href={pan} target="_blank" rel="noopener noreferrer">
-                    网盘下载
-                  </a>
-                </li>
+                <View onClick={this.copyPan.bind(this, pan)}><Text>网盘下载</Text></View>
               </ul>
             </div>
           </div>
         </div>
-        <PlayList key="playlist" />
-        <div className="mt20 clearfix wp" styleName="detail-bottom">
-          <div className="fl box pb20 left">
+        <PlayList vid={id} />
+        <div className='mt20 clearfix wp' className='detail-bottom'>
+          <div className='fl box pb20 left'>
             {newsTextlist.length > 0 ? (
-              <div className="mt10">
-                <div styleName="title">
+              <div className='mt10'>
+                <div className='title'>
                   <h2>预告片·OP·ED·BGM·MAD·CM·特典 · · · · · ·</h2>
                 </div>
                 <NewsText data={newsTextlist} />
               </div>
             ) : null}
             {content ? (
-              <div className="mt10">
-                <div styleName="title">
+              <div className='mt10'>
+                <div className='title'>
                   <h2>简介</h2>
                 </div>
-                <div styleName="detail-content" className="mt10">
+                <div className='detail-content' className='mt10'>
                   {content}
                 </div>
               </div>
             ) : null}
             {storyId && storylist.length > 0 ? (
-              <div styleName="ep">
-                <div styleName="title">
+              <div className='ep'>
+                <div className='title'>
                   <h2>分集剧情</h2>
                 </div>
-                <EpList id={storyId} data={storylist} />
+                <EpList vid={storyId} data={storylist} />
               </div>
             ) : null}
             {newsPiclist.length > 0 ? (
               <div className="mt10">
-                <div styleName="title">
+                <div className="title">
                   <h2>新闻花絮</h2>
                 </div>
                 <NewsPic data={newsPiclist} />
               </div>
             ) : null}
             <div className={`${!(newsTextlist.length > 0 && storyId && newsPiclist.length > 0) ? 'mt10' : 'mt20'}`}>
-              <div styleName="title">
+              <div className='title'>
                 <h2>相关动漫</h2>
               </div>
-              {id ? <DetailActor actor={actor ? actor.map(item => item.title).join(',') : ''} no={id} /> : null}
+              {id && actor.length > 0 ? <DetailActor actor={actor.map(item => item.title).join(',')} no={id} /> : null}
             </div>
-            <div className="mt20">
-              <div styleName="title">
+            <div className='mt20'>
+              <div className='title'>
                 <h2>评论</h2>
               </div>
               <Comment data={comment} />
             </div>
           </div>
         </div>
-        <Modal visible={visible} showModal={this.showModal} closeModal={this.closeModal}>
+        {/* <Modal visible={visible} showModal={this.showModal} closeModal={this.closeModal}>
           <Sign isSign={isSign} onType={val => this.onType(val)} />
-        </Modal>
+        </Modal> */}
       </View>
     )
   }
 }
 
-const Bangumis = props => {
-  const {
-    match: {
-      params: { id }
-    }
-  } = props
-  return <Bangumi {...props} key={id} />
-}
-
-Bangumis.propTypes = {
-  match: PropTypes.object
-}
-
-export default Bangumis
+export default Bangumi

@@ -9,7 +9,7 @@ import './style.scss'
 export default class EpList extends Component {
   static propTypes = {
     data: PropTypes.array.isRequired,
-    id: PropTypes.number.isRequired
+    vid: PropTypes.number.isRequired
   }
 
   static defaultProps = {
@@ -17,12 +17,12 @@ export default class EpList extends Component {
   }
 
   render() {
-    const { id, data } = this.props
+    const { vid, data } = this.props
     return (
-      <View styleName='eplist' className='mt20'>
+      <View className='eplist mt20'>
         {data.map(item => (
           <View key={item.pid}>
-            <A url={`/episode/${id}/${item.pid ? item.pid : 1}`}>
+            <A url={`/episode/${vid}/${item.pid ? item.pid : 1}`}>
               <Text>
                 {item.name} {item.title}
               </Text>

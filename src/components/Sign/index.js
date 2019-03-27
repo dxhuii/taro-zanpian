@@ -21,11 +21,11 @@ class Sign extends Component {
   render() {
     const { isSign } = this.props
     return (
-      <View styleName='user'>
-        <View styleName='logo' />
+      <View className='user'>
+        <View className='logo' />
         <View>{isSign === 'signIn' ? '登录' : '注册'}，可以发现更多</View>
         {isSign === 'signIn' ? <SignIn /> : <SignUp />}
-        <View styleName='user-reg' className='mt20'>
+        <View className='user-reg' className='mt20'>
           {isSign === 'signIn' ? (
             <Text onClick={e => this.onType(e, 'signUp')}>还没有账号？去注册</Text>
           ) : (

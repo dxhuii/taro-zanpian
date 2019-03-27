@@ -17,33 +17,33 @@ class Comment extends Component {
   render() {
     const { data = [] } = this.props
     return (
-      <View styleName='comment'>
-        <div styleName='comment-list'>
+      <View className='comment'>
+        <div className='comment-list'>
           {data.length < 0 ? (
-            <div styleName='comment-empty' className='tac'>
+            <div className='comment-empty' className='tac'>
               暂无评论，抢少发
             </div>
           ) : (
-            <ul styleName='comment-list__list' className='mt20'>
+            <ul className='comment-list__list' className='mt20'>
               {data.map(item => (
                 <li key={item.cm_id}>
-                  <div styleName='commit-list__people'>
-                    <div styleName='avatar'>
+                  <div className='commit-list__people'>
+                    <div className='avatar'>
                       <img src={item.avatar} />
                       {item.nickname}
                     </div>
-                    <div styleName='commit-list__zan'>
+                    <div className='commit-list__zan'>
                       有用({item.cm_support}) 没用({item.cm_oppose})
                     </div>
                   </div>
-                  <div styleName='commit-list__content'>
+                  <div className='commit-list__content'>
                     {item.cm_content}
                     {item.cm_sub.length > 0 ? (
-                      <ul styleName='commit_sublist' className='mt10'>
+                      <ul className='commit_sublist' className='mt10'>
                         {item.cm_sub.map(subItem => (
                           <li key={subItem.cm_id}>
-                            <div styleName='commit-list__people'>
-                              <span styleName='title'>
+                            <div className='commit-list__people'>
+                              <span className='title'>
                                 {subItem.at ? (
                                   <span>
                                     <A url={`/people/${subItem.cm_uid}`}>
@@ -60,12 +60,12 @@ class Comment extends Component {
                                   </A>
                                 )}
                               </span>
-                              <span styleName='time'>{subItem.cm_addtime}</span>
-                              <div styleName='commit-list__zan'>
+                              <span className='time'>{subItem.cm_addtime}</span>
+                              <div className='commit-list__zan'>
                                 有用({subItem.cm_support}) 没用({subItem.cm_oppose})
                               </div>
                             </div>
-                            <div styleName='commit-list__content'>{subItem.cm_content}</div>
+                            <div className='commit-list__content'>{subItem.cm_content}</div>
                           </li>
                         ))}
                       </ul>

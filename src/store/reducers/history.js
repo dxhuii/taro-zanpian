@@ -1,3 +1,5 @@
+import merge from 'lodash/merge'
+
 export default function() {
   let initialState = {
     data: []
@@ -11,7 +13,7 @@ export default function() {
         return state
       case 'GET_PLAY_LOG':
         state[name] = data
-        return Object.assign({}, state, {})
+        return merge({}, state, {})
       // 清空
       case 'CLEAN':
         return {

@@ -16,7 +16,7 @@ import './style.scss'
 
 @connect(
   (state, props) => ({
-    info: getDetailActor(state, props.no, props.actor)
+    info: getDetailActor(state, props.no)
   }),
   dispatch => ({
     detailActor: bindActionCreators(detailActor, dispatch)
@@ -31,7 +31,8 @@ class DetailActor extends Component {
   }
 
   componentDidMount() {
-    const { info, actor, detailActor, no } = this.props
+    console.log(this.props, 'detailactor')
+    const { info, detailActor, no, actor } = this.props
     if (!info || !info.data) {
       detailActor({
         actor,
@@ -50,7 +51,7 @@ class DetailActor extends Component {
       Taro.hideLoading()
     }
     return (
-      <View styleName='d-item'>
+      <View className='d-item'>
         {data.map(item => (
           <View key={item.id}>
             <A url={`/subject/${item.id}`}>
@@ -60,12 +61,12 @@ class DetailActor extends Component {
             <A url={`/play/${item.id}/${item.pid}`}>
               {isNumber(item.status) ? (
                 item.isDate ? (
-                  <Text styleName='today'>更新至{item.status}话</Text>
+                  <Text className='today'>更新至{item.status}话</Text>
                 ) : (
                   <Text>更新至{item.status}话</Text>
                 )
               ) : item.isDate ? (
-                <Text styleName='today'>{item.status}</Text>
+                <Text className='today'>{item.status}</Text>
               ) : (
                 <Text>{item.status}</Text>
               )}

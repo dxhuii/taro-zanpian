@@ -78,41 +78,6 @@ class Tating extends Component {
     return pfclass
   }
 
-  show(data, text) {
-    const { a, b, c, d, e, pinfen } = data
-    if (pinfen > 0) {
-      const total = a + b + c + d + e
-      const calc = val => `${((val / total) * 100).toFixed(2)}%`
-      const progressBar = val => <div styleName='progress-bar' style={{ width: calc(val) }} />
-      const scoreArr = [a, b, c, d, e]
-      return (
-        <div styleName='rating' className='pr'>
-          <h4>评分</h4>
-          <div styleName='rating-num'>
-            <strong>{pinfen === '10.0' ? 10 : pinfen}</strong>
-            <span className={this.starClass(parseFloat(pinfen) * 5)} />
-            <span styleName='people'>
-              <em>{total}</em>人评价
-            </span>
-          </div>
-          <ul styleName='rating-show' className='clearfix'>
-            {scoreArr.map((item, index) => (
-              <li key={index}>
-                <span>{text[scoreArr.length - (index + 1)]}</span>
-                <div styleName='progress' title={calc(item)}>
-                  {progressBar(item)}
-                </div>
-                <em>{item}人</em>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )
-    } else {
-      return <View styleName='noscore'>还没有评分</View>
-    }
-  }
-
   move(index) {
     this.setState({
       star: index
@@ -122,23 +87,46 @@ class Tating extends Component {
   render() {
     const { starWith, starText, star } = this.state
     const { data } = this.props
+    const { a, b, c, d, e, pinfen } = data
+    const total = a + b + c + d + e
+    const calc = val => `${((val / total) * 100).toFixed(2)}%`
+    const progressBar = val => <div className='progress-bar' style={{ width: calc(val) }} />
+    const scoreArr = [a, b, c, d, e]
     return (
       <Block>
-        {this.show(data, starText)}
-        <div styleName='starBox'>
+        {pinfen > 0 ? (
+          <div className='rating' className='pr'>
+            <h4>评分</h4>
+            <div className='rating-num'>
+              <strong>{pinfen === '10.0' ? 10 : pinfen}</strong>
+              <span className={this.starClass(parseFloat(pinfen) * 5)} />
+              <span className='people'>
+                <em>{total}</em>人评价
+              </span>
+            </div>
+            <ul className='rating-show' className='clearfix'>
+              {scoreArr.map((item, index) => (
+                <li key={index}>
+                  <span>{starText[scoreArr.length - (index + 1)]}</span>
+                  <div className='progress' title={calc(item)}>
+                    {progressBar(item)}
+                  </div>
+                  <em>{item}人</em>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : (
+          <View className='noscore'>还没有评分</View>
+        )}
+        <div className='starBox'>
           <em>评分</em>
-          <div styleName='starlist'>
+          <div className='starlist'>
             {[1, 2, 3, 4, 5].map(item => (
-              <a
-                key={item}
-                title={`${item}星`}
-                styleName={`star_${item}`}
-                onClick={() => this.onStar(item)}
-                onMouseOver={() => this.move(item)}
-              />
+              <a key={item} title={`${item}星`} className={`star_${item}`} onClick={() => this.onStar(item)} onMouseOver={() => this.move(item)} />
             ))}
           </div>
-          <div styleName='star_current' style={{ width: starWith }} />
+          <div className='star_current' style={{ width: starWith }} />
           <span>{starText[star - 1]}</span>
         </div>
       </Block>

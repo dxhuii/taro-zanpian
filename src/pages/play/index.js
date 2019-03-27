@@ -1,8 +1,8 @@
-import React, { Component, Fragment } from 'react'
+import Taro, { Component } from '@tarojs/taro'
+import { View, Text, Block } from '@tarojs/components'
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
 import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux'
+import { connect } from '@tarojs/redux'
 
 import { playerLoad } from '@/store/actions/player'
 import { digg } from '@/store/actions/mark'
@@ -13,27 +13,16 @@ import { getUserInfo } from '@/store/reducers/user'
 
 import PlayList from '@/components/PlayList'
 import DetailActor from '@/components/DetailActor'
-import SideBar from '@/components/SideBar'
-import Share from '@/components/Share'
-import Ads from '@/components/Ads'
-import Toast from '@/components/Toast'
 
-import Shell from '@/components/Shell'
-import Meta from '@/components/Meta'
-
-import { ISPLAY, IS9, DOMAIN_NAME, NAME } from 'Config'
-import { isMobile } from '@/utils'
-import playing from '@/utils/play'
+import { globalData } from '@/utils'
+// import playing from '@/utils/play'
 
 import './style.scss'
 
-const isP = IS9 && !isMobile()
-
-@Shell
 @connect(
   (state, props) => ({
     userinfo: getUserInfo(state),
-    player: getPlayerList(state, props.match.params.id, props.match.params.pid)
+    player: getPlayerList(state, globalData.extraData.id, globalData.extraData.pid)
   }),
   dispatch => ({
     playerLoad: bindActionCreators(playerLoad, dispatch),
@@ -52,9 +41,7 @@ class Play extends Component {
       subTitle: '',
       playHtml: '',
       mInfo: {},
-      list: [],
-      full: false,
-      isfull: false
+      list: []
     }
   }
 
@@ -70,13 +57,9 @@ class Play extends Component {
 
   async componentDidMount() {
     const {
-      player,
-      playerLoad,
-      hits,
-      match: {
-        params: { id, pid }
-      }
-    } = this.props
+      params: { id, pid }
+    } = this.$router
+    const { player, playerLoad, hits } = this.props
     hits({ id, sid: 1 })
     if (!player || !player.data) {
       let [, data] = await playerLoad({ id, pid })
@@ -88,12 +71,6 @@ class Play extends Component {
       this.getData()
       this.addHistory() // 增加观看记录
     }
-
-    document.onkeyup = event => {
-      if (event.which == '27') {
-        this.isFull()
-      }
-    }
   }
 
   componentWillUnmount() {
@@ -104,10 +81,10 @@ class Play extends Component {
 
   async addHistory() {
     const {
+      params: { id, pid }
+    } = this.$router
+    const {
       userinfo: { userid },
-      match: {
-        params: { id, pid }
-      },
       player: { data = {} },
       addplaylog
     } = this.props
@@ -124,7 +101,7 @@ class Play extends Component {
       })
       console.log(data)
     } else if (title) {
-      let dataList = JSON.parse(localStorage.historyData || '[]')
+      let dataList = JSON.parse(Taro.getStorageSync('historyData') || '[]')
       if (dataList.length > 0) {
         for (let i = 0; i < dataList.length; i++) {
           const obj = JSON.parse(dataList[i])
@@ -145,7 +122,7 @@ class Play extends Component {
           next: +pid < count ? +pid + 1 : 0
         })
       )
-      localStorage.historyData = JSON.stringify([...new Set([...dataList])])
+      Taro.setStorageSync('historyData', JSON.stringify([...new Set([...dataList])]))
     }
   }
 
@@ -159,9 +136,9 @@ class Play extends Component {
 
   getData() {
     const {
-      match: {
-        params: { id, pid }
-      },
+      params: { id, pid }
+    } = this.$router
+    const {
       userinfo: { userid },
       player: { data = {} }
     } = this.props
@@ -169,37 +146,20 @@ class Play extends Component {
     const { list = [], copyright } = data
     const other = this.getOther(list)
     const danmu = `${id}_${pid}`
-    const isA = other.length > 0 && !isP && (copyright !== 'vip' || isMobile() || ISPLAY)
+    const isA = other.length > 0
+    debugger
     const { playName, vid, playTitle } = isA ? other[0] : list[0]
     let playHtml = ''
     if (play) {
-      playHtml = playing(type, play, danmu, userid, copyright)
+      playHtml = '' //playing(type, play, danmu, userid, copyright)
     } else {
-      playHtml = playing(playName, vid, danmu, userid, copyright)
+      playHtml = '' // playing(playName, vid, danmu, userid, copyright)
     }
     const mInfo = { playName, vid, playTitle }
     console.log(play, playHtml, isA, 'getdata')
     this.setState({
       playHtml,
       mInfo
-    })
-  }
-
-  isFull = () => {
-    this.setState({
-      full: !this.state.full
-    })
-  }
-
-  showFull = () => {
-    this.setState({
-      isfull: true
-    })
-  }
-
-  hideFull = () => {
-    this.setState({
-      isfull: false
     })
   }
 
@@ -238,82 +198,79 @@ class Play extends Component {
       const num = res.data.split(':')
       this.up.querySelectorAll('span')[0].innerText = num[0]
       this.down.querySelectorAll('span')[0].innerText = num[1]
-      Toast.success(res.msg)
+      Taro.showToast({ title: res.msg })
+    }
+  }
+
+  onShareAppMessage(res) {
+    const {
+      info: { data = {} }
+    } = this.props
+    const {
+      params: { id, pid }
+    } = this.$router
+    const { title, pic = '', subTitle } = data
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(res.target)
+    }
+    return {
+      title: `${title} ${subTitle}`,
+      imageUrl: pic,
+      path: `/pages/play/index?id=${id}&pid=${pid}`
     }
   }
 
   render() {
     const {
-      userinfo: { userid },
-      player: { data = {} },
-      match: {
-        params: { id, pid },
-        url
-      }
+      params: { id, pid }
+    } = this.$router
+    const {
+      player: { data = {} }
     } = this.props
-    const { full, isfull, playHtml, mInfo } = this.state
-    const { listName, listId, listNameBig, list = [], pic, title, pan, subTitle, actor = '', up, down, prev, next, mcid = [], copyright } = data
-    const shareConfig = {
-      pic,
-      title: `#${title}# ${subTitle}在线播放 - ${listName}${listNameBig} - #${NAME.split('_').join('##')}# @99496动漫网`,
-      url: `/play/${id}/${pid}`
-    }
-    if (copyright === 'stop' && !userid && !ISPLAY && !isMobile()) {
-      if (typeof window === 'undefined') {
-        return
-      }
-      window.location.href = '/404'
-    }
+    const { playHtml, mInfo } = this.state
+    const { listName, listId, listNameBig, list = [], pic, title, pan, subTitle, actor = '', up, down, prev, next, mcid = [] } = data
     return (
-      <Fragment>
-        <div styleName="player">
-          <div className="wp pt20">
-            <Meta title={`${title} ${subTitle}在线播放 - ${listName}${listNameBig}`}>
-              <meta name="keywords" content={`${title}${subTitle},${title}在线观看,动画${title}`} />
-              <meta name="description" content={`${NAME}为您提供${listName}${listNameBig}${title}${subTitle}在线观看。喜欢${title}${subTitle}，就推荐给小伙伴们吧！`} />
-            </Meta>
-            <div styleName={`player-box ${full ? 'play-full' : ''}`} onMouseOver={this.showFull} onMouseLeave={this.hideFull}>
-              <div dangerouslySetInnerHTML={{ __html: playHtml }} />
-              {isfull ? (
-                <a onMouseOver={this.showFull} onClick={this.isFull}>
-                  {full ? '退出全屏' : '网页全屏'}
-                </a>
-              ) : null}
-            </div>
-            <div styleName="player-info">
-              <div styleName="player-title">
+      <Block>
+        <View className='player'>
+          <View className='wp pt20'>
+            <View className='player-box'>
+              <View dangerouslySetInnerHTML={{ __html: playHtml }} />
+            </View>
+            <View className='player-info'>
+              <View className='player-title'>
                 <h1>
                   <Link to={`/subject/${id}`}>{title}</Link>：
                 </h1>
                 <h4>{subTitle}</h4>
-              </div>
-              <ul styleName="playlist">
+              </View>
+              <View className='playlist'>
                 {list.map(item => (
                   <li key={item.playName} onClick={() => this.onPlay(item.vid, item.playName)}>
                     <i className={`playicon ${item.playName}`} />
                     {item.playTitle}
                   </li>
                 ))}
-              </ul>
-              <div styleName="m-play-name">
+              </View>
+              <div className='m-play-name'>
                 <i className={`playicon ${mInfo.playName}`} />
                 {mInfo.playTitle}
               </div>
-              <div styleName="play-next">
+              <div className='play-next'>
                 {prev ? <Link to={`/play/${id}/${prev}`}>上一集</Link> : null}
                 {next ? <Link to={`/play/${id}/${next}`}>下一集</Link> : null}
               </div>
-            </div>
-            <div styleName="play-tool">
-              <div styleName="digg" onClick={() => this.onDigg('up', id)} ref={e => (this.up = e)}>
-                <i className="iconfont">&#xe607;</i>
+            </View>
+            <View className='play-tool'>
+              <View className='digg' onClick={() => this.onDigg('up', id)} ref={e => (this.up = e)}>
+                <i className='iconfont'>&#xe607;</i>
                 <span>{up}</span>
-              </div>
-              <div styleName="digg" onClick={() => this.onDigg('down', id)} ref={e => (this.down = e)}>
-                <i className="iconfont">&#xe606;</i>
+              </View>
+              <View className='digg' onClick={() => this.onDigg('down', id)} ref={e => (this.down = e)}>
+                <i className='iconfont'>&#xe606;</i>
                 <span>{down}</span>
-              </div>
-              <div styleName="mcid">
+              </View>
+              <View className='mcid'>
                 {mcid.map(item => {
                   return item.title ? (
                     <Link key={item.id} to={`/type/${this.getName(listId)}/${item.id}/-/-/-/-/-/`}>
@@ -321,68 +278,29 @@ class Play extends Component {
                     </Link>
                   ) : null
                 })}
-                {(pan && !isP) || userid ? (
-                  <a href={pan} target="_blank" rel="noopener noreferrer">
+                {pan ? (
+                  <a href={pan} target='_blank' rel='noopener noreferrer'>
                     网盘下载
                   </a>
                 ) : null}
-              </div>
-              <div styleName="player-share">
-                <Share data={shareConfig} />
-              </div>
-            </div>
-          </div>
-        </div>
-        <PlayList />
-        {DOMAIN_NAME === 'dddm.tv' && (
-          <div className="wp mt20 box" styleName="zhaimoe">
-            <iframe src="//www.zhaimoe.com/portal/page/index/id/35.html" width="1200" height="100%" frameBorder="0" scrolling="no" />
-          </div>
-        )}
-        <div className="wp">
-          {isMobile() ? (
-            <div className="mt20">
-              <Ads id={26} url={url} />
-            </div>
-          ) : (
-            <Ads id={21} />
-          )}
-        </div>
-        <div className="mt20" />
-        <div className="wp clearfix">
-          <div className="fl left box">
-            <div className="mt20">
-              <div styleName="title">
+              </View>
+            </View>
+          </View>
+        </View>
+        <PlayList vid={id} pid={pid} />
+        <div className='wp clearfix'>
+          <div className='fl left box'>
+            <div className='mt20'>
+              <div className='title'>
                 <h2>相关动漫</h2>
               </div>
               {id ? <DetailActor actor={actor} no={id} /> : null}
             </div>
           </div>
-          <div className="right fr">
-            <SideBar />
-          </div>
         </div>
-        {!isMobile() && (
-          <div className="wp">
-            <Ads id={22} />
-          </div>
-        )}
-      </Fragment>
+      </Block>
     )
   }
 }
 
-const Plays = props => {
-  const {
-    match: {
-      params: { pid }
-    }
-  } = props
-  return <Play {...props} key={pid} />
-}
-
-Plays.propTypes = {
-  match: PropTypes.object
-}
-
-export default Plays
+export default Play

@@ -51,10 +51,10 @@ export default class Modal extends PureComponent {
   render() {
     const { visible } = this.state
     return (
-      <div styleName={`cd-popup ${visible ? 'is-visible' : ''}`} role="alert" onClick={this.closeModal}>
-        <div styleName="cd-popup-container" onClick={this.showModal} style={this.props.cls}>
+      <div className={`cd-popup ${visible ? 'is-visible' : ''}`} role="alert" onClick={this.closeModal}>
+        <div className="cd-popup-container" onClick={this.showModal} style={this.props.cls}>
           {this.props.children}
-          <span styleName="cd-popup-close img-replace" onClick={this.closeModal} />
+          <span className="cd-popup-close img-replace" onClick={this.closeModal} />
         </div>
       </div>
     )

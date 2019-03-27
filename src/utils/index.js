@@ -1,6 +1,4 @@
-import Taro from '@tarojs/taro'
-
-export const navTo = url => Taro.navigateTo({ url })
+export const globalData = {} // 全局公共变量
 
 export const isNumber = val => typeof val === 'number'
 

@@ -125,7 +125,7 @@ class SignIn extends Component {
           }}
           placeholder='再输入一次密码'
         />
-        <View styleName='validate'>
+        <View className='validate'>
           <Input
             type='text'
             ref={c => {

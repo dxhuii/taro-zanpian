@@ -23,14 +23,16 @@ class Index extends Component {
   componentDidHide() {}
 
   render() {
-    console.log(Taro.useState)
     return (
       <View className='index'>
         <A url='/pages/top/index'>
-          <View className={styles.red}>
-            <Text>去top</Text>
-          </View>
-          <View className='blue'>1111</View>
+          <Text>去top</Text>
+        </A>
+        <A url='/pages/subject/index?id=33600'>
+          <Text>去详情</Text>
+        </A>
+        <A url='/pages/top/index'>
+          <Text>去play</Text>
         </A>
         {/* <Week type={1} />
         <Week type={0} /> */}

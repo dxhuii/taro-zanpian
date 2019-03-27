@@ -17,13 +17,14 @@ export default class NewsPic extends Component {
   }
 
   render() {
+    const { data } = this.props
     return (
-      <View styleName='newslist'>
+      <View className='newslist'>
         {data.map(item => (
           <View key={item.id}>
             <A to={`/article/${item.id}`}>
               <Image src={formatPic(item.pic, 'orj360')} />
-              <Text styleName='mark'>{item.title}</Text>
+              <Text className='mark'>{item.title}</Text>
             </A>
           </View>
         ))}

@@ -1,6 +1,6 @@
 import config from '@/utils/config'
 import Ajax from '@/common/ajax'
-import Toast from '@/components/Toast'
+import Taro from '@tarojs/taro'
 
 export default ({ api, params, method = 'get', callback = () => {} }) => {
   return new Promise(async (resolve, reject) => {
@@ -19,7 +19,7 @@ export default ({ api, params, method = 'get', callback = () => {} }) => {
       resolve([null, data])
       callback([null, data])
     } else {
-      Toast.info(data.msg)
+      Taro.showToast({ title: data.msg })
     }
   })
 }
