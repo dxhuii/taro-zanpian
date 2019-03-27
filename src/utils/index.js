@@ -1,3 +1,7 @@
+import Taro from '@tarojs/taro'
+
+export const navTo = url => Taro.navigateTo({ url })
+
 export const isNumber = val => typeof val === 'number'
 
 /**

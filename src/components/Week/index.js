@@ -7,7 +7,6 @@ import { connect } from '@tarojs/redux'
 import { week } from '@/store/actions/week'
 import { getWeek } from '@/store/reducers/week'
 
-import Loading from '@/components/Loading'
 import Item from '@/components/Week/Item'
 
 import './style.scss'
@@ -107,6 +106,11 @@ class weekDay extends Component {
     const weekEng = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
     const weekType = this.getArea(data)
     const weekData = this.getEveryWeek(weekType[type], type)
+    if (loading) {
+      Taro.showLoading()
+    } else {
+      Taro.hideLoading()
+    }
     return (
       <View className='week'>
         <Text className='week-title'>{type ? '日漫' : '国漫'}</Text>
@@ -117,7 +121,6 @@ class weekDay extends Component {
             </Text>
           ))}
         </View>
-        {loading ? <Loading /> : null}
         <Item data={weekData[weekEng[today]]} type={type} />
       </View>
     )
