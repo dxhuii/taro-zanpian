@@ -13,6 +13,8 @@ import { getUserInfo } from '@/store/reducers/user'
 
 import PlayList from '@/components/PlayList'
 import DetailActor from '@/components/DetailActor'
+import A from '@/components/A'
+import Ar from '@/components/Ar'
 
 import { globalData } from '@/utils'
 import playing from '@/utils/play'
@@ -41,6 +43,8 @@ class Play extends Component {
       title: '',
       subTitle: '',
       playHtml: '',
+      up: 0,
+      down: 0,
       mInfo: {},
       list: []
     }
@@ -65,6 +69,10 @@ class Play extends Component {
     // debugger
     if (!player[`${id}-${pid}`] || !player[`${id}-${pid}`].data) {
       let [, data] = await playerLoad({ id, pid })
+      this.setState({
+        up: data.data.up,
+        down: data.data.down
+      })
       if (data) {
         this.addHistory() // 增加观看记录
         this.getData()
@@ -72,6 +80,10 @@ class Play extends Component {
     } else {
       this.getData()
       this.addHistory() // 增加观看记录
+      this.setState({
+        up: data.data.up,
+        down: data.data.down
+      })
     }
   }
 
@@ -206,8 +218,10 @@ class Play extends Component {
     let [, res] = await digg({ type, id })
     if (res.rcode === 1) {
       const num = res.data.split(':')
-      this.up.querySelectorAll('span')[0].innerText = num[0]
-      this.down.querySelectorAll('span')[0].innerText = num[1]
+      this.setState({
+        up: num[0],
+        down: num[1]
+      })
       Taro.showToast({ title: res.msg })
     }
   }
@@ -231,92 +245,95 @@ class Play extends Component {
     }
   }
 
+  copyPan(data) {
+    Taro.setClipboardData({
+      data,
+      success(res) {
+        console.log(res)
+      }
+    })
+  }
+
   render() {
     const {
       params: { id, pid }
     } = this.$router
     const { player } = this.props
     const data = (player[`${id}-${pid}`] || {}).data || {}
-    const { type, url, mInfo } = this.state
-    const { listName, listId, listNameBig, list = [], pic, title, pan, subTitle, actor = '', up, down, prev, next, mcid = [] } = data
+    const { type, url, up, down, mInfo } = this.state
+    const { listName, listId, listNameBig, list = [], pan, actor = '', prev, next, mcid = [] } = data
     return (
       <Block>
         <View className='player'>
           <View className='wp pt20'>
             <View className='player-box'>
-                --{url} {type}--
-                <Video
-                  src={url}
-                  controls={true}
-                  autoplay={false}
-                  poster='https://ww1.sinaimg.cn/large/87c01ec7gy1fqhvm91iodj21hc0u046d.jpg'
-                  initialTime='0'
-                  id='video'
-                  loop={false}
-                  muted={false}
-                />
+              {/* --{url} {type}-- */}
+              {type !== 'http' ? <Video style={{ width: '100%', height: '100%' }} src={url} poster='https://ww1.sinaimg.cn/large/87c01ec7gy1fqhvm91iodj21hc0u046d.jpg' /> : url}
             </View>
             <View className='player-info'>
               <View className='player-title'>
-                <h1>
-                  <Link to={`/subject/${id}`}>{title}</Link>：
-                </h1>
-                <h4>{subTitle}</h4>
+                <A url={`/pages/subject/index?id=${id}`}>
+                  <Text>
+                    {data.title} {data.subTitle}
+                  </Text>
+                </A>
               </View>
               <View className='playlist'>
                 {list.map(item => (
-                  <li key={item.playName} onClick={() => this.onPlay(item.vid, item.playName)}>
-                    <i className={`playicon ${item.playName}`} />
-                    {item.playTitle}
-                  </li>
+                  <View key={item.playName} onClick={() => this.onPlay(item.vid, item.playName)}>
+                    <Text className={`playicon ${item.playName}`} />
+                    <Text>{item.playTitle}</Text>
+                  </View>
                 ))}
               </View>
-              <div className='m-play-name'>
-                <i className={`playicon ${mInfo.playName}`} />
-                {mInfo.playTitle}
-              </div>
-              <div className='play-next'>
-                {prev ? <Link to={`/play/${id}/${prev}`}>上一集</Link> : null}
-                {next ? <Link to={`/play/${id}/${next}`}>下一集</Link> : null}
-              </div>
+              <View className='play-name'>
+                <Text className={`playicon ${mInfo.playName}`} />
+                <Text>{mInfo.playTitle}</Text>
+              </View>
+              <View className='play-next'>
+                {prev && (
+                  <Ar url={`/pages/play/index?id=${id}&pid=${prev}`}>
+                    <Text className='iconfont'>&#xe658;</Text>
+                  </Ar>
+                )}
+                {next && (
+                  <Ar url={`/pages/play/index?id=${id}&pid=${next}`}>
+                    <Text className='iconfont'>&#xe65a;</Text>
+                  </Ar>
+                )}
+              </View>
             </View>
             <View className='play-tool'>
-              <View className='digg' onClick={() => this.onDigg('up', id)} ref={e => (this.up = e)}>
-                <i className='iconfont'>&#xe607;</i>
-                <span>{up}</span>
+              <View className='digg' onClick={() => this.onDigg('up', id)}>
+                <Text className='iconfont'>&#xe607;</Text>
+                <Text>{up}</Text>
               </View>
-              <View className='digg' onClick={() => this.onDigg('down', id)} ref={e => (this.down = e)}>
-                <i className='iconfont'>&#xe606;</i>
-                <span>{down}</span>
+              <View className='digg' onClick={() => this.onDigg('down', id)}>
+                <Text className='iconfont'>&#xe606;</Text>
+                <Text>{down}</Text>
               </View>
               <View className='mcid'>
-                {mcid.map(item => {
-                  return item.title ? (
-                    <Link key={item.id} to={`/type/${this.getName(listId)}/${item.id}/-/-/-/-/-/`}>
+                {mcid.map((item, index) => {
+                  return item.title && index < 3 ? (
+                    <Text className='text' key={item.id}>
                       {item.title}
-                    </Link>
+                    </Text>
                   ) : null
                 })}
-                {pan ? (
-                  <a href={pan} target='_blank' rel='noopener noreferrer'>
+                {pan && (
+                  <Text className='text' onClick={this.copyPan.bind(this, pan)}>
                     网盘下载
-                  </a>
-                ) : null}
+                  </Text>
+                )}
               </View>
             </View>
           </View>
         </View>
         <PlayList vid={id} pid={pid} />
-        {/* <div className='wp clearfix'>
-          <div className='fl left box'>
-            <div className='mt20'>
-              <div className='title'>
-                <h2>相关动漫</h2>
-              </div>
-              {id ? <DetailActor actor={actor} no={id} /> : null}
-            </div>
-          </div>
-        </div> */}
+        <View className='play-title mt20'>
+          <Text>相关动漫</Text>
+        </View>
+        {id ? <DetailActor actor={actor} no={id} /> : null}
       </Block>
     )
   }
