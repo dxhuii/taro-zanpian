@@ -54,11 +54,11 @@ class DetailActor extends Component {
       <View className='d-item'>
         {data.map(item => (
           <View key={item.id}>
-            <A url={`/subject/${item.id}`}>
+            <A url={`/pages/subject/index?id=${item.id}`}>
               <Image className='load-demand' src={formatPic(item.pic, 'orj360')} alt={item.title} />
               <Text>{item.title}</Text>
             </A>
-            <A url={`/play/${item.id}/${item.pid}`}>
+            <A url={`/pages/play/index?id=${item.id}&pid=${item.pid}`}>
               {isNumber(item.status) ? (
                 item.isDate ? (
                   <Text className='today'>更新至{item.status}话</Text>

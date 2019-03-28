@@ -1,4 +1,6 @@
 import loadData from '@/utils/loadData'
+import Ajax from '@/common/ajax'
+import config from '@/utils/config'
 
 export function playerLoad({ id, pid }) {
   return (dispatch, getState) => {
@@ -10,6 +12,26 @@ export function playerLoad({ id, pid }) {
       actionType: 'GET_PLAYER',
       api: 'player',
       params: { id, pid }
+    })
+  }
+}
+
+export const yunpan = ({ name }) => {
+  return (dispatch, getState) => {
+    return new Promise(async (resolve, reject) => {
+      let [err, data] = await Ajax({
+        url: config.api.yunpan,
+        data: {
+          name
+        },
+        method: 'get'
+      })
+
+      if (err) {
+        resolve([err])
+      } else {
+        resolve([null, data])
+      }
     })
   }
 }

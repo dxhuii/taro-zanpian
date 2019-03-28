@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { bindActionCreators } from 'redux'
 import { connect } from '@tarojs/redux'
 
-import { playerLoad } from '@/store/actions/player'
+import { playerLoad, yunpan } from '@/store/actions/player'
 import { digg } from '@/store/actions/mark'
 import { hits } from '@/store/actions/hits'
 import { addplaylog } from '@/store/actions/history'
@@ -15,20 +15,21 @@ import PlayList from '@/components/PlayList'
 import DetailActor from '@/components/DetailActor'
 
 import { globalData } from '@/utils'
-// import playing from '@/utils/play'
+import playing from '@/utils/play'
 
 import './style.scss'
 
 @connect(
   (state, props) => ({
     userinfo: getUserInfo(state),
-    player: getPlayerList(state, globalData.extraData.id, globalData.extraData.pid)
+    player: state.player
   }),
   dispatch => ({
     playerLoad: bindActionCreators(playerLoad, dispatch),
     digg: bindActionCreators(digg, dispatch),
     addplaylog: bindActionCreators(addplaylog, dispatch),
-    hits: bindActionCreators(hits, dispatch)
+    hits: bindActionCreators(hits, dispatch),
+    yunpan: bindActionCreators(yunpan, dispatch)
   })
 )
 class Play extends Component {
@@ -61,7 +62,8 @@ class Play extends Component {
     } = this.$router
     const { player, playerLoad, hits } = this.props
     hits({ id, sid: 1 })
-    if (!player || !player.data) {
+    // debugger
+    if (!player[`${id}-${pid}`] || !player[`${id}-${pid}`].data) {
       let [, data] = await playerLoad({ id, pid })
       if (data) {
         this.addHistory() // 增加观看记录
@@ -134,32 +136,40 @@ class Play extends Component {
     return data.filter(item => item.playName === 'other')
   }
 
-  getData() {
+  async getData() {
     const {
       params: { id, pid }
     } = this.$router
-    const {
-      userinfo: { userid },
-      player: { data = {} }
-    } = this.props
+    const { player, yunpan } = this.props
+    const data = (player[`${id}-${pid}`] || {}).data || {}
     const { play, type } = this.state
-    const { list = [], copyright } = data
-    const other = this.getOther(list)
+    const { list = [] } = data
+    const other = this.getOther(list) || {}
     const danmu = `${id}_${pid}`
     const isA = other.length > 0
-    debugger
     const { playName, vid, playTitle } = isA ? other[0] : list[0]
-    let playHtml = ''
+    let playData = ''
     if (play) {
-      playHtml = '' //playing(type, play, danmu, userid, copyright)
+      playData = playing(type, play)
     } else {
-      playHtml = '' // playing(playName, vid, danmu, userid, copyright)
+      playData = playing(playName, vid)
     }
     const mInfo = { playName, vid, playTitle }
-    console.log(play, playHtml, isA, 'getdata')
+    console.log(play, playData, isA, 'getdata')
+    if (playData.type === 'yunpan') {
+      let [err, data] = await yunpan({ name: playData.url })
+      this.setState({
+        url: data
+      })
+    } else {
+      this.setState({
+        url: playData.url
+      })
+    }
     this.setState({
-      playHtml,
-      mInfo
+      type: playData.type,
+      mInfo,
+      danmu
     })
   }
 
@@ -225,17 +235,26 @@ class Play extends Component {
     const {
       params: { id, pid }
     } = this.$router
-    const {
-      player: { data = {} }
-    } = this.props
-    const { playHtml, mInfo } = this.state
+    const { player } = this.props
+    const data = (player[`${id}-${pid}`] || {}).data || {}
+    const { type, url, mInfo } = this.state
     const { listName, listId, listNameBig, list = [], pic, title, pan, subTitle, actor = '', up, down, prev, next, mcid = [] } = data
     return (
       <Block>
         <View className='player'>
           <View className='wp pt20'>
             <View className='player-box'>
-              <View dangerouslySetInnerHTML={{ __html: playHtml }} />
+                --{url} {type}--
+                <Video
+                  src={url}
+                  controls={true}
+                  autoplay={false}
+                  poster='https://ww1.sinaimg.cn/large/87c01ec7gy1fqhvm91iodj21hc0u046d.jpg'
+                  initialTime='0'
+                  id='video'
+                  loop={false}
+                  muted={false}
+                />
             </View>
             <View className='player-info'>
               <View className='player-title'>
@@ -288,7 +307,7 @@ class Play extends Component {
           </View>
         </View>
         <PlayList vid={id} pid={pid} />
-        <div className='wp clearfix'>
+        {/* <div className='wp clearfix'>
           <div className='fl left box'>
             <div className='mt20'>
               <div className='title'>
@@ -297,7 +316,7 @@ class Play extends Component {
               {id ? <DetailActor actor={actor} no={id} /> : null}
             </div>
           </div>
-        </div>
+        </div> */}
       </Block>
     )
   }

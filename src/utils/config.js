@@ -47,6 +47,8 @@ export default {
     getplaylog: `${apiReact}getplaylog`, // 获取观看记录 需登录
     addplaylog: `${apiReact}addplaylog`, // 添加观看记录 需登录
     emptyhistory: `${apiReact}emptyhistory`, // 清空观看记录 需登录
-    delplaylog: `${apiReact}delplaylog` // 删除观看记录 需登录
+    delplaylog: `${apiReact}delplaylog`, // 删除观看记录 需登录
+    // 解析
+    yunpan: `${apiHome}api-yunpan` // 获取360云盘真实地址
   }
 }

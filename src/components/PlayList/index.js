@@ -1,7 +1,7 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Text, Block } from '@tarojs/components'
 
-import A from '@/components/A'
+import Ar from '@/components/Ar'
 import { bindActionCreators } from 'redux'
 import { connect } from '@tarojs/redux'
 
@@ -80,7 +80,7 @@ class PlayList extends Component {
             <View>
               {(isReverse ? data.reverse() : data).map(item => (
                 <View className={cls(item.episode)} key={item.episode}>
-                  <A url={`/pages/play/index?id=${vid}&pid=${item.episode}`}>{firstNumber(item.title)}</A>
+                  <Ar url={`/pages/play/index?id=${vid}&pid=${item.episode}`}>{firstNumber(item.title)}</Ar>
                 </View>
               ))}
             </View>

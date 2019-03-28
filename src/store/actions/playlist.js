@@ -1,6 +1,6 @@
 import loadData from '@/utils/loadData'
 
-export function playlist({ id }) {
+export const playlist = ({ id }) => {
   return (dispatch, getState) => {
     return loadData({
       dispatch,

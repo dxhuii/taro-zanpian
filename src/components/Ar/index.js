@@ -1,8 +1,8 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View } from '@tarojs/components'
 
-export default class A extends Component {
-  handleClick = url => Taro.navigateTo({ url })
+export default class Ar extends Component {
+  handleClick = url => Taro.redirectTo({ url })
 
   render() {
     const { url } = this.props
