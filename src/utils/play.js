@@ -43,19 +43,10 @@ const acfun = pv => {
   if (pv.indexOf('ab') !== -1) {
     data = pv.split('ab')
     const ab = data[1].split(',')
-    if (ab.length === 2) {
-      vid = ab[0] + '_' + ab[1]
-    } else {
-      vid = data[1]
-    }
+    vid = ab.length === 2 ? ab[0] + '_' + ab[1] : data[1]
   } else {
     data = pv.split(',')
-    const len = data.length
-    if (len === 2) {
-      vid = data[0] + '_' + data[1]
-    } else {
-      vid = pv
-    }
+    vid = data.length === 2 ? data[0] + '_' + data[1] : pv
   }
   return 'https://m.acfun.cn/v/?' + (pv.indexOf('ab') !== -1 ? 'ab' : 'ac') + '=' + vid
 }
