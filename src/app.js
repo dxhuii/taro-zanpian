@@ -20,7 +20,7 @@ const store = configStore()
 
 class App extends Component {
   config = {
-    pages: ['pages/index/index', 'pages/top/index', 'pages/subject/index', 'pages/play/index'],
+    pages: ['pages/index/index', 'pages/top/index', 'pages/subject/index', 'pages/play/index', 'pages/article/index'],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',

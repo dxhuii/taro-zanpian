@@ -16,7 +16,6 @@ import DetailActor from '@/components/DetailActor'
 import A from '@/components/A'
 import Ar from '@/components/Ar'
 
-import { globalData } from '@/utils'
 import playing from '@/utils/play'
 
 import './style.scss'
@@ -183,34 +182,6 @@ class Play extends Component {
       mInfo,
       danmu
     })
-  }
-
-  getName(id) {
-    let name = ''
-    switch (id) {
-      case 201:
-        name = 'tv'
-        break
-      case 202:
-        name = 'ova'
-        break
-      case 203:
-        name = 'juchang'
-        break
-      case 4:
-        name = 'tebie'
-        break
-      case 204:
-        name = 'zhenren'
-        break
-      case 35:
-        name = 'qita'
-        break
-      default:
-        name = 'list'
-        break
-    }
-    return name
   }
 
   async onDigg(type, id) {
