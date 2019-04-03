@@ -13,6 +13,8 @@ import { getUserInfo } from '@/store/reducers/user'
 
 import PlayList from '@/components/PlayList'
 import DetailActor from '@/components/DetailActor'
+import A from '@/components/A'
+import Ar from '@/components/Ar'
 
 import { globalData } from '@/utils'
 import playing from '@/utils/play'
@@ -231,6 +233,15 @@ class Play extends Component {
     }
   }
 
+  copyPLay(data) {
+    Taro.setClipboardData({
+      data,
+      success(res) {
+        console.log(res)
+      }
+    })
+  }
+
   render() {
     const {
       params: { id, pid }
@@ -244,24 +255,22 @@ class Play extends Component {
         <View className='player'>
           <View className='wp pt20'>
             <View className='player-box'>
-                --{url} {type}--
-                <Video
-                  src={url}
-                  controls={true}
-                  autoplay={false}
-                  poster='https://ww1.sinaimg.cn/large/87c01ec7gy1fqhvm91iodj21hc0u046d.jpg'
-                  initialTime='0'
-                  id='video'
-                  loop={false}
-                  muted={false}
-                />
+              --{url} {type}--
+              {type === 'http' ? (
+                <View onClick={this.copyPLay.bind(this, url)}>
+                  <Text>播放地址已经生成，点击复制，使用浏览器打开观看</Text>
+                </View>
+              ) : (
+                <Video src={url} controls autoplay={false} poster='https://ww1.sinaimg.cn/large/87c01ec7gy1fqhvm91iodj21hc0u046d.jpg' initialTime='0' id='video' loop={false} muted={false} />
+              )}
             </View>
             <View className='player-info'>
               <View className='player-title'>
-                <h1>
-                  <Link to={`/subject/${id}`}>{title}</Link>：
-                </h1>
-                <h4>{subTitle}</h4>
+                <A url={`/subject/${id}`}>
+                  <Text>
+                    {title}：{subTitle}
+                  </Text>
+                </A>
               </View>
               <View className='playlist'>
                 {list.map(item => (
@@ -276,17 +285,17 @@ class Play extends Component {
                 {mInfo.playTitle}
               </div>
               <div className='play-next'>
-                {prev ? <Link to={`/play/${id}/${prev}`}>上一集</Link> : null}
-                {next ? <Link to={`/play/${id}/${next}`}>下一集</Link> : null}
+                {prev ? <Ar url={`/pages/play/index?id=${id}&pid=${prev}`}>上一集</Ar> : null}
+                {next ? <Ar url={`/pages/play/index?id=${id}&pid=${next}`}>下一集</Ar> : null}
               </div>
             </View>
             <View className='play-tool'>
               <View className='digg' onClick={() => this.onDigg('up', id)} ref={e => (this.up = e)}>
-                <i className='iconfont'>&#xe607;</i>
-                <span>{up}</span>
+                <Text className='iconfont'>&#xe607;</Text>
+                <Text>{up}</Text>
               </View>
               <View className='digg' onClick={() => this.onDigg('down', id)} ref={e => (this.down = e)}>
-                <i className='iconfont'>&#xe606;</i>
+                <Text className='iconfont'>&#xe606;</Text>
                 <span>{down}</span>
               </View>
               <View className='mcid'>
