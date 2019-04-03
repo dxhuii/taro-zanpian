@@ -24,8 +24,7 @@ class PlayList extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      isReverse: false,
-      isAll: false
+      isReverse: false
     }
   }
 
@@ -42,19 +41,13 @@ class PlayList extends Component {
     })
   }
 
-  isAll = () => {
-    this.setState({
-      isAll: !this.state.isAll
-    })
-  }
-
   render() {
     const {
       play: { loading, data = [] },
       vid,
       pid
     } = this.props
-    const { isReverse, isAll } = this.state
+    const { isReverse } = this.state
     if (loading && data.length) {
       Taro.showLoading()
     } else {
@@ -65,22 +58,16 @@ class PlayList extends Component {
       <Block>
         {data.length ? (
           <View className='playlistbox'>
-            <View className={`moblie-list ${isAll ? 'showAll' : ''}`} />
             <View className='moblie-title'>
-              <View>
-                <Text>分集</Text>
-              </View>
-              <View onClick={this.onReverse}>{isReverse ? '倒序' : '正序'}</View>
-              {isAll ? (
-                <Text className='iconfont' onClick={this.isAll}>
-                  &#xe610;
-                </Text>
-              ) : null}
+              <Text className='title'>分集</Text>
+              <Text onClick={this.onReverse}>{isReverse ? '倒序' : '正序'}</Text>
             </View>
-            <View>
-              {(isReverse ? data.reverse() : data).map(item => (
-                <View className={cls(item.episode)} key={item.episode}>
-                  <Ar url={`/pages/play/index?id=${vid}&pid=${item.episode}`}>{firstNumber(item.title)}</Ar>
+            <View className='play-list'>
+              {data.map(item => (
+                <View className={`play-list__li ${cls(item.episode)}`} key={item.episode}>
+                  <Ar url={`/pages/play/index?id=${vid}&pid=${item.episode}`}>
+                    <Text className='ep'>{firstNumber(item.title)}</Text>
+                  </Ar>
                 </View>
               ))}
             </View>

@@ -51,24 +51,28 @@ class DetailActor extends Component {
       Taro.hideLoading()
     }
     return (
-      <View className='d-item'>
+      <View className='item'>
         {data.map(item => (
-          <View key={item.id}>
+          <View className='item-list' key={item.id}>
+            <View className='item-list__pic'>
+              <A url={`/pages/subject/index?id=${item.id}`}>
+                <Image className='item-list__pic-img' src={formatPic(item.pic, 'orj360')} alt={item.title} />
+              </A>
+            </View>
             <A url={`/pages/subject/index?id=${item.id}`}>
-              <Image className='load-demand' src={formatPic(item.pic, 'orj360')} alt={item.title} />
-              <Text>{item.title}</Text>
+              <Text className='item-list__title'>{item.title}</Text>
             </A>
             <A url={`/pages/play/index?id=${item.id}&pid=${item.pid}`}>
               {isNumber(item.status) ? (
                 item.isDate ? (
-                  <Text className='today'>更新至{item.status}话</Text>
+                  <Text className='today item-list__text'>更新至{item.status}话</Text>
                 ) : (
-                  <Text>更新至{item.status}话</Text>
+                  <Text className='item-list__text'>更新至{item.status}话</Text>
                 )
               ) : item.isDate ? (
-                <Text className='today'>{item.status}</Text>
+                <Text className='today item-list__text'>{item.status}</Text>
               ) : (
-                <Text>{item.status}</Text>
+                <Text className='item-list__text'>{item.status}</Text>
               )}
             </A>
           </View>

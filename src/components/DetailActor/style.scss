@@ -1,107 +1,63 @@
 @import '../../pages/_mixin';
-.d-item {
+
+.item {
   display: flex;
   flex-wrap: wrap;
-  padding-top: 20px;
-  width: 910px;
-  margin-left: -10px;
-  li {
-    position: relative;
-    width: 155px;
-    margin: 0 12.5px 25px;
-    &:nth-child(5n) {
-      margin-right: 0;
-    }
-    div {
-      position: relative;
-      z-index: 2;
-      width: 100%;
-      height: 195px;
-      border-radius: 4px;
-      overflow: hidden;
-      box-shadow: 0 3px 14px 0 rgba(203, 193, 187, .40);
-    }
-    img {
-      position: absolute;
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      margin: auto;
-      overflow: auto;
-      display: block;
-      width: 100%;
-    }
-    p {
-      margin-top: 6px;
-      height: 16px;
-      line-height: 16px;
-      color: #999;
-      overflow: hidden;
-      &.today {
-        color: #0084ff;
-      }
-    }
-    h3 {
-      margin: 15px 0;
-      height: 20px;
-      line-height: 20px;
-      font-size: 16px;
-      font-weight: blod;
-      color: #333;
-      @include clamp(1);
-      &:hover {
-        color: #0084ff;
-      }
-    }
+  padding: 20px 2%;
+  width: 100%;
+}
+
+.item-list {
+  position: relative;
+  width: 30.8%;
+  margin: 0 2% 30px 0;
+
+  &:nth-child(10) {
+    display: none;
   }
 }
 
-@media (min-width: 0) and (max-width: 1200px) {
-  .d-item {
-    padding-top: 15px;
-    width: 100%;
-    margin-left: 0;
-    li {
-      width: 32%;
-      margin: 0 2% 15px 0;
-      &:nth-child(5n) {
-        margin-right: 2%;
-      }
-      &:nth-child(3n) {
-        margin-right: 0;
-      }
-      &:last-child {
-        display: none;
-      }
-      div {
-        height: 150px;
-      }
-      h3 {
-        margin: 10px 0;
-        font-size: 14px;
-      }
-      p {
-        margin-top: 0;
-        font-size: 14px;
-      }
-    }
+.item-list__pic {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 300px;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 3px 14px 0 rgba(203, 193, 187, .40);
+}
+
+.item-list__pic-img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  overflow: auto;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.item-list__text {
+  font-size: 28px;
+  color: #999;
+  overflow: hidden;
+
+  &.today {
+    color: #0084ff;
   }
 }
 
-@media (min-width: 0px) and (max-width: 413px) {
-  .d-item {
-    li {
-      div {
-        height: 135px;
-      }
-      h3 {
-        font-size: 12px;
-        margin: 5px 0;
-      }
-      p {
-        font-size: 12px;
-      }
-    }
+.item-list__title {
+  margin-top: 10px;
+  font-size: 28px;
+  font-weight: blod;
+  color: #333;
+  @include clamp(1);
+
+  &:hover {
+    color: #0084ff;
   }
 }
