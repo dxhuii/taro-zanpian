@@ -32,14 +32,10 @@ class Article extends Component {
 
   async componentDidMount() {
     const {
-      match: {
-        params: { id }
-      },
-      article,
-      data,
-      hits
-    } = this.props
-    if (!data[id].data) {
+      params: { id }
+    } = this.$router
+    const { article, data, hits } = this.props
+    if (!(data[id] || {}).data) {
       article({ id })
     }
     hits({ id, sid: 2 })
@@ -47,12 +43,11 @@ class Article extends Component {
 
   onShareAppMessage(res) {
     const {
-      data: { data = {} }
-    } = this.props
-    const {
       params: { id }
     } = this.$router
-    const { title, pic = '', name } = data
+    const { data } = this.props
+    const dataSource = (data[id] || {}).data || {}
+    const { title, pic = '', name } = dataSource
     if (res.from === 'button') {
       // 来自页面内转发按钮
       console.log(res.target)
@@ -64,13 +59,23 @@ class Article extends Component {
     }
   }
 
+  copy(data) {
+    Taro.setClipboardData({
+      data,
+      success(res) {
+        console.log(res)
+      }
+    })
+  }
+
   render() {
     const {
-      data: { data = {} }
-    } = this.props
+      params: { id }
+    } = this.$router
+    const { data } = this.props
+    const dataSource = (data[id] || {}).data || {}
     const {
       title,
-      id,
       name,
       cid,
       pic = '',
@@ -86,7 +91,7 @@ class Article extends Component {
       content = '',
       playname = '',
       playurl = ''
-    } = data
+    } = dataSource
     const { type, url } = playing(playname, playurl)
     return (
       <View styleName='article-body'>
@@ -110,20 +115,20 @@ class Article extends Component {
         ) : null}
         <View styleName='article-content' dangerouslySetInnerHTML={{ __html: content }} />
         {tag.map((item, index) => (
-          <A to={`/pages/search/index?keyword=${item}`} key={`tag_${index}`}>
+          <A url={`/pages/search/index?keyword=${item}`} key={`tag_${index}`}>
             #{item}
           </A>
         ))}
         <View styleName='article-context' className='mt20'>
           {prev ? (
-            <Text>
-              上一篇：<Ar to={`/pages/article/index?id=${prev.id}`}>{prev.title}</Ar>
-            </Text>
+            <View>
+              上一篇：<Ar url={`/pages/article/index?id=${prev.id}`}>{prev.title}</Ar>
+            </View>
           ) : null}
           {next ? (
-            <Text>
-              下一篇：<Ar to={`/pages/article/index?id=${next.id}`}>{next.title}</Ar>
-            </Text>
+            <View>
+              下一篇：<Ar url={`/pages/article/index?id=${next.id}`}>{next.title}</Ar>
+            </View>
           ) : null}
         </View>
       </View>
