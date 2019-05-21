@@ -57,9 +57,9 @@ class PlayList extends Component {
     return (
       <Block>
         {data.length ? (
-          <View className='playlistbox'>
-            <View className='moblie-title'>
-              <Text className='title'>分集</Text>
+          <View className='play-box'>
+            <View className='play-title'>
+              <Text className='play-title__h2'>分集</Text>
               <Text onClick={this.onReverse}>{isReverse ? '倒序' : '正序'}</Text>
             </View>
             <View className='play-list'>

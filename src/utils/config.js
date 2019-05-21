@@ -1,6 +1,7 @@
 const API = 'https://api.99496.com/'
 const apiReact = `${API}api.php?s=home-react-`
 const apiHome = `${API}api.php?s=home-`
+const apiOther = `${API}api.php?s=home-other-`
 
 export default {
   api: {
@@ -49,6 +50,6 @@ export default {
     emptyhistory: `${apiReact}emptyhistory`, // 清空观看记录 需登录
     delplaylog: `${apiReact}delplaylog`, // 删除观看记录 需登录
     // 解析
-    yunpan: `${apiHome}api-yunpan` // 获取360云盘真实地址
+    getplayUrl: `${apiOther}getUrl` // 获取解析地址
   }
 }

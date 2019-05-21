@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { bindActionCreators } from 'redux'
 import { connect } from '@tarojs/redux'
 
-import { playerLoad, yunpan } from '@/store/actions/player'
+import { playerLoad, getPlayUrl } from '@/store/actions/player'
 import { digg } from '@/store/actions/mark'
 import { hits } from '@/store/actions/hits'
 import { addplaylog } from '@/store/actions/history'
@@ -16,6 +16,8 @@ import DetailActor from '@/components/DetailActor'
 import A from '@/components/A'
 import Ar from '@/components/Ar'
 
+import '@/utils/base64.min'
+import authcode from '@/utils/authcode'
 import playing from '@/utils/play'
 
 import './style.scss'
@@ -30,7 +32,7 @@ import './style.scss'
     digg: bindActionCreators(digg, dispatch),
     addplaylog: bindActionCreators(addplaylog, dispatch),
     hits: bindActionCreators(hits, dispatch),
-    yunpan: bindActionCreators(yunpan, dispatch)
+    getPlayUrl: bindActionCreators(getPlayUrl, dispatch)
   })
 )
 class Play extends Component {
@@ -151,26 +153,26 @@ class Play extends Component {
     const {
       params: { id, pid }
     } = this.$router
-    const { player, yunpan } = this.props
+    const { player, getPlayUrl } = this.props
     const data = (player[`${id}-${pid}`] || {}).data || {}
     const { play, type } = this.state
-    const { list = [] } = data
+    const { list = [], key } = data
     const other = this.getOther(list) || {}
     const danmu = `${id}_${pid}`
     const isA = other.length > 0
     const { playName, vid, playTitle } = isA ? other[0] : list[0]
     let playData = ''
     if (play) {
-      playData = playing(type, play)
+      playData = playing(type, authcode(atob(play), 'DECODE', key, 0))
     } else {
-      playData = playing(playName, vid)
+      playData = playing(playName, authcode(atob(vid), 'DECODE', key, 0))
     }
     const mInfo = { playName, vid, playTitle }
     console.log(play, playData, isA, 'getdata')
-    if (playData.type === 'yunpan') {
-      let [err, data] = await yunpan({ name: playData.url })
+    if (/yunpan|360|s360|ksyun|mp4/.test(playData.type)) {
+      let [err, data] = await getPlayUrl({ type: playData.type, name: playData.url })
       this.setState({
-        url: data
+        url: data.data
       })
     } else {
       this.setState({
