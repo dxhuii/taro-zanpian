@@ -53,7 +53,7 @@ class PlayList extends Component {
     } else {
       Taro.hideLoading()
     }
-    const cls = id => (pid === id ? 'active' : '')
+    const cls = id => (+pid === id ? 'active' : '')
     return (
       <Block>
         {data.length ? (
