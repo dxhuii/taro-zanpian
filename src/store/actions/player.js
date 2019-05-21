@@ -16,12 +16,13 @@ export function playerLoad({ id, pid }) {
   }
 }
 
-export const yunpan = ({ name }) => {
+export const getPlayUrl = ({ type, name }) => {
   return (dispatch, getState) => {
     return new Promise(async (resolve, reject) => {
       let [err, data] = await Ajax({
-        url: config.api.yunpan,
+        url: config.api.getplayUrl,
         data: {
+          type,
           name
         },
         method: 'get'

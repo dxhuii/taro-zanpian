@@ -40,7 +40,7 @@ export const trim = str => {
 export const firstNumber = str => {
   const isN = /pv|PV|SP|sp|全集|总集/.exec(str) || []
   if (isN.index === 0) {
-    return str
+    return /pv|PV|SP|sp|全集|总集/.test(str) ? str.substring(0, 2) : str
   } else {
     const reg = /\d+/g
     const arr = str.match(reg)

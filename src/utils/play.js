@@ -108,9 +108,9 @@ const isPlay = (name, pv) => {
     } else if (name === 'qqq') {
       url = `https://quan.qq.com/video/1098_${pv}`
       type = 'mp4'
-    } else if (name === 'yunpan') {
+    } else if (name === 'yunpan' || name === '360' || name === 's360' || name === 'ksyun') {
       url = pv
-      type = 'yunpan'
+      type = name
     } else if (/.html|.shtml|.htm|https:\/\/|http:\/\//.test(pv)) {
       url = pv
       type = 'http'
