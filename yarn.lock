@@ -87,7 +87,7 @@
   dependencies:
     regenerator-runtime "^0.12.0"
 
-"@babel/runtime@^7.3.1", "@babel/runtime@^7.3.4":
+"@babel/runtime@^7.3.1":
   version "7.4.2"
   resolved "http://npm.boqii.com:80/@babel%2fruntime/-/runtime-7.4.2.tgz#f5ab6897320f16decd855eed70b705908a313fe8"
   integrity sha1-9atolzIPFt7NhV7tcLcFkIoxP+g=
@@ -287,24 +287,21 @@
     component-type "^1.2.1"
     join-component "^1.1.0"
 
-"@tarojs/async-await@^1.2.22":
-  version "1.2.22"
-  resolved "http://npm.boqii.com:80/@tarojs%2fasync-await/-/async-await-1.2.22.tgz#70d14effd401ed9acab3e98d89776bfab1cb704a"
-  integrity sha1-cNFO/9QB7ZrKs+mNiXdr+rHLcEo=
+"@tarojs/async-await@1.3.0-beta.3":
+  version "1.3.0-beta.3"
+  resolved "http://npm.boqii.com:80/@tarojs%2fasync-await/-/async-await-1.3.0-beta.3.tgz#3538a96dc7b16fd7cbb4dcb640ef048b6c5d3996"
+  integrity sha1-NTipbcexb9fLtNy2QO8Ei2xdOZY=
   dependencies:
     promise-polyfill "^7.1.2"
     regenerator-runtime "^0.11.1"
 
-"@tarojs/components-rn@^1.2.22":
-  version "1.2.22"
-  resolved "http://npm.boqii.com:80/@tarojs%2fcomponents-rn/-/components-rn-1.2.22.tgz#595b8dbcfe9aac3009423b72a35631351443421f"
-  integrity sha1-WVuNvP6arDAJQjtyo1YxNRRDQh8=
+"@tarojs/components-rn@1.3.0-beta.3":
+  version "1.3.0-beta.3"
+  resolved "http://npm.boqii.com:80/@tarojs%2fcomponents-rn/-/components-rn-1.3.0-beta.3.tgz#fd147ae0b2dbd52d8588bfe2b64ae2e4a4e6ff6f"
+  integrity sha1-/RR64LLb1S2FiL/itkri5KTm/28=
   dependencies:
     "@ant-design/react-native" "^3.1.4"
-    "@babel/runtime" "^7.3.4"
     "@nart/react-native-swiper" "^1.5.13"
-    array-tree-filter "^2.1.0"
-    deepmerge "^3.2.0"
     prop-types "^15.6.2"
     react-dom "^16.4.0"
     react-mixin "^5.0.0"
@@ -312,68 +309,68 @@
     react-timer-mixin "^0.13.4"
     utility-types "^3.4.1"
 
-"@tarojs/components@^1.2.22":
-  version "1.2.22"
-  resolved "http://npm.boqii.com:80/@tarojs%2fcomponents/-/components-1.2.22.tgz#779e171efb09a8f3e12a58c13681cf3e4b615e80"
-  integrity sha1-d54XHvsJqPPhKljBNoHPPkthXoA=
+"@tarojs/components@1.3.0-beta.3":
+  version "1.3.0-beta.3"
+  resolved "http://npm.boqii.com:80/@tarojs%2fcomponents/-/components-1.3.0-beta.3.tgz#f41684cf0ab0176e51264d9faecac6a2f1269a5c"
+  integrity sha1-9BaEzwqwF25RJk2frsrGovEmmlw=
   dependencies:
     better-scroll "^1.14.1"
     classnames "^2.2.5"
-    nervjs "^1.3.0"
     omit.js "^1.0.0"
     resolve-pathname "^3.0.0"
     swiper "^4.4.2"
     weui "^1.1.2"
 
-"@tarojs/plugin-babel@^1.2.22":
-  version "1.2.22"
-  resolved "http://npm.boqii.com:80/@tarojs%2fplugin-babel/-/plugin-babel-1.2.22.tgz#114e61f77cdc43f70834f6821a0dbf631b97ab99"
-  integrity sha1-EU5h93zcQ/cINPaCGg2/YxuXq5k=
+"@tarojs/plugin-babel@1.3.0-beta.3":
+  version "1.3.0-beta.3"
+  resolved "http://npm.boqii.com:80/@tarojs%2fplugin-babel/-/plugin-babel-1.3.0-beta.3.tgz#759d3c2bcb25bdbe0c0c43350fe3d70696825cbe"
+  integrity sha1-dZ08K8slvb4MDEM1D+PXBpaCXL4=
   dependencies:
     babel-core "^6.26.0"
 
-"@tarojs/plugin-csso@^1.2.22":
-  version "1.2.22"
-  resolved "http://npm.boqii.com:80/@tarojs%2fplugin-csso/-/plugin-csso-1.2.22.tgz#f3f6db1a2e073858cbc5794c3984832a95f05f16"
-  integrity sha1-8/bbGi4HOFjLxXlMOYSDKpXwXxY=
+"@tarojs/plugin-csso@1.3.0-beta.3":
+  version "1.3.0-beta.3"
+  resolved "http://npm.boqii.com:80/@tarojs%2fplugin-csso/-/plugin-csso-1.3.0-beta.3.tgz#c7455a32d7b099aa743bce5ab20911136f013ed0"
+  integrity sha1-x0VaMtewmap0O85asgkRE28BPtA=
   dependencies:
     csso "^3.5.0"
 
-"@tarojs/plugin-sass@^1.2.22":
-  version "1.2.22"
-  resolved "http://npm.boqii.com:80/@tarojs%2fplugin-sass/-/plugin-sass-1.2.22.tgz#bec37b3a0051d3c5d91ea3d5beb02011026918f6"
-  integrity sha1-vsN7OgBR08XZHqPVvrAgEQJpGPY=
+"@tarojs/plugin-sass@1.3.0-beta.3":
+  version "1.3.0-beta.3"
+  resolved "http://npm.boqii.com:80/@tarojs%2fplugin-sass/-/plugin-sass-1.3.0-beta.3.tgz#8a4cb22e4a034d7e561eb3822d1b3277b63da795"
+  integrity sha1-ikyyLkoDTX5WHrOCLRsyd7Y9p5U=
   dependencies:
-    node-sass "^4.11.0"
+    dart-sass "^1.17.4"
+    scss-bundle "^2.5.1"
 
-"@tarojs/plugin-uglifyjs@^1.2.22":
-  version "1.2.22"
-  resolved "http://npm.boqii.com:80/@tarojs%2fplugin-uglifyjs/-/plugin-uglifyjs-1.2.22.tgz#ed2199ad47015d8e2713fe1ce3680de207ca15fb"
-  integrity sha1-7SGZrUcBXY4nE/4c42gN4gfKFfs=
+"@tarojs/plugin-uglifyjs@1.3.0-beta.3":
+  version "1.3.0-beta.3"
+  resolved "http://npm.boqii.com:80/@tarojs%2fplugin-uglifyjs/-/plugin-uglifyjs-1.3.0-beta.3.tgz#36f91b7268e411ce75212ea9d88bbe22198dda35"
+  integrity sha1-NvkbcmjkEc51IS6p2Iu+IhmN2jU=
   dependencies:
     uglify-js "^3.3.24"
 
-"@tarojs/redux-h5@^1.2.22":
-  version "1.2.22"
-  resolved "http://npm.boqii.com:80/@tarojs%2fredux-h5/-/redux-h5-1.2.22.tgz#aa455a4459ef5d0dd53c9fd7f8c655db9d3b1785"
-  integrity sha1-qkVaRFnvXQ3VPJ/X+MZV2507F4U=
+"@tarojs/redux-h5@1.3.0-beta.3":
+  version "1.3.0-beta.3"
+  resolved "http://npm.boqii.com:80/@tarojs%2fredux-h5/-/redux-h5-1.3.0-beta.3.tgz#160a09901d286f34824f9873a0fb84f2210266a0"
+  integrity sha1-FgoJkB0obzSCT5hzoPuE8iECZqA=
   dependencies:
     hoist-non-react-statics "^2.5.0"
     invariant "^2.2.4"
     loose-envify "^1.1.0"
     prop-types "^15.6.1"
 
-"@tarojs/redux@^1.2.22":
-  version "1.2.22"
-  resolved "http://npm.boqii.com:80/@tarojs%2fredux/-/redux-1.2.22.tgz#17c8b9e9b8d615bc81d84a9cd0ac09888c9deffe"
-  integrity sha1-F8i56bjWFbyB2Eqc0KwJiIyd7/4=
+"@tarojs/redux@1.3.0-beta.3":
+  version "1.3.0-beta.3"
+  resolved "http://npm.boqii.com:80/@tarojs%2fredux/-/redux-1.3.0-beta.3.tgz#930624a8b62bc259ad1f2f17a4a92707c13cbf42"
+  integrity sha1-kwYkqLYrwlmtHy8XpKknB8E8v0I=
   dependencies:
-    "@tarojs/utils" "1.2.22"
+    "@tarojs/utils" "1.3.0-beta.3"
 
-"@tarojs/rn-runner@^1.2.22":
-  version "1.2.22"
-  resolved "http://npm.boqii.com:80/@tarojs%2frn-runner/-/rn-runner-1.2.22.tgz#9a414708561d59f52c0c62fb2419bd715d6e66de"
-  integrity sha1-mkFHCFYdWfUsDGL7JBm9cV1uZt4=
+"@tarojs/rn-runner@1.3.0-beta.3":
+  version "1.3.0-beta.3"
+  resolved "http://npm.boqii.com:80/@tarojs%2frn-runner/-/rn-runner-1.3.0-beta.3.tgz#9dd6f8835fc49660f22887628acbb9fd423ed773"
+  integrity sha1-ndb4g1/ElmDyKIdiisu5/UI+13M=
   dependencies:
     "@expo/bunyan" "1.8.10"
     babel-runtime "^6.9.2"
@@ -391,10 +388,10 @@
     rimraf "^2.6.1"
     xdl "48.1.4"
 
-"@tarojs/router@^1.2.22":
-  version "1.2.22"
-  resolved "http://npm.boqii.com:80/@tarojs%2frouter/-/router-1.2.22.tgz#70b71ce904d2bf8ea0d4b99308c5defeb7a07871"
-  integrity sha1-cLcc6QTSv46g1LmTCMXe/regeHE=
+"@tarojs/router@1.3.0-beta.3":
+  version "1.3.0-beta.3"
+  resolved "http://npm.boqii.com:80/@tarojs%2frouter/-/router-1.3.0-beta.3.tgz#bc756917173ce8901cf851f39053ef8c8cfcf367"
+  integrity sha1-vHVpFxc86JAc+FHzkFPvjIz882c=
   dependencies:
     invariant "2.2.4"
     lodash "4.17.11"
@@ -403,53 +400,55 @@
     value-equal "0.4.0"
     warning "4.0.2"
 
-"@tarojs/taro-alipay@^1.2.22":
-  version "1.2.22"
-  resolved "http://npm.boqii.com:80/@tarojs%2ftaro-alipay/-/taro-alipay-1.2.22.tgz#ebcd958802300c6ee22bc05b9485c9410d2086ff"
-  integrity sha1-682ViAIwDG7iK8BblIXJQQ0ghv8=
+"@tarojs/taro-alipay@1.3.0-beta.3":
+  version "1.3.0-beta.3"
+  resolved "http://npm.boqii.com:80/@tarojs%2ftaro-alipay/-/taro-alipay-1.3.0-beta.3.tgz#753c9b1caf261f8de1643bd31c5157edfea60c78"
+  integrity sha1-dTybHK8mH43hZDvTHFFX7f6mDHg=
   dependencies:
-    "@tarojs/taro" "1.2.22"
-    "@tarojs/utils" "1.2.22"
+    "@tarojs/taro" "1.3.0-beta.3"
+    "@tarojs/utils" "1.3.0-beta.3"
     lodash "^4.17.10"
     prop-types "^15.6.1"
 
-"@tarojs/taro-h5@1.2.22", "@tarojs/taro-h5@^1.2.22":
-  version "1.2.22"
-  resolved "http://npm.boqii.com:80/@tarojs%2ftaro-h5/-/taro-h5-1.2.22.tgz#349ec759b5bda543558fd6a516e663da8bc974fa"
-  integrity sha1-NJ7HWbW9pUNVj9alFuZj2ovJdPo=
+"@tarojs/taro-h5@1.3.0-beta.3":
+  version "1.3.0-beta.3"
+  resolved "http://npm.boqii.com:80/@tarojs%2ftaro-h5/-/taro-h5-1.3.0-beta.3.tgz#a16653f32f668eb492cccbd63b5867ec5b07f98b"
+  integrity sha1-oWZT8y9mjrSSzMvWO1hn7FsH+Ys=
   dependencies:
     base64-js "^1.3.0"
     jsonp-retry "^1.0.3"
     mobile-detect "^1.4.2"
+    raf "^3.4.1"
     whatwg-fetch "^2.0.4"
 
-"@tarojs/taro-rn@^1.2.22":
-  version "1.2.22"
-  resolved "http://npm.boqii.com:80/@tarojs%2ftaro-rn/-/taro-rn-1.2.22.tgz#bd06b52b28e40b1435b68a8e46d02e83b037e813"
-  integrity sha1-vQa1KyjkCxQ1toqORtAug7A36BM=
+"@tarojs/taro-rn@1.3.0-beta.3":
+  version "1.3.0-beta.3"
+  resolved "http://npm.boqii.com:80/@tarojs%2ftaro-rn/-/taro-rn-1.3.0-beta.3.tgz#435744c18d1a788ffbe91ab1c4ee68196ec080e7"
+  integrity sha1-Q1dEwY0aeI/76RqxxO5oGW7AgOc=
   dependencies:
-    "@tarojs/taro" "1.2.22"
+    "@tarojs/taro" "1.3.0-beta.3"
     base64-js "^1.3.0"
+    react-native-image-crop-picker "^0.23.1"
     react-native-image-zoom-viewer "^2.2.13"
     react-native-root-siblings "^3.1.0"
     react-native-root-toast "^3.0.1"
     react-native-stylekit "^1.0.0"
 
-"@tarojs/taro-router-rn@^1.2.22":
-  version "1.2.22"
-  resolved "http://npm.boqii.com:80/@tarojs%2ftaro-router-rn/-/taro-router-rn-1.2.22.tgz#cdd0bc763b15e2117221057a450a0940e81ae2c4"
-  integrity sha1-zdC8djsV4hFyIQV6RQoJQOga4sQ=
+"@tarojs/taro-router-rn@1.3.0-beta.3":
+  version "1.3.0-beta.3"
+  resolved "http://npm.boqii.com:80/@tarojs%2ftaro-router-rn/-/taro-router-rn-1.3.0-beta.3.tgz#ab4a8b1dfdd480564435332532079f0d841c0ccf"
+  integrity sha1-q0qLHf3UgFZENTMlMgefDYQcDM8=
   dependencies:
     query-string "^6.1.0"
     react-navigation "^2.7.0"
 
-"@tarojs/taro-swan@^1.2.22":
-  version "1.2.22"
-  resolved "http://npm.boqii.com:80/@tarojs%2ftaro-swan/-/taro-swan-1.2.22.tgz#7ad56b97fb6394eb1a07861ae53b56f189ba9cb5"
-  integrity sha1-etVrl/tjlOsaB4Ya5TtW8Ym6nLU=
+"@tarojs/taro-swan@1.3.0-beta.3":
+  version "1.3.0-beta.3"
+  resolved "http://npm.boqii.com:80/@tarojs%2ftaro-swan/-/taro-swan-1.3.0-beta.3.tgz#f22ea4e4deaf627ba02754bed66d799028bde8a0"
+  integrity sha1-8i6k5N6vYnugJ1S+1m15kCi96KA=
   dependencies:
-    "@tarojs/taro" "1.2.22"
-    "@tarojs/utils" "1.2.22"
+    "@tarojs/taro" "1.3.0-beta.3"
+    "@tarojs/utils" "1.3.0-beta.3"
     lodash "^4.17.10"
     prop-types "^15.6.1"
 
@@ -463,55 +462,66 @@
     lodash "^4.17.10"
     prop-types "^15.6.1"
 
-"@tarojs/taro-weapp@^1.2.22":
-  version "1.2.22"
-  resolved "http://npm.boqii.com:80/@tarojs%2ftaro-weapp/-/taro-weapp-1.2.22.tgz#8fc546c3892d584eff2db917a1505d9ac1fc90ea"
-  integrity sha1-j8VGw4ktWE7/LbkXoVBdmsH8kOo=
+"@tarojs/taro-weapp@1.3.0-beta.3":
+  version "1.3.0-beta.3"
+  resolved "http://npm.boqii.com:80/@tarojs%2ftaro-weapp/-/taro-weapp-1.3.0-beta.3.tgz#450583edc926cf6fdd0172549fa5fb0a71894432"
+  integrity sha1-RQWD7ckmz2/dAXJUn6X7CnGJRDI=
   dependencies:
-    "@tarojs/taro" "1.2.22"
-    "@tarojs/utils" "1.2.22"
+    "@tarojs/taro" "1.3.0-beta.3"
+    "@tarojs/utils" "1.3.0-beta.3"
     lodash "^4.17.10"
     prop-types "^15.6.1"
 
-"@tarojs/taro@1.2.22", "@tarojs/taro@^1.2.22":
+"@tarojs/taro@1.2.22":
   version "1.2.22"
   resolved "http://npm.boqii.com:80/@tarojs%2ftaro/-/taro-1.2.22.tgz#0cd28d7ef129863fe02cbeb755e149e4018f57f1"
   integrity sha1-DNKNfvEphj/gLL63VeFJ5AGPV/E=
+
+"@tarojs/taro@1.3.0-beta.3":
+  version "1.3.0-beta.3"
+  resolved "http://npm.boqii.com:80/@tarojs%2ftaro/-/taro-1.3.0-beta.3.tgz#945e601f0854f0994d27614fa1a5ad2c2da93fbd"
+  integrity sha1-lF5gHwhU8JlNJ2FPoaWtLC2pP70=
 
 "@tarojs/utils@1.2.22":
   version "1.2.22"
   resolved "http://npm.boqii.com:80/@tarojs%2futils/-/utils-1.2.22.tgz#0b435819905beb45072bcde33d01e93ab9f7a155"
   integrity sha1-C0NYGZBb60UHK83jPQHpOrn3oVU=
 
-"@tarojs/webpack-runner@^1.2.22":
-  version "1.2.22"
-  resolved "http://npm.boqii.com:80/@tarojs%2fwebpack-runner/-/webpack-runner-1.2.22.tgz#ea4111e5aaba85b8b25c52330636ac7fcb1cc116"
-  integrity sha1-6kER5aq6hbiyXFIzBjasf8scwRY=
+"@tarojs/utils@1.3.0-beta.3":
+  version "1.3.0-beta.3"
+  resolved "http://npm.boqii.com:80/@tarojs%2futils/-/utils-1.3.0-beta.3.tgz#aaf25922b6df1ad056ebe911dfd7a8c201983df5"
+  integrity sha1-qvJZIrbfGtBW6+kR39eowgGYPfU=
+
+"@tarojs/webpack-runner@1.3.0-beta.3":
+  version "1.3.0-beta.3"
+  resolved "http://npm.boqii.com:80/@tarojs%2fwebpack-runner/-/webpack-runner-1.3.0-beta.3.tgz#d4af9554efdd9f6454b668eb9e58762780ac9e1a"
+  integrity sha1-1K+VVO/dn2RUtmjrnlh2J4Csnho=
   dependencies:
-    "@tarojs/taro-h5" "1.2.22"
+    "@tarojs/taro-h5" "1.3.0-beta.3"
     autoprefixer "8.6.4"
     babel-core "6.26.0"
     babel-loader "7.1.4"
     babel-plugin-syntax-dynamic-import "6.18.0"
     babel-plugin-transform-react-jsx "6.24.1"
-    babel-plugin-transform-taroapi "1.2.22"
-    babel-types "^6.26.0"
+    babel-plugin-transform-taroapi "1.3.0-beta.3"
+    babel-types "6.26.0"
     chalk "2.4.2"
+    copy-webpack-plugin "^5.0.3"
     css-loader "1.0.0"
     csso-webpack-plugin "1.0.0-beta.12"
+    dart-sass "1.17.3"
     file-loader "3.0.1"
     html-webpack-include-assets-plugin "1.0.5"
-    html-webpack-plugin "3.1.0"
+    html-webpack-plugin "3.2.0"
     less "3.0.4"
     less-loader "4.1.0"
     lodash "4.17.11"
     mini-css-extract-plugin "0.4.1"
-    node-sass "4.11.0"
     opn "5.3.0"
     ora "2.1.0"
     postcss-loader "2.1.6"
-    postcss-plugin-constparse "1.2.22"
-    postcss-pxtransform "1.2.22"
+    postcss-plugin-constparse "1.3.0-beta.3"
+    postcss-pxtransform "1.3.0-beta.3"
     resolve "1.8.1"
     resolve-url-loader "2.3.0"
     sass-loader "7.1.0"
@@ -519,11 +529,19 @@
     stylus "0.54.5"
     stylus-loader "3.0.2"
     uglifyjs-webpack-plugin "1.2.4"
-    url-loader "1.0.1"
+    url-loader "1.1.2"
     webpack "4.28.4"
     webpack-chain "4.9.0"
     webpack-dev-server "3.1.14"
     webpack-format-messages "2.0.3"
+
+"@types/chokidar@^1.7.5":
+  version "1.7.5"
+  resolved "http://npm.boqii.com:80/@types%2fchokidar/-/chokidar-1.7.5.tgz#1fa78c8803e035bed6d98e6949e514b133b0c9b6"
+  integrity sha1-H6eMiAPgNb7W2Y5pSeUUsTOwybY=
+  dependencies:
+    "@types/events" "*"
+    "@types/node" "*"
 
 "@types/cross-spawn@^6.0.0":
   version "6.0.0"
@@ -545,6 +563,18 @@
     "@types/events" "*"
     "@types/minimatch" "*"
     "@types/node" "*"
+
+"@types/lodash.debounce@^4.0.4":
+  version "4.0.6"
+  resolved "http://npm.boqii.com:80/@types%2flodash.debounce/-/lodash.debounce-4.0.6.tgz#c5a2326cd3efc46566c47e4c0aa248dc0ee57d60"
+  integrity sha1-xaIybNPvxGVmxH5MCqJI3A7lfWA=
+  dependencies:
+    "@types/lodash" "*"
+
+"@types/lodash@*":
+  version "4.14.130"
+  resolved "http://npm.boqii.com:80/@types%2flodash/-/lodash-4.14.130.tgz#04b3a690d5f4fc34579963c99adae067b8c8eb5a"
+  integrity sha1-BLOmkNX0/DRXmWPJmtrgZ7jI61o=
 
 "@types/minimatch@*":
   version "3.0.3"
@@ -902,6 +932,11 @@ ansi-regex@^4.0.0:
   resolved "http://npm.boqii.com:80/ansi-regex/-/ansi-regex-4.0.0.tgz#70de791edf021404c3fd615aa89118ae0432e5a9"
   integrity sha1-cN55Ht8CFATD/WFaqJEYrgQy5ak=
 
+ansi-regex@^4.1.0:
+  version "4.1.0"
+  resolved "http://npm.boqii.com:80/ansi-regex/-/ansi-regex-4.1.0.tgz#8b9f8f08cf1acb843756a839ca8c7e3168c51997"
+  integrity sha1-i5+PCM8ay4Q3Vqg5yox+MWjFGZc=
+
 ansi-styles@^2.2.1:
   version "2.2.1"
   resolved "http://npm.boqii.com:80/ansi-styles/-/ansi-styles-2.2.1.tgz#b432dd3358b634cf75e1e4664368240533c1ddbe"
@@ -931,6 +966,11 @@ aproba@^1.0.3, aproba@^1.1.1:
   version "1.2.0"
   resolved "http://npm.boqii.com:80/aproba/-/aproba-1.2.0.tgz#6802e6264efd18c790a1b0d517f0f2627bf2c94a"
   integrity sha1-aALmJk79GMeQobDVF/DyYnvyyUo=
+
+archy@^1.0.0:
+  version "1.0.0"
+  resolved "http://npm.boqii.com:80/archy/-/archy-1.0.0.tgz#f9c8c13757cc1dd7bc379ac77b2c62a5c2868c40"
+  integrity sha1-+cjBN1fMHde8N5rHeyxipcKGjEA=
 
 are-we-there-yet@~1.1.2:
   version "1.1.5"
@@ -985,7 +1025,7 @@ array-includes@^3.0.3:
     define-properties "^1.1.2"
     es-abstract "^1.7.0"
 
-array-tree-filter@^2.1.0, array-tree-filter@~2.1.0:
+array-tree-filter@~2.1.0:
   version "2.1.0"
   resolved "http://npm.boqii.com:80/array-tree-filter/-/array-tree-filter-2.1.0.tgz#873ac00fec83749f255ac8dd083814b4f6329190"
   integrity sha1-hzrAD+yDdJ8lWsjdCDgUtPYykZA=
@@ -1007,7 +1047,7 @@ array-unique@^0.3.2:
   resolved "http://npm.boqii.com:80/array-unique/-/array-unique-0.3.2.tgz#a894b75d4bc4f6cd679ef3244a9fd8f46ae2d428"
   integrity sha1-qJS3XUvE9s1nnvMkSp/Y9Gri1Cg=
 
-asap@~2.0.3:
+asap@~2.0.3, asap@~2.0.6:
   version "2.0.6"
   resolved "http://npm.boqii.com:80/asap/-/asap-2.0.6.tgz#e50347611d7e690943208bbdafebcbc2fb866d46"
   integrity sha1-5QNHYR1+aQlDIIu9r+vLwvuGbUY=
@@ -1663,10 +1703,10 @@ babel-plugin-transform-jsx-stylesheet@^0.6.5:
   dependencies:
     camelcase "^3.0.0"
 
-babel-plugin-transform-jsx-to-stylesheet@^1.2.22:
-  version "1.2.22"
-  resolved "http://npm.boqii.com:80/babel-plugin-transform-jsx-to-stylesheet/-/babel-plugin-transform-jsx-to-stylesheet-1.2.22.tgz#70b13c39ce28053caa0b3b3ba8f5f97a9a30747b"
-  integrity sha1-cLE8Oc4oBTyqCzs7qPX5epowdHs=
+babel-plugin-transform-jsx-to-stylesheet@1.3.0-beta.3:
+  version "1.3.0-beta.3"
+  resolved "http://npm.boqii.com:80/babel-plugin-transform-jsx-to-stylesheet/-/babel-plugin-transform-jsx-to-stylesheet-1.3.0-beta.3.tgz#2b4639f53f5b0ae7a4514878179eee61f9559b51"
+  integrity sha1-K0Y59T9bCuekUUh4F57uYflVm1E=
 
 babel-plugin-transform-object-rest-spread@^6.26.0:
   version "6.26.0"
@@ -1700,10 +1740,10 @@ babel-plugin-transform-strict-mode@^6.24.1:
     babel-runtime "^6.22.0"
     babel-types "^6.24.1"
 
-babel-plugin-transform-taroapi@1.2.22:
-  version "1.2.22"
-  resolved "http://npm.boqii.com:80/babel-plugin-transform-taroapi/-/babel-plugin-transform-taroapi-1.2.22.tgz#9fd2e596e762cd2b8757694a812040b22a62264e"
-  integrity sha1-n9LlludizSuHV2lKgSBAsipiJk4=
+babel-plugin-transform-taroapi@1.3.0-beta.3:
+  version "1.3.0-beta.3"
+  resolved "http://npm.boqii.com:80/babel-plugin-transform-taroapi/-/babel-plugin-transform-taroapi-1.3.0-beta.3.tgz#a43a466651d763b7f96f3a0eed3d15ffff72ab77"
+  integrity sha1-pDpGZlHXY7f5bzoO7T0V//9yq3c=
 
 babel-polyfill@^6.23.0:
   version "6.26.0"
@@ -1804,7 +1844,7 @@ babel-traverse@^6.24.1, babel-traverse@^6.26.0:
     invariant "^2.2.2"
     lodash "^4.17.4"
 
-babel-types@^6.19.0, babel-types@^6.24.1, babel-types@^6.26.0:
+babel-types@6.26.0, babel-types@^6.19.0, babel-types@^6.24.1, babel-types@^6.26.0:
   version "6.26.0"
   resolved "http://npm.boqii.com:80/babel-types/-/babel-types-6.26.0.tgz#a3b073f94ab49eb6fa55cd65227a334380632497"
   integrity sha1-o7Bz+Uq0nrb6Vc1lInozQ4BjJJc=
@@ -2095,7 +2135,7 @@ cacache@^10.0.4:
     unique-filename "^1.1.0"
     y18n "^4.0.0"
 
-cacache@^11.0.2:
+cacache@^11.0.2, cacache@^11.3.2:
   version "11.3.2"
   resolved "http://npm.boqii.com:80/cacache/-/cacache-11.3.2.tgz#2d81e308e3d258ca38125b676b98b2ac9ce69bfa"
   integrity sha1-LYHjCOPSWMo4Eltna5iyrJzmm/o=
@@ -2183,6 +2223,11 @@ camelcase@^4.1.0:
   version "4.1.0"
   resolved "http://npm.boqii.com:80/camelcase/-/camelcase-4.1.0.tgz#d545635be1e33c542649c69173e5de6acfae34dd"
   integrity sha1-1UVjW+HjPFQmScaRc+Xeas+uNN0=
+
+camelcase@^5.0.0:
+  version "5.3.1"
+  resolved "http://npm.boqii.com:80/camelcase/-/camelcase-5.3.1.tgz#e3c9b31569e106811df242f715725a1f4c494320"
+  integrity sha1-48mzFWnhBoEd8kL3FXJaH0xJQyA=
 
 caniuse-lite@^1.0.30000844, caniuse-lite@^1.0.30000859:
   version "1.0.30000938"
@@ -2275,6 +2320,25 @@ chokidar@^2.0.0, chokidar@^2.0.2:
   optionalDependencies:
     fsevents "^1.2.7"
 
+chokidar@^2.0.4:
+  version "2.1.6"
+  resolved "http://npm.boqii.com:80/chokidar/-/chokidar-2.1.6.tgz#b6cad653a929e244ce8a834244164d241fa954c5"
+  integrity sha1-tsrWU6kp4kTOioNCRBZNJB+pVMU=
+  dependencies:
+    anymatch "^2.0.0"
+    async-each "^1.0.1"
+    braces "^2.3.2"
+    glob-parent "^3.1.0"
+    inherits "^2.0.3"
+    is-binary-path "^1.0.0"
+    is-glob "^4.0.0"
+    normalize-path "^3.0.0"
+    path-is-absolute "^1.0.0"
+    readdirp "^2.2.1"
+    upath "^1.1.1"
+  optionalDependencies:
+    fsevents "^1.2.7"
+
 chownr@^1.0.1, chownr@^1.1.1:
   version "1.1.1"
   resolved "http://npm.boqii.com:80/chownr/-/chownr-1.1.1.tgz#54726b8b8fff4df053c42187e801fb4412df1494"
@@ -2356,6 +2420,15 @@ cliui@^4.0.0:
     string-width "^2.1.1"
     strip-ansi "^4.0.0"
     wrap-ansi "^2.0.0"
+
+cliui@^5.0.0:
+  version "5.0.0"
+  resolved "http://npm.boqii.com:80/cliui/-/cliui-5.0.0.tgz#deefcfdb2e800784aa34f46fa08e06851c7bbbc5"
+  integrity sha1-3u/P2y6AB4SqNPRvoI4GhRx7u8U=
+  dependencies:
+    string-width "^3.1.0"
+    strip-ansi "^5.2.0"
+    wrap-ansi "^5.1.0"
 
 clone-deep@^2.0.1:
   version "2.0.2"
@@ -2567,6 +2640,24 @@ copy-descriptor@^0.1.0:
   version "0.1.1"
   resolved "http://npm.boqii.com:80/copy-descriptor/-/copy-descriptor-0.1.1.tgz#676f6eb3c39997c2ee1ac3a924fd6124748f578d"
   integrity sha1-Z29us8OZl8LuGsOpJP1hJHSPV40=
+
+copy-webpack-plugin@^5.0.3:
+  version "5.0.3"
+  resolved "http://npm.boqii.com:80/copy-webpack-plugin/-/copy-webpack-plugin-5.0.3.tgz#2179e3c8fd69f13afe74da338896f1f01a875b5c"
+  integrity sha1-IXnjyP1p8Tr+dNoziJbx8BqHW1w=
+  dependencies:
+    cacache "^11.3.2"
+    find-cache-dir "^2.1.0"
+    glob-parent "^3.1.0"
+    globby "^7.1.1"
+    is-glob "^4.0.1"
+    loader-utils "^1.2.3"
+    minimatch "^3.0.4"
+    normalize-path "^3.0.0"
+    p-limit "^2.2.0"
+    schema-utils "^1.0.0"
+    serialize-javascript "^1.7.0"
+    webpack-log "^2.0.0"
 
 core-js@^1.0.0:
   version "1.2.7"
@@ -2827,6 +2918,20 @@ d@1:
   dependencies:
     es5-ext "^0.10.9"
 
+dart-sass@1.17.3:
+  version "1.17.3"
+  resolved "http://npm.boqii.com:80/dart-sass/-/dart-sass-1.17.3.tgz#47b04d4aaad64e027afa86ca3f5b0e8ed7af659a"
+  integrity sha1-R7BNSqrWTgJ6+obKP1sOjtevZZo=
+  dependencies:
+    chokidar "^2.0.0"
+
+dart-sass@^1.17.4:
+  version "1.20.1"
+  resolved "http://npm.boqii.com:80/dart-sass/-/dart-sass-1.20.1.tgz#c1b5c881815503fb1a83c79b304d69155fbbc2c2"
+  integrity sha1-wbXIgYFVA/sag8ebME1pFV+7wsI=
+  dependencies:
+    chokidar "^2.0.0"
+
 dashdash@^1.12.0:
   version "1.14.1"
   resolved "http://npm.boqii.com:80/dashdash/-/dashdash-1.14.1.tgz#853cfa0f7cbe2fed5de20326b8dd581035f6e2f0"
@@ -2886,7 +2991,7 @@ decache@^4.1.0:
   dependencies:
     callsite "^1.0.0"
 
-decamelize@^1.1.1, decamelize@^1.1.2:
+decamelize@^1.1.1, decamelize@^1.1.2, decamelize@^1.2.0:
   version "1.2.0"
   resolved "http://npm.boqii.com:80/decamelize/-/decamelize-1.2.0.tgz#f6534d15148269b20352e7bee26f501f9a191290"
   integrity sha1-9lNNFRSCabIDUue+4m9QH5oZEpA=
@@ -2933,7 +3038,7 @@ deepmerge@^1.3.0, deepmerge@^1.5.1, deepmerge@^1.5.2:
   resolved "http://npm.boqii.com:80/deepmerge/-/deepmerge-1.5.2.tgz#10499d868844cdad4fee0842df8c7f6f0c95a753"
   integrity sha1-EEmdhohEza1P7ghC34x/bwyVp1M=
 
-deepmerge@^3.0.0, deepmerge@^3.2.0:
+deepmerge@^3.0.0:
   version "3.2.0"
   resolved "http://npm.boqii.com:80/deepmerge/-/deepmerge-3.2.0.tgz#58ef463a57c08d376547f8869fdc5bcee957f44e"
   integrity sha1-WO9GOlfAjTdlR/iGn9xbzulX9E4=
@@ -3061,6 +3166,13 @@ diffie-hellman@^5.0.0:
     bn.js "^4.1.0"
     miller-rabin "^4.0.0"
     randombytes "^2.0.0"
+
+dir-glob@^2.0.0:
+  version "2.2.2"
+  resolved "http://npm.boqii.com:80/dir-glob/-/dir-glob-2.2.2.tgz#fa09f0694153c8918b18ba0deafae94769fc50c4"
+  integrity sha1-+gnwaUFTyJGLGLoN6vrpR2n8UMQ=
+  dependencies:
+    path-type "^3.0.0"
 
 dns-equal@^1.0.0:
   version "1.0.0"
@@ -3361,12 +3473,12 @@ escodegen@1.x.x:
   optionalDependencies:
     source-map "~0.6.1"
 
-eslint-config-taro@^1.2.22:
-  version "1.2.22"
-  resolved "http://npm.boqii.com:80/eslint-config-taro/-/eslint-config-taro-1.2.22.tgz#cf870c3ee07637fea75035997255da259bcb01d7"
-  integrity sha1-z4cMPuB2N/6nUDWZclXaJZvLAdc=
+eslint-config-taro@1.3.0-beta.3:
+  version "1.3.0-beta.3"
+  resolved "http://npm.boqii.com:80/eslint-config-taro/-/eslint-config-taro-1.3.0-beta.3.tgz#55416f9ae5146d5e050ed17a0334f9e080c78e0d"
+  integrity sha1-VUFvmuUUbV4FDtF6AzT54IDHjg0=
   dependencies:
-    eslint-plugin-taro "1.2.22"
+    eslint-plugin-taro "1.3.0-beta.3"
 
 eslint-import-resolver-node@^0.3.2:
   version "0.3.2"
@@ -3413,10 +3525,10 @@ eslint-plugin-react@^7.12.4:
     prop-types "^15.6.2"
     resolve "^1.9.0"
 
-eslint-plugin-taro@1.2.22, eslint-plugin-taro@^1.2.22:
-  version "1.2.22"
-  resolved "http://npm.boqii.com:80/eslint-plugin-taro/-/eslint-plugin-taro-1.2.22.tgz#6b27090341ff8d9e31e08e33c55745092bf0885e"
-  integrity sha1-aycJA0H/jZ4x4I4zxVdFCSvwiF4=
+eslint-plugin-taro@1.3.0-beta.3:
+  version "1.3.0-beta.3"
+  resolved "http://npm.boqii.com:80/eslint-plugin-taro/-/eslint-plugin-taro-1.3.0-beta.3.tgz#2c87b551425a8970ff455a6b7ed216e2efb727b1"
+  integrity sha1-LIe1UUJaiXD/RVprftIW4u+3J7E=
   dependencies:
     has "^1.0.1"
 
@@ -3834,7 +3946,7 @@ find-cache-dir@^1.0.0:
     make-dir "^1.0.0"
     pkg-dir "^2.0.0"
 
-find-cache-dir@^2.0.0:
+find-cache-dir@^2.0.0, find-cache-dir@^2.1.0:
   version "2.1.0"
   resolved "http://npm.boqii.com:80/find-cache-dir/-/find-cache-dir-2.1.0.tgz#8d0f94cd13fe43c6c7c261a0d86115ca918c05f7"
   integrity sha1-jQ+UzRP+Q8bHwmGg2GEVypGMBfc=
@@ -3978,6 +4090,15 @@ fs-extra@^4.0.2:
     jsonfile "^4.0.0"
     universalify "^0.1.0"
 
+fs-extra@^5.0.0:
+  version "5.0.0"
+  resolved "http://npm.boqii.com:80/fs-extra/-/fs-extra-5.0.0.tgz#414d0110cdd06705734d055652c5411260c31abd"
+  integrity sha1-QU0BEM3QZwVzTQVWUsVBEmDDGr0=
+  dependencies:
+    graceful-fs "^4.1.2"
+    jsonfile "^4.0.0"
+    universalify "^0.1.0"
+
 fs-minipass@^1.2.5:
   version "1.2.5"
   resolved "http://npm.boqii.com:80/fs-minipass/-/fs-minipass-1.2.5.tgz#06c277218454ec288df77ada54a03b8702aacb9d"
@@ -4061,6 +4182,11 @@ get-caller-file@^1.0.1:
   version "1.0.3"
   resolved "http://npm.boqii.com:80/get-caller-file/-/get-caller-file-1.0.3.tgz#f978fa4c90d1dfe7ff2d6beda2a515e713bdcf4a"
   integrity sha1-+Xj6TJDR3+f/LWvtoqUV5xO9z0o=
+
+get-caller-file@^2.0.1:
+  version "2.0.5"
+  resolved "http://npm.boqii.com:80/get-caller-file/-/get-caller-file-2.0.5.tgz#4f94412a82db32f36e3b0b9741f8a97feb031f7e"
+  integrity sha1-T5RBKoLbMvNuOwuXQfipf+sDH34=
 
 get-stdin@^4.0.1:
   version "4.0.1"
@@ -4158,6 +4284,18 @@ glob@^7.0.0, glob@^7.0.3, glob@^7.1.2, glob@^7.1.3, glob@~7.1.1:
     once "^1.3.0"
     path-is-absolute "^1.0.0"
 
+glob@^7.1.1:
+  version "7.1.4"
+  resolved "http://npm.boqii.com:80/glob/-/glob-7.1.4.tgz#aa608a2f6c577ad357e1ae5a5c26d9a8d1969255"
+  integrity sha1-qmCKL2xXetNX4a5aXCbZqNGWklU=
+  dependencies:
+    fs.realpath "^1.0.0"
+    inflight "^1.0.4"
+    inherits "2"
+    minimatch "^3.0.4"
+    once "^1.3.0"
+    path-is-absolute "^1.0.0"
+
 globals@^11.1.0, globals@^11.7.0:
   version "11.11.0"
   resolved "http://npm.boqii.com:80/globals/-/globals-11.11.0.tgz#dcf93757fa2de5486fbeed7118538adf789e9c2e"
@@ -4178,6 +4316,25 @@ globby@^6.1.0:
     object-assign "^4.0.1"
     pify "^2.0.0"
     pinkie-promise "^2.0.0"
+
+globby@^7.1.1:
+  version "7.1.1"
+  resolved "http://npm.boqii.com:80/globby/-/globby-7.1.1.tgz#fb2ccff9401f8600945dfada97440cca972b8680"
+  integrity sha1-+yzP+UAfhgCUXfral0QMypcrhoA=
+  dependencies:
+    array-union "^1.0.1"
+    dir-glob "^2.0.0"
+    glob "^7.1.2"
+    ignore "^3.3.5"
+    pify "^3.0.0"
+    slash "^1.0.0"
+
+globs@^0.1.3:
+  version "0.1.4"
+  resolved "http://npm.boqii.com:80/globs/-/globs-0.1.4.tgz#1d13639f6174e4ae73a7f936da7d9a079f657c1c"
+  integrity sha1-HRNjn2F05K5zp/k22n2aB59lfBw=
+  dependencies:
+    glob "^7.1.1"
 
 globule@^1.0.0:
   version "1.2.1"
@@ -4424,10 +4581,10 @@ html-webpack-include-assets-plugin@1.0.5:
     minimatch "^3.0.4"
     slash "^2.0.0"
 
-html-webpack-plugin@3.1.0:
-  version "3.1.0"
-  resolved "http://npm.boqii.com:80/html-webpack-plugin/-/html-webpack-plugin-3.1.0.tgz#6e02baaedb1e906310917f03239c793a75af2885"
-  integrity sha1-bgK6rtsekGMQkX8DI5x5OnWvKIU=
+html-webpack-plugin@3.2.0:
+  version "3.2.0"
+  resolved "http://npm.boqii.com:80/html-webpack-plugin/-/html-webpack-plugin-3.2.0.tgz#b01abbd723acaaa7b37b6af4492ebda03d9dd37b"
+  integrity sha1-sBq71yOsqqeze2r0SS69oD2d03s=
   dependencies:
     html-minifier "^3.2.3"
     loader-utils "^0.2.16"
@@ -4574,6 +4731,11 @@ ignore-walk@^3.0.1:
   integrity sha1-qD5i59JyrA47VRqqgoMaGbafgvg=
   dependencies:
     minimatch "^3.0.4"
+
+ignore@^3.3.5:
+  version "3.3.10"
+  resolved "http://npm.boqii.com:80/ignore/-/ignore-3.3.10.tgz#0a97fb876986e8081c631160f8f9f389157f0043"
+  integrity sha1-Cpf7h2mG6AgcYxFg+PnziRV/AEM=
 
 ignore@^4.0.6:
   version "4.0.6"
@@ -4898,6 +5060,13 @@ is-glob@^4.0.0:
   version "4.0.0"
   resolved "http://npm.boqii.com:80/is-glob/-/is-glob-4.0.0.tgz#9521c76845cc2610a85203ddf080a958c2ffabc0"
   integrity sha1-lSHHaEXMJhCoUgPd8ICpWML/q8A=
+  dependencies:
+    is-extglob "^2.1.1"
+
+is-glob@^4.0.1:
+  version "4.0.1"
+  resolved "http://npm.boqii.com:80/is-glob/-/is-glob-4.0.1.tgz#7567dbe9f2f5e2467bc77ab83c4a29482407a5dc"
+  integrity sha1-dWfb6fL14kZ7x3q4PEopSCQHpdw=
   dependencies:
     is-extglob "^2.1.1"
 
@@ -5378,7 +5547,7 @@ loader-utils@^0.2.16:
     json5 "^0.5.0"
     object-assign "^4.0.1"
 
-loader-utils@^1.0.1, loader-utils@^1.0.2, loader-utils@^1.1.0:
+loader-utils@^1.0.1, loader-utils@^1.0.2, loader-utils@^1.1.0, loader-utils@^1.2.3:
   version "1.2.3"
   resolved "http://npm.boqii.com:80/loader-utils/-/loader-utils-1.2.3.tgz#1ff5dc6911c9f0a062531a4c04b609406108c2c7"
   integrity sha1-H/XcaRHJ8KBiUxpMBLYJQGEIwsc=
@@ -5459,7 +5628,7 @@ lodash.assign@^3.0.0:
     lodash._createassigner "^3.0.0"
     lodash.keys "^3.0.0"
 
-lodash.assign@^4.0.1, lodash.assign@^4.2.0:
+lodash.assign@^4.0.1:
   version "4.2.0"
   resolved "http://npm.boqii.com:80/lodash.assign/-/lodash.assign-4.2.0.tgz#0d99f3ccd7a6d261d19bdaeb9245005d285808e7"
   integrity sha1-DZnzzNem0mHRm9rrkkUAXShYCOc=
@@ -5469,7 +5638,7 @@ lodash.camelcase@^4.3.0:
   resolved "http://npm.boqii.com:80/lodash.camelcase/-/lodash.camelcase-4.3.0.tgz#b28aa6288a2b9fc651035c7711f65ab6190331a6"
   integrity sha1-soqmKIorn8ZRA1x3EfZathkDMaY=
 
-lodash.clonedeep@^4.3.2, lodash.clonedeep@^4.5.0:
+lodash.clonedeep@^4.5.0:
   version "4.5.0"
   resolved "http://npm.boqii.com:80/lodash.clonedeep/-/lodash.clonedeep-4.5.0.tgz#e23f3f9c4f8fbdde872529c1071857a086e5ccef"
   integrity sha1-4j8/nE+Pvd6HJSnBBxhXoIblzO8=
@@ -5510,11 +5679,6 @@ lodash.keys@^3.0.0:
     lodash._getnative "^3.0.0"
     lodash.isarguments "^3.0.0"
     lodash.isarray "^3.0.0"
-
-lodash.mergewith@^4.6.0:
-  version "4.6.1"
-  resolved "http://npm.boqii.com:80/lodash.mergewith/-/lodash.mergewith-4.6.1.tgz#639057e726c3afbdb3e7d42741caa8d6e4335927"
-  integrity sha1-Y5BX5ybDr72z59QnQcqo1uQzWSc=
 
 lodash.once@^4.0.0:
   version "4.1.1"
@@ -5992,7 +6156,12 @@ mz@^2.6.0:
     object-assign "^4.0.1"
     thenify-all "^1.0.0"
 
-nan@^2.10.0, nan@^2.9.2:
+nan@^2.13.2:
+  version "2.14.0"
+  resolved "http://npm.boqii.com:80/nan/-/nan-2.14.0.tgz#7818f722027b2459a86f0295d434d1fc2336c52c"
+  integrity sha1-eBj3IgJ7JFmobwKV1DTR/CM2xSw=
+
+nan@^2.9.2:
   version "2.12.1"
   resolved "http://npm.boqii.com:80/nan/-/nan-2.12.1.tgz#7b1aa193e9aa86057e3c7bbd0ac448e770925552"
   integrity sha1-exqhk+mqhgV+PHu9CsRI53CSVVI=
@@ -6066,14 +6235,6 @@ nervjs@1.3.13, nervjs@^1.3.13:
   version "1.3.13"
   resolved "http://npm.boqii.com:80/nervjs/-/nervjs-1.3.13.tgz#0f3d5d5d09ced9c9a2329c4172cd707b32a1cc42"
   integrity sha1-Dz1dXQnO2cmiMpxBcs1wezKhzEI=
-  dependencies:
-    nerv-shared "1.3.7"
-    nerv-utils "1.3.12"
-
-nervjs@^1.3.0:
-  version "1.3.12"
-  resolved "http://npm.boqii.com:80/nervjs/-/nervjs-1.3.12.tgz#2c19919007876fa6e40104e01f85decd84f48898"
-  integrity sha1-LBmRkAeHb6bkAQTgH4XezYT0iJg=
   dependencies:
     nerv-shared "1.3.7"
     nerv-utils "1.3.12"
@@ -6176,10 +6337,10 @@ node-pre-gyp@^0.10.0:
     semver "^5.3.0"
     tar "^4"
 
-node-sass@4.11.0, node-sass@^4.11.0:
-  version "4.11.0"
-  resolved "http://npm.boqii.com:80/node-sass/-/node-sass-4.11.0.tgz#183faec398e9cbe93ba43362e2768ca988a6369a"
-  integrity sha1-GD+uw5jpy+k7pDNi4naMqYimNpo=
+node-sass@^4.10.0:
+  version "4.12.0"
+  resolved "http://npm.boqii.com:80/node-sass/-/node-sass-4.12.0.tgz#0914f531932380114a30cc5fa4fa63233a25f017"
+  integrity sha1-CRT1MZMjgBFKMMxfpPpjIzol8Bc=
   dependencies:
     async-foreach "^0.1.3"
     chalk "^1.1.1"
@@ -6188,12 +6349,10 @@ node-sass@4.11.0, node-sass@^4.11.0:
     get-stdin "^4.0.1"
     glob "^7.0.3"
     in-publish "^2.0.0"
-    lodash.assign "^4.2.0"
-    lodash.clonedeep "^4.3.2"
-    lodash.mergewith "^4.6.0"
+    lodash "^4.17.11"
     meow "^3.7.0"
     mkdirp "^0.5.1"
-    nan "^2.10.0"
+    nan "^2.13.2"
     node-gyp "^3.8.0"
     npmlog "^4.0.0"
     request "^2.88.0"
@@ -6474,7 +6633,7 @@ os-locale@^1.4.0:
   dependencies:
     lcid "^1.0.0"
 
-os-locale@^3.0.0:
+os-locale@^3.0.0, os-locale@^3.1.0:
   version "3.1.0"
   resolved "http://npm.boqii.com:80/os-locale/-/os-locale-3.1.0.tgz#a802a6ee17f24c10483ab9935719cef4ed16bf1a"
   integrity sha1-qAKm7hfyTBBIOrmTVxnO9O0Wvxo=
@@ -6522,6 +6681,13 @@ p-limit@^2.0.0:
   version "2.1.0"
   resolved "http://npm.boqii.com:80/p-limit/-/p-limit-2.1.0.tgz#1d5a0d20fb12707c758a655f6bbc4386b5930d68"
   integrity sha1-HVoNIPsScHx1imVfa7xDhrWTDWg=
+  dependencies:
+    p-try "^2.0.0"
+
+p-limit@^2.2.0:
+  version "2.2.0"
+  resolved "http://npm.boqii.com:80/p-limit/-/p-limit-2.2.0.tgz#417c9941e6027a9abcba5092dd2904e255b5fbc2"
+  integrity sha1-QXyZQeYCepq8ulCS3SkE4lW1+8I=
   dependencies:
     p-try "^2.0.0"
 
@@ -6736,6 +6902,13 @@ path-type@^2.0.0:
   dependencies:
     pify "^2.0.0"
 
+path-type@^3.0.0:
+  version "3.0.0"
+  resolved "http://npm.boqii.com:80/path-type/-/path-type-3.0.0.tgz#cef31dc8e0a1a3bb0d105c0cd97cf3bf47f4e36f"
+  integrity sha1-zvMdyOCho7sNEFwM2Xzzv0f0428=
+  dependencies:
+    pify "^3.0.0"
+
 pbkdf2@^3.0.3:
   version "3.0.17"
   resolved "http://npm.boqii.com:80/pbkdf2/-/pbkdf2-3.0.17.tgz#976c206530617b14ebb32114239f7b09336e93a6"
@@ -6865,10 +7038,10 @@ postcss-modules-values@^1.3.0:
     icss-replace-symbols "^1.1.0"
     postcss "^6.0.1"
 
-postcss-plugin-constparse@1.2.22:
-  version "1.2.22"
-  resolved "http://npm.boqii.com:80/postcss-plugin-constparse/-/postcss-plugin-constparse-1.2.22.tgz#59139c34c9ecb7a87f7c88104b776231220d01bb"
-  integrity sha1-WROcNMnst6h/fIgQS3diMSINAbs=
+postcss-plugin-constparse@1.3.0-beta.3:
+  version "1.3.0-beta.3"
+  resolved "http://npm.boqii.com:80/postcss-plugin-constparse/-/postcss-plugin-constparse-1.3.0-beta.3.tgz#d8bafe005ec279945beefad82b8899f8ac3fe8b3"
+  integrity sha1-2Lr+AF7CeZRb7vrYK4iZ+Kw/6LM=
   dependencies:
     postcss "^6.0.22"
 
@@ -6880,10 +7053,10 @@ postcss-pxtorem@^4.0.1:
     object-assign "^4.1.0"
     postcss "^5.2.10"
 
-postcss-pxtransform@1.2.22:
-  version "1.2.22"
-  resolved "http://npm.boqii.com:80/postcss-pxtransform/-/postcss-pxtransform-1.2.22.tgz#be4f2f8a2bdd18d57844697f5da9790dddf18480"
-  integrity sha1-vk8viivdGNV4RGl/Xal5Dd3xhIA=
+postcss-pxtransform@1.3.0-beta.3:
+  version "1.3.0-beta.3"
+  resolved "http://npm.boqii.com:80/postcss-pxtransform/-/postcss-pxtransform-1.3.0-beta.3.tgz#97e851f8ca2e963efa6c31b72af9cf5ec44c341b"
+  integrity sha1-l+hR+Moulj76bDG3KvnPXsRMNBs=
   dependencies:
     postcss "^6.0.16"
     postcss-pxtorem "^4.0.1"
@@ -6921,6 +7094,11 @@ prepend-http@^1.0.1:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/prepend-http/-/prepend-http-1.0.4.tgz#d4f4562b0ce3696e41ac52d0e002e57a635dc6dc"
   integrity sha1-1PRWKwzjaW5BrFLQ4ALlemNdxtw=
+
+pretty-bytes@^4.0.2:
+  version "4.0.2"
+  resolved "http://npm.boqii.com:80/pretty-bytes/-/pretty-bytes-4.0.2.tgz#b2bf82e7350d65c6c33aa95aaa5a4f6327f61cd9"
+  integrity sha1-sr+C5zUNZcbDOqlaqlpPYyf2HNk=
 
 pretty-error@^2.0.2:
   version "2.1.1"
@@ -6978,6 +7156,13 @@ promise@^7.1.1:
   integrity sha1-BktyYCsY+Q8pGSuLG8QY/9Hr078=
   dependencies:
     asap "~2.0.3"
+
+promise@^8.0.1:
+  version "8.0.3"
+  resolved "http://npm.boqii.com:80/promise/-/promise-8.0.3.tgz#f592e099c6cddc000d538ee7283bb190452b0bf6"
+  integrity sha1-9ZLgmcbN3AANU47nKDuxkEUrC/Y=
+  dependencies:
+    asap "~2.0.6"
 
 prop-types@^15.5.10, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
@@ -7120,7 +7305,7 @@ querystringify@^2.0.0:
   resolved "http://npm.boqii.com:80/querystringify/-/querystringify-2.1.0.tgz#7ded8dfbf7879dcc60d0a644ac6754b283ad17ef"
   integrity sha1-fe2N+/eHncxg0KZErGdUsoOtF+8=
 
-raf@^3.1.0:
+raf@^3.1.0, raf@^3.4.1:
   version "3.4.1"
   resolved "http://npm.boqii.com:80/raf/-/raf-3.4.1.tgz#0742e99a4a6552f445d73e3ee0328af0ff1ede39"
   integrity sha1-B0LpmkplUvRF1z4+4DKK8P8e3jk=
@@ -7253,6 +7438,11 @@ react-native-drawer-layout@1.3.2:
   integrity sha1-uXQNdmOh3E+IphucbZPS2UjqQm4=
   dependencies:
     react-native-dismiss-keyboard "1.0.0"
+
+react-native-image-crop-picker@^0.23.1:
+  version "0.23.1"
+  resolved "http://npm.boqii.com:80/react-native-image-crop-picker/-/react-native-image-crop-picker-0.23.1.tgz#26c1b899dbe4358b9f2c98369109a42a8141682a"
+  integrity sha1-JsG4mdvkNYufLJg2kQmkKoFBaCo=
 
 react-native-image-pan-zoom@^2.1.9:
   version "2.1.11"
@@ -7793,6 +7983,11 @@ require-main-filename@^1.0.1:
   resolved "http://npm.boqii.com:80/require-main-filename/-/require-main-filename-1.0.1.tgz#97f717b69d48784f5f526a6c5aa8ffdda055a4d1"
   integrity sha1-l/cXtp1IeE9fUmpsWqj/3aBVpNE=
 
+require-main-filename@^2.0.0:
+  version "2.0.0"
+  resolved "http://npm.boqii.com:80/require-main-filename/-/require-main-filename-2.0.0.tgz#d0b329ecc7cc0f61649f62215be69af54aa8989b"
+  integrity sha1-0LMp7MfMD2Fkn2IhW+aa9UqomJs=
+
 requires-port@^1.0.0:
   version "1.0.0"
   resolved "http://npm.boqii.com:80/requires-port/-/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
@@ -8032,7 +8227,7 @@ scheduler@^0.13.3:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
 
-schema-utils@^0.4.0, schema-utils@^0.4.3, schema-utils@^0.4.4, schema-utils@^0.4.5:
+schema-utils@^0.4.0, schema-utils@^0.4.4, schema-utils@^0.4.5:
   version "0.4.7"
   resolved "http://npm.boqii.com:80/schema-utils/-/schema-utils-0.4.7.tgz#ba74f597d2be2ea880131746ee17d0a093c68187"
   integrity sha1-unT1l9K+LqiAExdG7hfQoJPGgYc=
@@ -8048,6 +8243,23 @@ schema-utils@^1.0.0:
     ajv "^6.1.0"
     ajv-errors "^1.0.0"
     ajv-keywords "^3.1.0"
+
+scss-bundle@^2.5.1:
+  version "2.5.1"
+  resolved "http://npm.boqii.com:80/scss-bundle/-/scss-bundle-2.5.1.tgz#def470dcac93484c7e40a6d4f657498ee5400934"
+  integrity sha1-3vRw3KyTSEx+QKbU9ldJjuVACTQ=
+  dependencies:
+    "@types/chokidar" "^1.7.5"
+    "@types/lodash.debounce" "^4.0.4"
+    archy "^1.0.0"
+    chokidar "^2.0.4"
+    fs-extra "^5.0.0"
+    globs "^0.1.3"
+    lodash.debounce "^4.0.8"
+    node-sass "^4.10.0"
+    pretty-bytes "^4.0.2"
+    promise "^8.0.1"
+    yargs "^13.1.0"
 
 scss-tokenizer@^0.2.3:
   version "0.2.3"
@@ -8109,6 +8321,11 @@ serialize-javascript@^1.4.0:
   version "1.6.1"
   resolved "http://npm.boqii.com:80/serialize-javascript/-/serialize-javascript-1.6.1.tgz#4d1f697ec49429a847ca6f442a2a755126c4d879"
   integrity sha1-TR9pfsSUKahHym9EKip1USbE2Hk=
+
+serialize-javascript@^1.7.0:
+  version "1.7.0"
+  resolved "http://npm.boqii.com:80/serialize-javascript/-/serialize-javascript-1.7.0.tgz#d6e0dfb2a3832a8c94468e6eb1db97e55a192a65"
+  integrity sha1-1uDfsqODKoyURo5usduX5VoZKmU=
 
 serve-index@^1.7.2:
   version "1.9.1"
@@ -8595,6 +8812,15 @@ string-width@^3.0.0:
     is-fullwidth-code-point "^2.0.0"
     strip-ansi "^5.0.0"
 
+string-width@^3.1.0:
+  version "3.1.0"
+  resolved "http://npm.boqii.com:80/string-width/-/string-width-3.1.0.tgz#22767be21b62af1081574306f69ac51b62203961"
+  integrity sha1-InZ74htirxCBV0MG9prFG2IgOWE=
+  dependencies:
+    emoji-regex "^7.0.1"
+    is-fullwidth-code-point "^2.0.0"
+    strip-ansi "^5.1.0"
+
 string_decoder@^1.0.0, string_decoder@^1.1.1:
   version "1.2.0"
   resolved "http://npm.boqii.com:80/string_decoder/-/string_decoder-1.2.0.tgz#fe86e738b19544afe70469243b2a1ee9240eae8d"
@@ -8634,6 +8860,13 @@ strip-ansi@^5.0.0:
   integrity sha1-949otdCGbCCyybjGG1KYUI3IdW8=
   dependencies:
     ansi-regex "^4.0.0"
+
+strip-ansi@^5.1.0, strip-ansi@^5.2.0:
+  version "5.2.0"
+  resolved "http://npm.boqii.com:80/strip-ansi/-/strip-ansi-5.2.0.tgz#8c9a536feb6afc962bdfa5b104a5091c1ad9c0ae"
+  integrity sha1-jJpTb+tq/JYr36WxBKUJHBrZwK4=
+  dependencies:
+    ansi-regex "^4.1.0"
 
 strip-bom@^2.0.0:
   version "2.0.0"
@@ -9154,6 +9387,11 @@ upath@^1.1.0:
   resolved "http://npm.boqii.com:80/upath/-/upath-1.1.0.tgz#35256597e46a581db4793d0ce47fa9aebfc9fabd"
   integrity sha1-NSVll+RqWB20eT0M5H+prr/J+r0=
 
+upath@^1.1.1:
+  version "1.1.2"
+  resolved "http://npm.boqii.com:80/upath/-/upath-1.1.2.tgz#3db658600edaeeccbe6db5e684d67ee8c2acd068"
+  integrity sha1-PbZYYA7a7sy+bbXmhNZ+6MKs0Gg=
+
 upper-case-first@^1.1.0:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/upper-case-first/-/upper-case-first-1.1.2.tgz#5d79bedcff14419518fd2edb0a0507c9b6859115"
@@ -9183,14 +9421,14 @@ url-join@^1.1.0:
   resolved "https://registry.yarnpkg.com/url-join/-/url-join-1.1.0.tgz#741c6c2f4596c4830d6718460920d0c92202dc78"
   integrity sha1-dBxsL0WWxIMNZxhGCSDQySIC3Hg=
 
-url-loader@1.0.1:
-  version "1.0.1"
-  resolved "http://npm.boqii.com:80/url-loader/-/url-loader-1.0.1.tgz#61bc53f1f184d7343da2728a1289ef8722ea45ee"
-  integrity sha1-YbxT8fGE1zQ9onKKEonvhyLqRe4=
+url-loader@1.1.2:
+  version "1.1.2"
+  resolved "http://npm.boqii.com:80/url-loader/-/url-loader-1.1.2.tgz#b971d191b83af693c5e3fea4064be9e1f2d7f8d8"
+  integrity sha1-uXHRkbg69pPF4/6kBkvp4fLX+Ng=
   dependencies:
     loader-utils "^1.1.0"
     mime "^2.0.3"
-    schema-utils "^0.4.3"
+    schema-utils "^1.0.0"
 
 url-parse-lax@^1.0.0:
   version "1.0.0"
@@ -9545,6 +9783,15 @@ wrap-ansi@^2.0.0:
     string-width "^1.0.1"
     strip-ansi "^3.0.1"
 
+wrap-ansi@^5.1.0:
+  version "5.1.0"
+  resolved "http://npm.boqii.com:80/wrap-ansi/-/wrap-ansi-5.1.0.tgz#1fd1f67235d5b6d0fee781056001bfb694c03b09"
+  integrity sha1-H9H2cjXVttD+54EFYAG/tpTAOwk=
+  dependencies:
+    ansi-styles "^3.2.0"
+    string-width "^3.0.0"
+    strip-ansi "^5.0.0"
+
 wrappy@1:
   version "1.0.2"
   resolved "http://npm.boqii.com:80/wrappy/-/wrappy-1.0.2.tgz#b5243d8f3ec1aa35f1364605bc0d1036e30ab69f"
@@ -9686,6 +9933,14 @@ yargs-parser@^10.1.0:
   dependencies:
     camelcase "^4.1.0"
 
+yargs-parser@^13.1.0:
+  version "13.1.0"
+  resolved "http://npm.boqii.com:80/yargs-parser/-/yargs-parser-13.1.0.tgz#7016b6dd03e28e1418a510e258be4bff5a31138f"
+  integrity sha1-cBa23QPijhQYpRDiWL5L/1oxE48=
+  dependencies:
+    camelcase "^5.0.0"
+    decamelize "^1.2.0"
+
 yargs-parser@^5.0.0:
   version "5.0.0"
   resolved "http://npm.boqii.com:80/yargs-parser/-/yargs-parser-5.0.0.tgz#275ecf0d7ffe05c77e64e7c86e4cd94bf0e1228a"
@@ -9710,6 +9965,23 @@ yargs@12.0.2:
     which-module "^2.0.0"
     y18n "^3.2.1 || ^4.0.0"
     yargs-parser "^10.1.0"
+
+yargs@^13.1.0:
+  version "13.2.4"
+  resolved "http://npm.boqii.com:80/yargs/-/yargs-13.2.4.tgz#0b562b794016eb9651b98bd37acf364aa5d6dc83"
+  integrity sha1-C1YreUAW65ZRuYvTes82SqXW3IM=
+  dependencies:
+    cliui "^5.0.0"
+    find-up "^3.0.0"
+    get-caller-file "^2.0.1"
+    os-locale "^3.1.0"
+    require-directory "^2.1.1"
+    require-main-filename "^2.0.0"
+    set-blocking "^2.0.0"
+    string-width "^3.0.0"
+    which-module "^2.0.0"
+    y18n "^4.0.0"
+    yargs-parser "^13.1.0"
 
 yargs@^7.0.0:
   version "7.1.0"
