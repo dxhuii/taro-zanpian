@@ -18,7 +18,6 @@ import NewsText from '@/components/Subject/NewsText'
 import PlayList from '@/components/PlayList'
 import Tating from '@/components/Tating'
 import A from '@/components/A'
-import analyze from 'rgbaster'
 
 import { isNumber, formatPic } from '@/utils'
 
@@ -75,8 +74,6 @@ class Detail extends Component {
       score({ id: vid, sid: 1, uid: userid })
     }
     hits({ id: vid, sid: 1 })
-    const result = await analyze('https://wxt.sinaimg.cn/large/006bnWk0gw1f2roat34joj31ao0m8dkt.jpg')
-    console.log(result, 'color')
   }
 
   async addMark(type, id, cid, uid) {
@@ -243,56 +240,50 @@ class Detail extends Component {
           </View>
         </View>
         <PlayList vid={vid} />
-        <div className='mt20 clearfix wp' className='detail-bottom'>
-          <div className='fl box pb20 left'>
-            {newsTextlist.length > 0 ? (
-              <div className='mt10'>
-                <div className='title'>
-                  <h2>预告片·OP·ED·BGM·MAD·CM·特典 · · · · · ·</h2>
-                </div>
-                <NewsText data={newsTextlist} />
-              </div>
-            ) : null}
-            {content ? (
-              <div className='mt10'>
-                <div className='title'>
-                  <h2>简介</h2>
-                </div>
-                <div className='detail-content' className='mt10'>
-                  {content}
-                </div>
-              </div>
-            ) : null}
-            {storyId && storylist.length > 0 ? (
-              <div className='ep'>
-                <div className='title'>
-                  <h2>分集剧情</h2>
-                </div>
-                <EpList vid={storyId} data={storylist} />
-              </div>
-            ) : null}
-            {newsPiclist.length > 0 ? (
-              <div className='mt10'>
-                <div className='title'>
-                  <h2>新闻花絮</h2>
-                </div>
-                <NewsPic data={newsPiclist} />
-              </div>
-            ) : null}
-            <div className={`${!(newsTextlist.length > 0 && storyId && newsPiclist.length > 0) ? 'mt10' : 'mt20'}`}>
-              <div className='title'>
-                <h2>相关动漫</h2>
-              </div>
-              {vid && actor.length > 0 ? <DetailActor actor={actor.map(item => item.title).join(',')} no={vid} /> : null}
-            </div>
-            <div className='mt20'>
-              <div className='title'>
-                <h2>评论</h2>
-              </div>
-              <Comment data={comment} />
-            </div>
-          </div>
-        </div>
+        {newsTextlist.length > 0 ? (
+          <View className='detail-mt10'>
+            <View className='title'>
+              <Text>预告片·OP·ED·BGM·MAD·CM·特典 · · · · · ·</Text>
+            </View>
+            <NewsText data={newsTextlist} />
+          </View>
+        ) : null}
+        {content ? (
+          <View className='detail-mt10'>
+            <View className='title'>
+              <Text>简介</Text>
+            </View>
+            <View className='detail-content detail-mt10'>{content}</View>
+          </View>
+        ) : null}
+        {storyId && storylist.length > 0 ? (
+          <View className='ep'>
+            <View className='title'>
+              <Text>分集剧情</Text>
+            </View>
+            <EpList vid={storyId} data={storylist} />
+          </View>
+        ) : null}
+        {newsPiclist.length > 0 ? (
+          <View className='detail-mt10'>
+            <View className='title'>
+              <Text>新闻花絮</Text>
+            </View>
+            <NewsPic data={newsPiclist} />
+          </View>
+        ) : null}
+        <View className={`${!(newsTextlist.length > 0 && storyId && newsPiclist.length > 0) ? 'detail-mt10' : 'mt20'}`}>
+          <View className='title'>
+            <Text>相关动漫</Text>
+          </View>
+          {vid && actor.length > 0 ? <DetailActor actor={actor.map(item => item.title).join(',')} no={vid} /> : null}
+        </View>
+        <View className='detail-mt10'>
+          <View className='title'>
+            <Text>评论</Text>
+          </View>
+          <Comment data={comment} />
+        </View>
       </Block>
     )
   }

@@ -1,8 +1,8 @@
 import Taro, { Component } from '@tarojs/taro'
 
-import Detail from '@/components/Detail'
+import Detail from '@/components/Subject/Detail'
 
-class Bangumi extends Component {
+export default class Subject extends Component {
   render() {
     const {
       params: { id }
@@ -10,5 +10,3 @@ class Bangumi extends Component {
     return <Detail vid={id} />
   }
 }
-
-export default Bangumi

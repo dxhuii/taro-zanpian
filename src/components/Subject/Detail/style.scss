@@ -1,4 +1,4 @@
-@import '../../pages/_mixin';
+@import '../../../pages/_mixin';
 
 .detail {
   position: relative;
@@ -177,5 +177,9 @@
     border-bottom: 1px solid #ebebeb;
     background-color: #fff;
     display: flex;
+  }
+
+  &-mt10 {
+    margin-top: 10px;
   }
 }
